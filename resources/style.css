@@ -1,0 +1,74 @@
+body {
+	margin: 0px;
+}
+
+nav {
+	display: flex;
+	position: fixed;
+	z-index: 1;
+	background-color: white;
+	top: 0;
+	width: 100%;
+	justify-content: space-between;
+	background-color: dimgray;
+}
+
+.nav_left {
+	padding-left: 20px;
+}
+
+.nav_right {
+	padding-right: 20px;
+}
+
+nav h1, nav h2 {
+	color: white;
+}
+
+
+.nav_center h2 {
+	text-align: center;
+}
+
+.about {
+	padding-top: 115px;
+	text-align: center;
+	margin-right: 20px;
+	margin-left: 20px;
+
+}
+
+.projects {
+	text-align: center;
+	padding-top: 5px;
+	margin-top: 26px;
+	
+	padding-bottom: 50px;
+	margin-right: 20px;
+	margin-left: 20px;
+	background-color: lightgray;
+	margin-bottom: 26px;
+}
+
+.projects h3 {
+	margin-top: 40px;
+}
+
+.projects h2 {
+	background-color: dimgray;
+	color: white;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+footer {
+	display: flex;
+	justify-content: space-evenly;
+	background-color: dimgray;
+}
+
+footer p {
+	color:  white;
+}
