@@ -5,7 +5,7 @@
 	<title>Portfolio Page</title>
 	<link rel="stylesheet" type="text/css" href="resources/style.css">
 	<!-- I need to just make a bunch of random websites. Anything. If I can think of something that could actually be good that's fine but just for practice so I remember how to do various things I need to just make a bunch of random websites that have all the basic functionality and structure that's expected in a website and then I can start getting more creative. Also I'm just going to kind of spew this one out as well and then I'll make it look more professional and alter the design as I go -->
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<nav>
@@ -48,7 +48,9 @@
 					<div class="dealer-hand">
 						<p class="dealbust"></p>
 						<p class="dealtext"></p>
+					
 						<p class="dealsum"></p>
+
 						<p class="hitcount"></p>
 					</div>
 				</div>
@@ -67,7 +69,9 @@
 					<div class="playerhand">
 						<p class="bust"></p>
 						<p id="newtext"></p>
+						<div class="sumwrap">
 						<p class="cardvalue"></p>
+						</div>
 					</div>
 					<div class="buttons">
 							<button id="newhand">Start new hand</button>
@@ -80,9 +84,11 @@
 		</section>
 	</main>
 	<footer class="contact">
-		<p>Email: forrestvanduren1@gmail.com</p>
+		<p class="email">Email: forrestvanduren1@gmail.com</p>
 		<div class="leave-message">
-			<p><a name="contact">Send me an email</a></p>
+			
+			<p class="contact"><a name="contact">Send me an email</a></p>
+			
 			<form action="main.html" method="POST">
 				
 					<label for="name-input"></label>
