@@ -1,6 +1,28 @@
+/*Global*/
+
 body {
 	margin: 0px;
 }
+
+h1 {
+	font-size: 80px;
+}
+
+h2 {
+	font-size: 50px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+p {
+	font-size: 20px;
+}
+
+
+/*Nav*/
+
 
 nav {
 	display: flex;
@@ -13,6 +35,16 @@ nav {
 	background-color: dimgray;
 }
 
+nav a {
+	color: white;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: lightgray;
+	text-decoration: underline;
+}
+
 .nav_left {
 	padding-left: 20px;
 }
@@ -23,6 +55,7 @@ nav {
 
 nav h1, nav h2 {
 	color: white;
+	font-size: 24px;
 }
 
 
@@ -30,19 +63,36 @@ nav h1, nav h2 {
 	text-align: center;
 }
 
+
+/*About*/
+
+
 .about {
-	padding-top: 115px;
+	padding-top: 181px;
 	text-align: center;
 	margin-right: 20px;
 	margin-left: 20px;
 
 }
 
+.about h1 {
+	position: relative;
+	margin-top: 0;
+}
+
+.about p {
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-bottom: 0px;
+}
+
+
+/*Web pages section*/
+
+
 .projects {
 	text-align: center;
-	padding-top: 5px;
-	margin-top: 26px;
-	
+	margin-top: 0px;
 	padding-bottom: 50px;
 	margin-right: 20px;
 	margin-left: 20px;
@@ -50,8 +100,18 @@ nav h1, nav h2 {
 	margin-bottom: 26px;
 }
 
+.white-space {
+	padding-top: 114.5px;
+	background-color: white;
+}
+
 .projects h3 {
 	margin-top: 40px;
+}
+
+.projects a:hover {
+	text-decoration: none;
+	color: white;
 }
 
 .projects h2 {
@@ -63,12 +123,139 @@ nav h1, nav h2 {
 	padding-bottom: 20px;
 }
 
+.projects p {
+}
+
+
+
+/*Js projects*/
+
+.number {
+	width: 298.34px;
+	text-align: center;
+}
+
+.black-jack {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.blackj h2, .blackj h3, .blackj p {
+	text-align: center;
+}
+
+.playerhand, .dealer-hand {
+	width: 130px;
+	height: 100px;
+	text-align: center;
+}
+
+/*come back to this, I can't git rid of the margin on the right, dev tools shows there is one
+but then also says 0 margin and wont let me change it oh wait i think i had that issue, it's
+because, if I'm remembering right, it's a block level element so takes up the whole horizontal*/
+
+.playerhand {
+	display: inline;
+	margin-right: 0px;
+	margin-left: 0px;
+	height: 150px;
+}
+
+#newtext {
+	text-align: center;
+	
+}
+
+.dealer, .score, #playerhand {
+	width: 400px;
+	max-width: 400px;
+	height: 240px;
+	max-height: 240px;
+
+}
+
+.dealer{
+	margin-left: 100px;
+}
+
+#playerhand {
+	margin-right: 100px;
+	position: relative;
+}
+
+.dealer-hand {
+	display: inline;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.cardvalue {
+	position: absolute;
+	top: 140px;
+	left: 190px;
+}
+	/*the above isn't positioned right when theres a sum2 value*/
+
+.buttons {
+	text-align: center;
+	position: absolute;
+	width: 200px;
+	left: 100px;
+	top: 200px;
+
+}
+
+
+
+/*I need to get the buttons to stay at the bottom of the page. I could make
+the position fixed or absolute but then I'd have to manually position it centerd
+and everything. I could do relitive but when the numbers and cards display it
+pushes it downward. I could just have text populated from the begining. Or
+maybe I could use js to change the value from relitive to static after the
+start game button is pressed the first time I feel like theres probably another
+way. idk though I'll think about it.*/
+
+/*Footer*/
+
+
 footer {
 	display: flex;
 	justify-content: space-evenly;
+	align-items: center;
 	background-color: dimgray;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
+
 
 footer p {
 	color:  white;
 }
+
+.leave-message {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	font-size: 20px;
+}
+
+footer form {
+	margin-bottom: 20px;
+}
+
+.labels {
+	display: block;
+}
+
+footer form label {
+	color: white;
+}
+
+footer form textarea {
+	margin-top: 5px;
+}
+
+
+
+
+/*add white space between footer and game later. */

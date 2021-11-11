@@ -5,41 +5,111 @@
 	<title>Portfolio Page</title>
 	<link rel="stylesheet" type="text/css" href="resources/style.css">
 	<!-- I need to just make a bunch of random websites. Anything. If I can think of something that could actually be good that's fine but just for practice so I remember how to do various things I need to just make a bunch of random websites that have all the basic functionality and structure that's expected in a website and then I can start getting more creative. Also I'm just going to kind of spew this one out as well and then I'll make it look more professional and alter the design as I go -->
+	
 </head>
 <body>
 	<nav>
 		<div class="nav_left">
-			<h2>About</h2>
+			<h2><a href="#about-me">About</a></h2>
 		</div>
 		<div class="nav_center">
 			<h1>Forrest Van Duren</h1>
-			<h2>Projects</h2>
+			<h2><a href="#projects">Projects</a></h2>
 		</div>
 		<div class="nav_right">
-			<h2>Contact</h2>
+			<h2><a href="#contact">Contact</a></h2>
 		</div>
 	</nav>
 	<main>
-		<section class="about">
-			<h2>About Me</h2>
+		<section class="about" id="about-me">
+			<h1>About Me</h1>
 			<p>I'm new to programming and developing my skills in basic web design. HTML CSS and Java Script. I have here a brief overview of my projects. Most of them were projects from my learning resource but there's a couple that I came up with independently.</p>
+			<!-- the text allign center works but the bottom line of text I kind of feel like should be toward the left instead of in the middle. IDK how to do that at the moment -->
+		</a></section>
+		<section class="projects" id="projects">
+			<div class="white-space"></div>
+				<h2>Projects</h2>
+				<h3><a href="../arts and crafts page/artsncrafts.html">Arts and Crafts</a></h3>
+				<p>This is a project I did that involved creating a fictional arts and crafts page. It was early on before I was taught much and it was all made from a design that was given to me</p>
+				<h3><a href="../repurposedliving/excercise.html">Repurposed living</a></h3>
+				<p>This was a project designed for practicing grid in css</p>
+				<h3><a href="../Tea Cozy/layout.html">Tea Cozy</a></h3>
+				<p>This was a website that i was given the basic layout for how it should look but I wasn't given any instructions as to how the code should look</p>
+				<h3><a href="../reflect/reflect.html">Reflect</a></h3>
+				<p>This was an idea for a website that I built from scratch. I wasn't given any direction on this. It utilizes more concepts then any of the other things on this short portfolio although it is still in progress.</p>
 		</section>
-		<section class="projects">
-			<h2>Projects</h2>
-			<h3><a href="../arts and crafts page/artsncrafts.html">Arts and Crafts</a></h3>
-			<p>This is a project I did that involved creating a fictional arts and crafts page. It was early on before I was taught much and it was all made from a design that was given to me</p>
-			<h3><a href="../repurposedliving/excercise.html">Repurposed living</a></h3>
-			<p>This was a project designed for practicing grid in css</p>
-			<h3><a href="../Tea Cozy/layout.html">Tea Cozy</a></h3>
-			<p>This was a website that i was given the basic layout for how it should look but I wasn't given any instructions as to how the code should look</p>
-			<h3><a href="../reflect/reflect.html">Reflect</a></h3>
-			<p>This was an idea for a website that I built from scratch. I wasn't given any direction on this. It utilizes more concepts then any of the other things on this short portfolio although it is still in progress.</p>
+		<section class="blackj">
+			<h2>Jave script programs</h2>
+			<h3>Black jack</h3>
+			<p>This is a program I made to simulate playing black jack at a casino.</p> 
+			<div class="black-jack">
+				<div class="dealer">
+					<p>Dealers hand</p>
+					<div class="dealer-hand">
+						<p class="dealbust"></p>
+						<p class="dealtext"></p>
+						<p class="dealsum"></p>
+						<p class="hitcount"></p>
+					</div>
+				</div>
+				<div class="score">
+					<p>Score</p>
+					<div>
+						<p class="dealerscore">0</p>
+						<p class="playerscore">0</p>
+					</div>
+					<p class="winmessage"></p>
+					<p class="test"></p>
+				</div>
+				<div id="playerhand">
+					<!-- I should maybe change some of the id's and classes on this now that I got all the js stuff working. IDK though it's not bad I just normally would do it differntly I was just fiddling with stuff when I was first making the js stuff work correctly-->
+					<p>Your hand</p>
+					<div class="playerhand">
+						<p class="bust"></p>
+						<p id="newtext"></p>
+						<p class="cardvalue"></p>
+					</div>
+					<div class="buttons">
+							<button id="newhand">Start new hand</button>
+							<button class="hit">Hit</button>
+							<button class="stay">Stay</button>
+					</div>	
+				</div>
+				
+			</div>
 		</section>
 	</main>
 	<footer class="contact">
 		<p>Email: forrestvanduren1@gmail.com</p>
-		<p>Phone: 801-604-6833</p>
+		<div class="leave-message">
+			<p><a name="contact">Send me an email</a></p>
+			<form action="main.html" method="POST">
+				
+					<label for="name-input"></label>
+					<label for="email-input"></label>
+					<label for="message-input"></label>
+				
+					<input type="text" name="name-input" id="name-input" placeholder="Enter your name">
+			
+				
+					
+					<input type="text" name="email-input" id="email-input" placeholder="Enter your email">
+					
+					<br>
+					
+				
+					<textarea type="text" name="message-input" id="message-input" placeholder="Leave a message" rows="5" cols="44"></textarea>
+			</form>
+		</div>
+		<!-- I'm not exactly sure how I want to style this yet. I might but a contact me header at the top and then just put my name and email on one side and the form on the other. Or just make it all top to bottom. The email and name being on either side doesn't look right because they're to small for the size of the section
+		I think I need more practice positioning things without flex. Or I just need to get better with flex. I mean it's not bad. 
+		for some reason everything is off center unless the email and phone have exactly the same length. I'm sure there's a way to fix this just in css but I was thinking I could use js to push empty spaces on either side of the number based on how many charecters there are in the email. Or just count and do that myself lol. I could put spans and then color the excess letters gray so they don't show up but I'm sure that's unecesary. well that works but when you highlite the text you see all the hidden text. If you use visibility hidden instead of just changing the color it works. Although I feel there should be a way to make it just line up without having to do that. I don't actually really understand why it doesn't line up in the first place so there's something I don't totally understand about my page structure in the footer. I wasn't thinking I just had to set the phone number width to the width of the email address. -->
+		<p class="number">Phone: 801-604-6833</p>
+		<!-- I should put a contact me section here so I can use forms and stuff.. apperently you need another language called php to send emails-->
 	</footer>
 	<!-- this is okay for now. It's better than bare bones but still looks sort of amature. the reflect page I made looks more professional in the parts that I've done but it still needs work. But I'm trying to learn more about making it look professional and attractive without adding pictures and things. The text placement in the banner is another thing that added an extra something in the reflect page. Small things like that can make a difference. This looks fine but it could be more interesing even with the gray scale scheme. Maybe shift some of the wording a little off center. Or play around with the spacing. Maybe change the colors a little bit and add a bit more accent but keep it monochomatic.  -->
+	<!-- two things I think that would make my page look better. First is that everything is squished so that it's viewvable right on the face of the webpage, you don't have to scroll. I unsquished it a little by adding some space. But there's another solution which leads me to a common theme I'm noticing-and I remember reading it's sort of the norm nowadays-most websites, especially ones like this, non informational type pages-it's not so much true for things like forums or informational articles and things like, I'll have to look again to be sure- Is big elements. The fonts are bigger, the pictures are bigger. There's sort of a different thing that goes into making a desing with smaller text look professional. But the big wording and things catches peoples attention. I should try increasing the size of my text. It seems that most of these webpages try to make each 'section' of the page, like the about and the projects for example, each fill up the entire screen more or less. For one it catches peoples attention, and i think the idea is that it's more engaging when each section has to be scrolled to, or you can just click the nav links. -->
+<script src="./resources/javasc/blackjack.js"></script>
 </body>
 </html>
+<!-- it seems pretty responsive. It looks fine until you get over about 200% zoom and then there's only a few small problems. So I probably just need to reformate the footer and header slightly over that magnification. There was a website that emulates screen sizes but I think zooming is a fairly good way of replicating it. Then I'm just supposed to add some kind of interactivity with js. I can't really think of what to add though at the moment. -->
