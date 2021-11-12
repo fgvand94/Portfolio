@@ -737,7 +737,7 @@ const timeFunction = () => {
 		cardSum1New3Out = cardSum1;
 	};  
 	
-	test.innerHTML = `${cardSum1} ${cardSum1New3Out}`;
+	/*test.innerHTML = `${cardSum1} ${cardSum1New3Out}`;*/
 
 	dealText.innerHTML = `${cardValue[randValue1DOut]} of ${cardSuit[randSuit1DOut]} and 
 		${cardValue[randValue2DOut]} of ${cardSuit[randSuit2DOut]}`;

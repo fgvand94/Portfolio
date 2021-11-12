@@ -64,7 +64,9 @@ nav h1, nav h2 {
 .nav_center h2 {
 	text-align: center;
 }
-
+/*I need to adjust the nav bar position for the to be more responsive and also resize because it 
+doesn't work on all phones. also in the @media maybe just change the layout completely because
+it doesn't look great on the phone screen. Maybe make a hamburger menu or something*/
 
 /*About*/
 
@@ -128,7 +130,7 @@ nav h1, nav h2 {
 .projects p {
 }
 
-
+/*maybe make the text here a little less wide so it's not so close to the edge of the screen*/
 
 /*Js projects*/
 
@@ -192,6 +194,19 @@ because, if I'm remembering right, it's a block level element so takes up the wh
 	margin-right: 0px;
 }
 
+.scorenumber {
+	display: flex;
+	justify-content: center;
+}
+
+.dealerscore {
+	margin-right: 5%;
+}
+
+.playerscore {
+	margin-left: 5%;
+}
+
 .sumwrap {
 	display: flex;
 	justify-content: center;
@@ -217,7 +232,9 @@ because, if I'm remembering right, it's a block level element so takes up the wh
 
 
 }
-
+/*The buttons need to be resized for mobile and also maybe the whole area resized because
+it's pretty squished right now on mobile. I might do that after i replace the text with
+pictures of the cards though*/
 
 
 /*when zoomed in or emulating a phone the buttons are shifted to the right from the center
@@ -292,7 +309,7 @@ footer form textarea {
 		height: 500px;
 	}
 	footer form label, footer form textarea{max-width: 50%;
-		max-height: 50%;}
+		max-height: 50%;} 
 		footer p {max-width: 30%;
 			}
 		.about, .projects {margin-left: 0px;
@@ -304,12 +321,33 @@ footer form textarea {
 	.leave-message {justify-content: center;
 		align-items: center; justify-items: center;
 		align-content: center;}
+		.emailcontainer {
+			order: 1;
+			display: flex;
+			justify-content: center;
+		}
+		.email2 {
+			text-align: center;
+			position: relative;
+			right: 150%;
+
+
+		}
+		textarea {
+			width: 50.5em;
+			margin-bottom: 0px;
+		}
+
+		footer form {
+			margin-bottom: 0px;
+		}
 	}
 	/*I have no idea at the moment how to get this to work tbh. the send me an email part
 	randomely uncenterd itself and I can't get my email to actually line up at the bottom
 	of the page. it's because it's all one line. I'm thinking I could put forrestvanduen1
 	in a span and then in the media query put a break between the email and the span. That
 	might work*/
+
 }
 
 /*I should make another one to adjust it for smaller 
