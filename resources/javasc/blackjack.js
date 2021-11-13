@@ -1,10 +1,48 @@
+/*Variables for each individual card and suit value posibility*/
+
+
 const cardValue = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
 const cardSuit = ['diamonds', 'hearts', 'spades', 'clubs'];
-/*I was thinking of making the above operate like a real deck and trying
-to make it so the cards wouldn't repeat. That would still be interesting to
-do for practice but at a real casino they normally have 5 or so decks shuffed
-together so It's possible to get two of the exact same cards so I think this
-is fine the way it is*/
+
+
+
+/*links to each picture of each card in a given suit*/
+
+const clubCards = ['resources/pictures/clubs/acec.jpg', 'resources/pictures/clubs/2c.jpg', 'resources/pictures/clubs/3c.jpg', 
+'resources/pictures/clubs/4c.jpg', 'resources/pictures/clubs/5c.jpg', 'resources/pictures/clubs/6c.jpg', 'resources/pictures/clubs/7c.jpg',
+'resources/pictures/clubs/8c.jpg', 'resources/pictures/clubs/9c.jpg', 'resources/pictures/clubs/10c.jpg', 'resources/pictures/clubs/jc.jpg'
+, 'resources/pictures/clubs/qc.jpg', 'resources/pictures/clubs/kc.jpg'];
+
+
+const spadeCards = ['resources/pictures/spades/aces.jpg', 'resources/pictures/spades/2s.jpg', 'resources/pictures/spades/3s.jpg', 
+'resources/pictures/spades/4s.jpg', 'resources/pictures/spades/5s.jpg', 'resources/pictures/spades/6s.jpg', 'resources/pictures/spades/7s.jpg',
+'resources/pictures/spades/8s.jpg', 'resources/pictures/spades/9s.jpg', 'resources/pictures/spades/10s.jpg', 'resources/pictures/spades/js.jpg',
+'resources/pictures/spades/qs.jpg', 'resources/pictures/spades/ks.jpg',];
+
+
+const heartCards = ['resources/pictures/hearts/aceh.jpg', 'resources/pictures/hearts/2h.jpg', 'resources/pictures/hearts/3h.jpg', 'resources/pictures/hearts/4h.jpg',
+'resources/pictures/hearts/5h.jpg', 'resources/pictures/hearts/6h.jpg', 'resources/pictures/hearts/7h.jpg', 'resources/pictures/hearts/8h.jpg',
+'resources/pictures/hearts/9h.jpg', 'resources/pictures/hearts/10h.jpg', 'resources/pictures/hearts/jh.jpg', 'resources/pictures/hearts/qh.jpg',
+'resources/pictures/hearts/kh.jpg',];
+
+
+const diamondCards = ['resources/pictures/diamonds/aced.jpg', 'resources/pictures/diamonds/2d.jpg', 'resources/pictures/diamonds/3d.jpg', 'resources/pictures/diamonds/4d.jpg',
+'resources/pictures/diamonds/5d.jpg', 'resources/pictures/diamonds/6d.jpg', 'resources/pictures/diamonds/7d.jpg', 'resources/pictures/diamonds/8d.jpg',
+'resources/pictures/diamonds/9d.jpg', 'resources/pictures/diamonds/10d.jpg', 'resources/pictures/diamonds/jd.jpg', 'resources/pictures/diamonds/qd.jpg',
+'resources/pictures/diamonds/kd.jpg',];
+
+/*I'm going to replace the sources for these with higher quility images that are cropped nicer later but the ones I have should work for now
+I'll just replace the location with the better image and leave it the same name so I won't have to change any of my source code. */
+
+
+
+/*card image variables*/
+
+const card1 = document.querySelector('.pcard1');
+const card2 = document.querySelector('.pcard2');
+const card3 = document.querySelector('.pcard3');
+const card4 = document.querySelector('.pcard4');
+const card5 = document.querySelector('.pcard5');
 
 
 
@@ -82,6 +120,10 @@ const addCard = () => {
 	const randValue4 = Math.floor(Math.random()*13);
 	const randSuit4 = Math.floor(Math.random()*4);
 
+	const randValue5 = Math.floor(Math.random()*13);
+	const randSuit5 = Math.floor(Math.random()*4);
+
+
 
 	/*Generating number values for the face cards for each click*/
 
@@ -147,33 +189,385 @@ const addCard = () => {
 	};
 
 
-	/*Printing the cards that were 'dealt' on each hit*/
+/*printing each card*/
 
-	if (clickCount===1) {
-		newText.innerHTML = `${cardValue[randValue1Out]} of ${cardSuit[randSuit1Out]} and 
-		${cardValue[randValue2Out]} of ${cardSuit[randSuit2Out]} and 
-		${valueArr[0]} of ${suitArr[0]}`;
+/*card3*/
+if (suitArr[0] === 'clubs') {
+	if (valueArr[0] === 'Ace') {
+		card3.src = clubCards[0];
+	} else if (valueArr[0] === 2) {
+		card3.src = clubCards[1];
+	} else if (valueArr[0] === 3) {
+		card3.src = clubCards[2];
+	} else if (valueArr[0] === 4) {
+		card3.src = clubCards[3];
+	} else if (valueArr[0] === 5) {
+		card3.src = clubCards[4];
+	} else if (valueArr[0] === 6) {
+		card3.src = clubCards[5];
+	} else if (valueArr[0] === 7) {
+		card3.src = clubCards[6];
+	} else if (valueArr[0] === 8) {
+		card3.src = clubCards[7];
+	} else if (valueArr[0] === 9) {
+		card3.src = clubCards[8];
+	} else if (valueArr[0] === 10) {
+		card3.src = clubCards[9];
+	} else if (valueArr[0] === 'Jack') {
+		card3.src = clubCards[10];
+	} else if (valueArr[0] === 'Queen') {
+		card3.src = clubCards[11];
+	} else if (valueArr[0] === 'King') {
+		card3.src = clubCards[12];
+	}; 
+};
+
+
+if (suitArr[0] === 'spades') {
+	if (valueArr[0] === 'Ace') {
+		card3.src = spadeCards[0];
+	} else if (valueArr[0] === 2) {
+		card3.src = spadeCards[1];
+	} else if (valueArr[0] === 3) {
+		card3.src = spadeCards[2];
+	} else if (valueArr[0] === 4) {
+		card3.src = spadeCards[3];
+	} else if (valueArr[0] === 5) {
+		card3.src = spadeCards[4];
+	} else if (valueArr[0] === 6) {
+		card3.src = spadeCards[5];
+	} else if (valueArr[0] === 7) {
+		card3.src = spadeCards[6];
+	} else if (valueArr[0] === 8) {
+		card3.src = spadeCards[7];
+	} else if (valueArr[0] === 9) {
+		card3.src = spadeCards[8];
+	} else if (valueArr[0] === 10) {
+		card3.src = spadeCards[9];
+	} else if (valueArr[0] === 'Jack') {
+		card3.src = spadeCards[10];
+	} else if (valueArr[0] === 'Queen') {
+		card3.src = spadeCards[11];
+	} else if (valueArr[0] === 'King') {
+		card3.src = spadeCards[12];
+	}; 
+};
+
+
+if (suitArr[0] === 'hearts') {
+	if (valueArr[0] === 'Ace') {
+		card3.src = heartCards[0];
+	} else if (valueArr[0] === 2) {
+		card3.src = heartCards[1];
+	} else if (valueArr[0] === 3) {
+		card3.src = heartCards[2];
+	} else if (valueArr[0] === 4) {
+		card3.src = heartCards[3];
+	} else if (valueArr[0] === 5) {
+		card3.src = heartCards[4];
+	} else if (valueArr[0] === 6) {
+		card3.src = heartCards[5];
+	} else if (valueArr[0] === 7) {
+		card3.src = heartCards[6];
+	} else if (valueArr[0] === 8) {
+		card3.src = heartCards[7];
+	} else if (valueArr[0] === 9) {
+		card3.src = hearCards[8];
+	} else if (valueArr[0] === 10) {
+		card3.src = heartCards[9];
+	} else if (valueArr[0] === 'Jack') {
+		card3.src = heartCards[10];
+	} else if (valueArr[0] === 'Queen') {
+		card3.src = heartCards[11];
+	} else if (valueArr[0] === 'King') {
+		card3.src = heartCards[12];
 	};
+};
 
 
-	if (clickCount===2) {
-		newText.innerHTML = `${cardValue[randValue1Out]} of ${cardSuit[randSuit1Out]} and 
-		${cardValue[randValue2Out]} of ${cardSuit[randSuit2Out]} and 
-		${valueArr[0]} of ${suitArr[0]} and ${valueArr[1]} of ${suitArr[1]}`;
+if (suitArr[0] === 'diamonds') {
+	if (valueArr[0] === 'Ace') {
+		card3.src = diamondCards[0];
+	} else if (valueArr[0] === 2) {
+		card3.src = diamondCards[1];
+	} else if (valueArr[0] === 3) {
+		card3.src = diamondCards[2];
+	} else if (valueArr[0] === 4) {
+		card3.src = diamondCards[3];
+	} else if (valueArr[0] === 5) {
+		card3.src = diamondCards[4];
+	} else if (valueArr[0] === 6) {
+		card3.src = diamondCards[5];
+	} else if (valueArr[0] === 7) {
+		card3.src = diamondCards[6];
+	} else if (valueArr[0] === 8) {
+		card3.src = diamondCards[7];
+	} else if (valueArr[0] === 9) {
+		card3.src = diamondCards[8];
+	} else if (valueArr[0] === 10) {
+		card3.src = diamondCards[9];
+	} else if (valueArr[0] === 'Jack') {
+		card3.src = diamondCards[10];
+	} else if (valueArr[0] === 'Queen') {
+		card3.src = diamondCards[11];
+	} else if (valueArr[0] === 'King') {
+		card3.src = diamondCards[12];
+	}; 
+};
+
+
+/*card 4*/
+if (suitArr[1] === 'clubs') {
+	if (valueArr[1] === 'Ace') {
+		card4.src = clubCards[0];
+	} else if (valueArr[1] === 2) {
+		card4.src = clubCards[1];
+	} else if (valueArr[1] === 3) {
+		card4.src = clubCards[2];
+	} else if (valueArr[1] === 4) {
+		card4.src = clubCards[3];
+	} else if (valueArr[1] === 5) {
+		card4.src = clubCards[4];
+	} else if (valueArr[1] === 6) {
+		card4.src = clubCards[5];
+	} else if (valueArr[1] === 7) {
+		card4.src = clubCards[6];
+	} else if (valueArr[1] === 8) {
+		card4.src = clubCards[7];
+	} else if (valueArr[1] === 9) {
+		card4.src = clubCards[8];
+	} else if (valueArr[1] === 10) {
+		card4.src = clubCards[9];
+	} else if (valueArr[1] === 'Jack') {
+		card4.src = clubCards[10];
+	} else if (valueArr[1] === 'Queen') {
+		card4.src = clubCards[11];
+	} else if (valueArr[1] === 'King') {
+		card4.src = clubCards[12];
+	}; 
+};
+
+
+if (suitArr[1] === 'spades') {
+	if (valueArr[1] === 'Ace') {
+		card4.src = spadeCards[0];
+	} else if (valueArr[1] === 2) {
+		card4.src = spadeCards[1];
+	} else if (valueArr[1] === 3) {
+		card4.src = spadeCards[2];
+	} else if (valueArr[1] === 4) {
+		card4.src = spadeCards[3];
+	} else if (valueArr[1] === 5) {
+		card4.src = spadeCards[4];
+	} else if (valueArr[1] === 6) {
+		card4.src = spadeCards[5];
+	} else if (valueArr[1] === 7) {
+		card4.src = spadeCards[6];
+	} else if (valueArr[1] === 8) {
+		card4.src = spadeCards[7];
+	} else if (valueArr[1] === 9) {
+		card4.src = spadeCards[8];
+	} else if (valueArr[1] === 10) {
+		card4.src = spadeCards[9];
+	} else if (valueArr[1] === 'Jack') {
+		card4.src = spadeCards[10];
+	} else if (valueArr[1] === 'Queen') {
+		card4.src = spadeCards[11];
+	} else if (valueArr[1] === 'King') {
+		card4.src = spadeCards[12];
+	}; 
+};
+
+
+if (suitArr[1] === 'hearts') {
+	if (valueArr[1] === 'Ace') {
+		card4.src = heartCards[0];
+	} else if (valueArr[1] === 2) {
+		card4.src = heartCards[1];
+	} else if (valueArr[1] === 3) {
+		card4.src = heartCards[2];
+	} else if (valueArr[1] === 4) {
+		card4.src = heartCards[3];
+	} else if (valueArr[1] === 5) {
+		card4.src = heartCards[4];
+	} else if (valueArr[1] === 6) {
+		card4.src = heartCards[5];
+	} else if (valueArr[1] === 7) {
+		card4.src = heartCards[6];
+	} else if (valueArr[1] === 8) {
+		card4.src = heartCards[7];
+	} else if (valueArr[1] === 9) {
+		card4.src = heartCards[8];
+	} else if (valueArr[1] === 10) {
+		card4.src = heartCards[9];
+	} else if (valueArr[1] === 'Jack') {
+		card4.src = heartCards[10];
+	} else if (valueArr[1] === 'Queen') {
+		card4.src = heartCards[11];
+	} else if (valueArr[1] === 'King') {
+		card4.src = heartCards[12];
 	};
+};
 
-	if (clickCount===3) {
-		newText.innerHTML = `${cardValue[randValue1Out]} of ${cardSuit[randSuit1Out]} and 
-		${cardValue[randValue2Out]} of ${cardSuit[randSuit2Out]} and 
-		${valueArr[0]} of ${suitArr[0]} and ${valueArr[1]} of ${suitArr[1]} 
-		and ${valueArr[2]} of ${suitArr[2]}`;
+
+if (suitArr[1] === 'diamonds') {
+	if (valueArr[1] === 'Ace') {
+		card4.src = diamondCards[0];
+	} else if (valueArr[1] === 2) {
+		card4.src = diamondCards[1];
+	} else if (valueArr[1] === 3) {
+		card4.src = diamondCards[2];
+	} else if (valueArr[1] === 4) {
+		card4.src = diamondCards[3];
+	} else if (valueArr[1] === 5) {
+		card4.src = diamondCards[4];
+	} else if (valueArr[1] === 6) {
+		card4.src = diamondCards[5];
+	} else if (valueArr[1] === 7) {
+		card4.src = diamondCards[6];
+	} else if (valueArr[1] === 8) {
+		card4.src = diamondCards[7];
+	} else if (valueArr[1] === 9) {
+		card4.src = diamondCards[8];
+	} else if (valueArr[1] === 10) {
+		card4.src = diamondCards[9];
+	} else if (valueArr[1] === 'Jack') {
+		card4.src = diamondCards[10];
+	} else if (valueArr[1] === 'Queen') {
+		card4.src = diamondCards[11];
+	} else if (valueArr[1] === 'King') {
+		card4.src = diamondCards[12];
+	}; 
+};
+
+
+/*card5*/
+if (suitArr[2] === 'clubs') {
+	if (valueArr[2] === 'Ace') {
+		card5.src = clubCards[0];
+	} else if (valueArr[2] === 2) {
+		card5.src = clubCards[1];
+	} else if (valueArr[2] === 3) {
+		card5.src = clubCards[2];
+	} else if (valueArr[2] === 4) {
+		card5.src = clubCards[3];
+	} else if (valueArr[2] === 5) {
+		card5.src = clubCards[4];
+	} else if (valueArr[2] === 6) {
+		card5.src = clubCards[5];
+	} else if (valueArr[2] === 7) {
+		card5.src = clubCards[6];
+	} else if (valueArr[2] === 8) {
+		card5.src = clubCards[7];
+	} else if (valueArr[2] === 9) {
+		card5.src = clubCards[8];
+	} else if (valueArr[2] === 10) {
+		card5.src = clubCards[9];
+	} else if (valueArr[2] === 'Jack') {
+		card5.src = clubCards[10];
+	} else if (valueArr[2] === 'Queen') {
+		card5.src = clubCards[11];
+	} else if (valueArr[2] === 'King') {
+		card5.src = clubCards[12];
+	}; 
+};
+
+
+if (suitArr[2] === 'spades') {
+	if (valueArr[2] === 'Ace') {
+		card5.src = spadeCards[0];
+	} else if (valueArr[2] === 2) {
+		card5.src = spadeCards[1];
+	} else if (valueArr[2] === 3) {
+		card5.src = spadeCards[2];
+	} else if (valueArr[2] === 4) {
+		card5.src = spadeCards[3];
+	} else if (valueArr[2] === 5) {
+		card5.src = spadeCards[4];
+	} else if (valueArr[2] === 6) {
+		card5.src = spadeCards[5];
+	} else if (valueArr[2] === 7) {
+		card5.src = spadeCards[6];
+	} else if (valueArr[2] === 8) {
+		card5.src = spadeCards[7];
+	} else if (valueArr[2] === 9) {
+		card5.src = spadeCards[8];
+	} else if (valueArr[2] === 10) {
+		card5.src = spadeCards[9];
+	} else if (valueArr[2] === 'Jack') {
+		card5.src = spadeCards[10];
+	} else if (valueArr[2] === 'Queen') {
+		card5.src = spadeCards[11];
+	} else if (valueArr[2] === 'King') {
+		card5.src = spadeCards[12];
+	}; 
+};
+
+
+if (suitArr[2] === 'hearts') {
+	if (valueArr[2] === 'Ace') {
+		card5.src = heartCards[0];
+	} else if (valueArr[2] === 2) {
+		card5.src = heartCards[1];
+	} else if (valueArr[2] === 3) {
+		card5.src = heartCards[2];
+	} else if (valueArr[2] === 4) {
+		card5.src = heartCards[3];
+	} else if (valueArr[2] === 5) {
+		card5.src = heartCards[4];
+	} else if (valueArr[2] === 6) {
+		card5.src = heartCards[5];
+	} else if (valueArr[2] === 7) {
+		card5.src = heartCards[6];
+	} else if (valueArr[2] === 8) {
+		card5.src = heartCards[7];
+	} else if (valueArr[2] === 9) {
+		card5.src = hearCards[8];
+	} else if (valueArr[2] === 10) {
+		card5.src = heartCards[9];
+	} else if (valueArr[2] === 'Jack') {
+		card5.src = heartCards[10];
+	} else if (valueArr[2] === 'Queen') {
+		card5.src = heartCards[11];
+	} else if (valueArr[2] === 'King') {
+		card5.src = heartCards[12];
 	};
+};
 
 
-	/*Creating the primary sum and secondary sum for the ace values, 2ndary 
-	isn't fully working yet for card four and up at least when 2 aces are dealt
-	earlier, I had put number 4 in the 5 statement. I think that was the problem
-	but I'll test*/
+if (suitArr[2] === 'diamonds') {
+	if (valueArr[2] === 'Ace') {
+		card5.src = diamondCards[0];
+	} else if (valueArr[2] === 2) {
+		card5.src = diamondCards[1];
+	} else if (valueArr[2] === 3) {
+		card5.src = diamondCards[2];
+	} else if (valueArr[2] === 4) {
+		card5.src = diamondCards[3];
+	} else if (valueArr[2] === 5) {
+		card5.src = diamondCards[4];
+	} else if (valueArr[2] === 6) {
+		card5.src = diamondCards[5];
+	} else if (valueArr[2] === 7) {
+		card5.src = diamondCards[6];
+	} else if (valueArr[2] === 8) {
+		card5.src = diamondCards[7];
+	} else if (valueArr[2] === 9) {
+		card5.src = diamondCards[8];
+	} else if (valueArr[2] === 10) {
+		card5.src = diamondCards[9];
+	} else if (valueArr[2] === 'Jack') {
+		card5.src = diamondCards[10];
+	} else if (valueArr[2] === 'Queen') {
+		card5.src = diamondCards[11];
+	} else if (valueArr[2] === 'King') {
+		card5.src = diamondCards[12];
+	}; 
+};
+
+
+
+	/*Creating the primary sum and secondary sum for the ace values*/
 	
 	cardSum1New1 = cardSum1 + cardNumber3Opt1;
 	cardSum1New2 = cardSum1New1 + cardNumber4Opt1;
@@ -276,10 +670,6 @@ const addCard = () => {
 		hit.removeEventListener("click", addCard);
 		winFunctionD();
 	};
-
-
-	
-
 };
 
 
@@ -335,10 +725,260 @@ const generateHands = () => {
 	};
 
 
-	/*displaying the cards that are generated*/
 
-	newText.innerHTML = `${cardValue[randValue1]} of ${cardSuit[randSuit1]} and 
-	${cardValue[randValue2]} of ${cardSuit[randSuit2]}`;
+
+/*card 1*/
+
+if (cardSuit[randSuit1] === 'clubs') {
+	if (cardValue[randValue1] === 'Ace') {
+		card1.src = clubCards[0];
+	} else if (cardValue[randValue1] === 2) {
+		card1.src = clubCards[1];
+	} else if (cardValue[randValue1] === 3) {
+		card1.src = clubCards[2];
+	} else if (cardValue[randValue1] === 4) {
+		card1.src = clubCards[3];
+	} else if (cardValue[randValue1] === 5) {
+		card1.src = clubCards[4];
+	} else if (cardValue[randValue1] === 6) {
+		card1.src = clubCards[5];
+	} else if (cardValue[randValue1] === 7) {
+		card1.src = clubCards[6];
+	} else if (cardValue[randValue1] === 8) {
+		card1.src = clubCards[7];
+	} else if (cardValue[randValue1] === 9) {
+		card1.src = clubCards[8];
+	} else if (cardValue[randValue1] === 10) {
+		card1.src = clubCards[9];
+	} else if (cardValue[randValue1] === 'Jack') {
+		card1.src = clubCards[10];
+	} else if (cardValue[randValue1] === 'Queen') {
+		card1.src = clubCards[11];
+	} else if (cardValue[randValue1] === 'King') {
+		card1.src = clubCards[12];
+	}; 
+};
+
+
+if (cardSuit[randSuit1] === 'spades') {
+	if (cardValue[randValue1] === 'Ace') {
+		card1.src = spadeCards[0];
+	} else if (cardValue[randValue1] === 2) {
+		card1.src = spadeCards[1];
+	} else if (cardValue[randValue1] === 3) {
+		card1.src = spadeCards[2];
+	} else if (cardValue[randValue1] === 4) {
+		card1.src = spadeCards[3];
+	} else if (cardValue[randValue1] === 5) {
+		card1.src = spadeCards[4];
+	} else if (cardValue[randValue1] === 6) {
+		card1.src = spadeCards[5];
+	} else if (cardValue[randValue1] === 7) {
+		card1.src = spadeCards[6];
+	} else if (cardValue[randValue1] === 8) {
+		card1.src = spadeCards[7];
+	} else if (cardValue[randValue1] === 9) {
+		card1.src = spadeCards[8];
+	} else if (cardValue[randValue1] === 10) {
+		card1.src = spadeCards[9];
+	} else if (cardValue[randValue1] === 'Jack') {
+		card1.src = spadeCards[10];
+	} else if (cardValue[randValue1] === 'Queen') {
+		card1.src = spadeCards[11];
+	} else if (cardValue[randValue1] === 'King') {
+		card1.src = spadeCards[12];
+	}; 
+};
+
+
+if (cardSuit[randSuit1] === 'hearts') {
+	if (cardValue[randValue1] === 'Ace') {
+		card1.src = heartCards[0];
+	} else if (cardValue[randValue1] === 2) {
+		card1.src = heartCards[1];
+	} else if (cardValue[randValue1] === 3) {
+		card1.src = heartCards[2];
+	} else if (cardValue[randValue1] === 4) {
+		card1.src = heartCards[3];
+	} else if (cardValue[randValue1] === 5) {
+		card1.src = heartCards[4];
+	} else if (cardValue[randValue1] === 6) {
+		card1.src = heartCards[5];
+	} else if (cardValue[randValue1] === 7) {
+		card1.src = heartCards[6];
+	} else if (cardValue[randValue1] === 8) {
+		card1.src = heartCards[7];
+	} else if (cardValue[randValue1] === 9) {
+		card1.src = heartCards[8];
+	} else if (cardValue[randValue1] === 10) {
+		card1.src = heartCards[9];
+	} else if (cardValue[randValue1] === 'Jack') {
+		card1.src = heartCards[10];
+	} else if (cardValue[randValue1] === 'Queen') {
+		card1.src = heartCards[11];
+	} else if (cardValue[randValue1] === 'King') {
+		card1.src = heartCards[12];
+	}; 
+};
+
+
+if (cardSuit[randSuit1] === 'diamonds') {
+	if (cardValue[randValue1] === 'Ace') {
+		card1.src = diamondCards[0];
+	} else if (cardValue[randValue1] === 2) {
+		card1.src = diamondCards[1];
+	} else if (cardValue[randValue1] === 3) {
+		card1.src = diamondCards[2];
+	} else if (cardValue[randValue1] === 4) {
+		card1.src = diamondCards[3];
+	} else if (cardValue[randValue1] === 5) {
+		card1.src = diamondCards[4];
+	} else if (cardValue[randValue1] === 6) {
+		card1.src = diamondCards[5];
+	} else if (cardValue[randValue1] === 7) {
+		card1.src = diamondCards[6];
+	} else if (cardValue[randValue1] === 8) {
+		card1.src = diamondCards[7];
+	} else if (cardValue[randValue1] === 9) {
+		card1.src = diamondCards[8];
+	} else if (cardValue[randValue1] === 10) {
+		card1.src = diamondCards[9];
+	} else if (cardValue[randValue1] === 'Jack') {
+		card1.src = diamondCards[10];
+	} else if (cardValue[randValue1] === 'Queen') {
+		card1.src = diamondCards[11];
+	} else if (cardValue[randValue1] === 'King') {
+		card1.src = diamondCards[12];
+	}; 
+};
+
+
+/*card 2*/
+
+if (cardSuit[randSuit2] === 'clubs') {
+	if (cardValue[randValue2] === 'Ace') {
+		card2.src = clubCards[0];
+	} else if (cardValue[randValue2] === 2) {
+		card2.src = clubCards[1];
+	} else if (cardValue[randValue2] === 3) {
+		card2.src = clubCards[2];
+	} else if (cardValue[randValue2] === 4) {
+		card2.src = clubCards[3];
+	} else if (cardValue[randValue2] === 5) {
+		card2.src = clubCards[4];
+	} else if (cardValue[randValue2] === 6) {
+		card2.src = clubCards[5];
+	} else if (cardValue[randValue2] === 7) {
+		card2.src = clubCards[6];
+	} else if (cardValue[randValue2] === 8) {
+		card2.src = clubCards[7];
+	} else if (cardValue[randValue2] === 9) {
+		card2.src = clubCards[8];
+	} else if (cardValue[randValue2] === 10) {
+		card2.src = clubCards[9];
+	} else if (cardValue[randValue2] === 'Jack') {
+		card2.src = clubCards[10];
+	} else if (cardValue[randValue2] === 'Queen') {
+		card2.src = clubCards[11];
+	} else if (cardValue[randValue2] === 'King') {
+		card2.src = clubCards[12];
+	}; 
+};
+
+
+if (cardSuit[randSuit2] === 'spades') {
+	if (cardValue[randValue2] === 'Ace') {
+		card2.src = spadeCards[0];
+	} else if (cardValue[randValue2] === 2) {
+		card2.src = spadeCards[1];
+	} else if (cardValue[randValue2] === 3) {
+		card2.src = spadeCards[2];
+	} else if (cardValue[randValue2] === 4) {
+		card2.src = spadeCards[3];
+	} else if (cardValue[randValue2] === 5) {
+		card2.src = spadeCards[4];
+	} else if (cardValue[randValue2] === 6) {
+		card2.src = spadeCards[5];
+	} else if (cardValue[randValue2] === 7) {
+		card2.src = spadeCards[6];
+	} else if (cardValue[randValue2] === 8) {
+		card2.src = spadeCards[7];
+	} else if (cardValue[randValue2] === 9) {
+		card2.src = spadeCards[8];
+	} else if (cardValue[randValue2] === 10) {
+		card2.src = spadeCards[9];
+	} else if (cardValue[randValue2] === 'Jack') {
+		card2.src = spadeCards[10];
+	} else if (cardValue[randValue2] === 'Queen') {
+		card2.src = spadeCards[11];
+	} else if (cardValue[randValue2] === 'King') {
+		card2.src = spadeCards[12];
+	}; 
+};
+
+
+if (cardSuit[randSuit2] === 'hearts') {
+	if (cardValue[randValue2] === 'Ace') {
+		card2.src = heartCards[0];
+	} else if (cardValue[randValue2] === 2) {
+		card2.src = heartCards[1];
+	} else if (cardValue[randValue2] === 3) {
+		card2.src = heartCards[2];
+	} else if (cardValue[randValue2] === 4) {
+		card2.src = heartCards[3];
+	} else if (cardValue[randValue2] === 5) {
+		card2.src = heartCards[4];
+	} else if (cardValue[randValue2] === 6) {
+		card2.src = heartCards[5];
+	} else if (cardValue[randValue2] === 7) {
+		card2.src = heartCards[6];
+	} else if (cardValue[randValue2] === 8) {
+		card2.src = heartCards[7];
+	} else if (cardValue[randValue2] === 9) {
+		card2.src = heartCards[8];
+	} else if (cardValue[randValue2] === 10) {
+		card2.src = heartCards[9];
+	} else if (cardValue[randValue2] === 'Jack') {
+		card2.src = heartCards[10];
+	} else if (cardValue[randValue2] === 'Queen') {
+		card2.src = heartCards[11];
+	} else if (cardValue[randValue2] === 'King') {
+		card2.src = heartCards[12];
+	};
+};
+
+
+if (cardSuit[randSuit2] === 'diamonds') {
+	if (cardValue[randValue2] === 'Ace') {
+		card2.src = diamondCards[0];
+	} else if (cardValue[randValue2] === 2) {
+		card2.src = diamondCards[1];
+	} else if (cardValue[randValue2] === 3) {
+		card2.src = diamondCards[2];
+	} else if (cardValue[randValue2] === 4) {
+		card2.src = diamondCards[3];
+	} else if (cardValue[randValue2] === 5) {
+		card2.src = diamondCards[4];
+	} else if (cardValue[randValue2] === 6) {
+		card2.src = diamondCards[5];
+	} else if (cardValue[randValue2] === 7) {
+		card2.src = diamondCards[6];
+	} else if (cardValue[randValue2] === 8) {
+		card2.src = diamondCards[7];
+	} else if (cardValue[randValue2] === 9) {
+		card2.src = diamondCards[8];
+	} else if (cardValue[randValue2] === 10) {
+		card2.src = diamondCards[9];
+	} else if (cardValue[randValue2] === 'Jack') {
+		card2.src = diamondCards[10];
+	} else if (cardValue[randValue2] === 'Queen') {
+		card2.src = diamondCards[11];
+	} else if (cardValue[randValue2] === 'King') {
+		card2.src = diamondCards[12];
+	}; 
+};
+
+
 
 
 	/*creating the sum of the cards, as well as a second sum for ace values*/
@@ -408,6 +1048,11 @@ const generateHands = () => {
 	cardNumber5Opt2 = 0;
 
 
+	card3.src = '';
+	card4.src = '';
+	card5.src = '';
+
+
 	/*Creating the event listiner for hit which will be removed when the player
 	busts or presses stay*/
 
@@ -416,13 +1061,15 @@ const generateHands = () => {
 
 	stay.addEventListener("click", pressStay);
 
-	stay.addEventListener("click", timeFunction);
-
-	
-	
+	stay.addEventListener("click", timeFunction);	
 };
 
 
+const dcard1 = document.querySelector('.dcard1');
+const dcard2 = document.querySelector('.dcard2');
+const dcard3 = document.querySelector('.dcard3');
+const dcard4 = document.querySelector('.dcard4');
+const dcard5 = document.querySelector('.dcard5');
 
 
 /*Dealer functions variables*/
@@ -437,6 +1084,8 @@ let randValue1DOut = 0;
 let randSuit1DOut = 0;
 let randValue2DOut = 0;
 let randSuit2DOut = 0;
+
+
 
 
 let cardNumber1Opt1D = 0;
@@ -499,9 +1148,7 @@ const genDealerHand2 = () => {
 		suitArrD.push(cardSuit[randSuit3D]);
 	}; 
 
-/*There should be a find and replace in editors so I could copy a function
-to another function and then inside that function change every instance like
-I'm doing here manually*/
+
 
 	if (cardValue[randValue3D]==='Jack' && hitCount===2 || 
 		cardValue[randValue3D]==='Queen' && hitCount===2 || 
@@ -545,32 +1192,389 @@ I'm doing here manually*/
 
 
 /*Printing the cards that were 'dealt' on each hit*/
+	
 
-	if (hitCount === 1) {
-		dealText.innerHTML = `${cardValue[randValue1DOut]} of ${cardSuit[randSuit1DOut]} and 
-		${cardValue[randValue2DOut]} of ${cardSuit[randSuit2DOut]} and 
-		${valueArrD[0]} of ${suitArrD[0]}`;
+/*card 3*/
+
+if (suitArrD[0] === 'clubs') {
+	if (valueArrD[0] === 'Ace') {
+		dcard3.src = clubCards[0];
+	} else if (valueArrD[0] === 2) {
+		dcard3.src = clubCards[1];
+	} else if (valueArrD[0] === 3) {
+		dcard3.src = clubCards[2];
+	} else if (valueArrD[0] === 4) {
+		dcard3.src = clubCards[3];
+	} else if (valueArrD[0] === 5) {
+		dcard3.src = clubCards[4];
+	} else if (valueArrD[0] === 6) {
+		dcard3.src = clubCards[5];
+	} else if (valueArrD[0] === 7) {
+		dcard3.src = clubCards[6];
+	} else if (valueArrD[0] === 8) {
+		dcard3.src = clubCards[7];
+	} else if (valueArrD[0] === 9) {
+		dcard3.src = clubCards[8];
+	} else if (valueArrD[0] === 10) {
+		dcard3.src = clubCards[9];
+	} else if (valueArrD[0] === 'Jack') {
+		dcard3.src = clubCards[10];
+	} else if (valueArrD[0] === 'Queen') {
+		dcard3.src = clubCards[11];
+	} else if (valueArrD[0] === 'King') {
+		dcard3.src = clubCards[12];
+	}; 
+};
+
+
+if (suitArrD[0] === 'spades') {
+	if (valueArrD[0] === 'Ace') {
+		dcard3.src = spadeCards[0];
+	} else if (valueArrD[0] === 2) {
+		dcard3.src = spadeCards[1];
+	} else if (valueArrD[0] === 3) {
+		dcard3.src = spadeCards[2];
+	} else if (valueArrD[0] === 4) {
+		dcard3.src = spadeCards[3];
+	} else if (valueArrD[0] === 5) {
+		dcard3.src = spadeCards[4];
+	} else if (valueArrD[0] === 6) {
+		dcard3.src = spadeCards[5];
+	} else if (valueArrD[0] === 7) {
+		dcard3.src = spadeCards[6];
+	} else if (valueArrD[0] === 8) {
+		dcard3.src = spadeCards[7];
+	} else if (valueArrD[0] === 9) {
+		dcard3.src = spadeCards[8];
+	} else if (valueArrD[0] === 10) {
+		dcard3.src = spadeCards[9];
+	} else if (valueArrD[0] === 'Jack') {
+		dcard3.src = spadeCards[10];
+	} else if (valueArrD[0] === 'Queen') {
+		dcard3.src = spadeCards[11];
+	} else if (valueArrD[0] === 'King') {
+		dcard3.src = spadeCards[12];
+	}; 
+};
+
+
+if (suitArrD[0] === 'hearts') {
+	if (valueArrD[0] === 'Ace') {
+		dcard3.src = heartCards[0];
+	} else if (valueArrD[0] === 2) {
+		dcard3.src = heartCards[1];
+	} else if (valueArrD[0] === 3) {
+		dcard3.src = heartCards[2];
+	} else if (valueArrD[0] === 4) {
+		dcard3.src = heartCards[3];
+	} else if (valueArrD[0] === 5) {
+		dcard3.src = heartCards[4];
+	} else if (valueArrD[0] === 6) {
+		dcard3.src = heartCards[5];
+	} else if (valueArrD[0] === 7) {
+		dcard3.src = heartCards[6];
+	} else if (valueArrD[0] === 8) {
+		dcard3.src = heartCards[7];
+	} else if (valueArrD[0] === 9) {
+		dcard3.src = hearCards[8];
+	} else if (valueArrD[0] === 10) {
+		dcard3.src = heartCards[9];
+	} else if (valueArrD[0] === 'Jack') {
+		dcard3.src = heartCards[10];
+	} else if (valueArrD[0] === 'Queen') {
+		dcard3.src = heartCards[11];
+	} else if (valueArrD[0] === 'King') {
+		dcard3.src = heartCards[12];
 	};
+};
 
 
-	if (hitCount===2) {
-		dealText.innerHTML = `${cardValue[randValue1DOut]} of ${cardSuit[randSuit1DOut]} and 
-		${cardValue[randValue2DOut]} of ${cardSuit[randSuit2DOut]} and 
-		${valueArrD[0]} of ${suitArrD[0]} and ${valueArrD[1]} of ${suitArrD[1]}`;
+if (suitArrD[0] === 'diamonds') {
+	if (valueArrD[0] === 'Ace') {
+		dcard3.src = diamondCards[0];
+	} else if (valueArrD[0] === 2) {
+		dcard3.src = diamondCards[1];
+	} else if (valueArrD[0] === 3) {
+		dcard3.src = diamondCards[2];
+	} else if (valueArrD[0] === 4) {
+		dcard3.src = diamondCards[3];
+	} else if (valueArrD[0] === 5) {
+		dcard3.src = diamondCards[4];
+	} else if (valueArrD[0] === 6) {
+		dcard3.src = diamondCards[5];
+	} else if (valueArrD[0] === 7) {
+		dcard3.src = diamondCards[6];
+	} else if (valueArrD[0] === 8) {
+		dcard3.src = diamondCards[7];
+	} else if (valueArrD[0] === 9) {
+		dcard3.src = diamondCards[8];
+	} else if (valueArrD[0] === 10) {
+		dcard3.src = diamondCards[9];
+	} else if (valueArrD[0] === 'Jack') {
+		dcard3.src = diamondCards[10];
+	} else if (valueArrD[0] === 'Queen') {
+		dcard3.src = diamondCards[11];
+	} else if (valueArrD[0] === 'King') {
+		dcard3.src = diamondCards[12];
+	}; 
+};
+
+
+/*card 4*/
+if (suitArrD[1] === 'clubs') {
+	if (valueArrD[1] === 'Ace') {
+		dcard4.src = clubCards[0];
+	} else if (valueArrD[1] === 2) {
+		dcard4.src = clubCards[1];
+	} else if (valueArrD[1] === 3) {
+		dcard4.src = clubCards[2];
+	} else if (valueArrD[1] === 4) {
+		dcard4.src = clubCards[3];
+	} else if (valueArrD[1] === 5) {
+		dcard4.src = clubCards[4];
+	} else if (valueArrD[1] === 6) {
+		dcard4.src = clubCards[5];
+	} else if (valueArrD[1] === 7) {
+		dcard4.src = clubCards[6];
+	} else if (valueArrD[1] === 8) {
+		dcard4.src = clubCards[7];
+	} else if (valueArrD[1] === 9) {
+		dcard4.src = clubCards[8];
+	} else if (valueArrD[1] === 10) {
+		dcard4.src = clubCards[9];
+	} else if (valueArrD[1] === 'Jack') {
+		dcard4.src = clubCards[10];
+	} else if (valueArrD[1] === 'Queen') {
+		dcard4.src = clubCards[11];
+	} else if (valueArrD[1] === 'King') {
+		dcard4.src = clubCards[12];
+	}; 
+};
+
+
+if (suitArrD[1] === 'spades') {
+	if (valueArrD[1] === 'Ace') {
+		dcard4.src = spadeCards[0];
+	} else if (valueArrD[1] === 2) {
+		dcard4.src = spadeCards[1];
+	} else if (valueArrD[1] === 3) {
+		dcard4.src = spadeCards[2];
+	} else if (valueArrD[1] === 4) {
+		dcard4.src = spadeCards[3];
+	} else if (valueArrD[1] === 5) {
+		dcard4.src = spadeCards[4];
+	} else if (valueArrD[1] === 6) {
+		dcard4.src = spadeCards[5];
+	} else if (valueArrD[1] === 7) {
+		dcard4.src = spadeCards[6];
+	} else if (valueArrD[1] === 8) {
+		dcard4.src = spadeCards[7];
+	} else if (valueArrD[1] === 9) {
+		dcard4.src = spadeCards[8];
+	} else if (valueArrD[1] === 10) {
+		dcard4.src = spadeCards[9];
+	} else if (valueArrD[1] === 'Jack') {
+		dcard4.src = spadeCards[10];
+	} else if (valueArrD[1] === 'Queen') {
+		dcard4.src = spadeCards[11];
+	} else if (valueArrD[1] === 'King') {
+		dcard4.src = spadeCards[12];
+	}; 
+};
+
+
+if (suitArrD[1] === 'hearts') {
+	if (valueArrD[1] === 'Ace') {
+		dcard4.src = heartCards[0];
+	} else if (valueArrD[1] === 2) {
+		dcard4.src = heartCards[1];
+	} else if (valueArrD[1] === 3) {
+		dcard4.src = heartCards[2];
+	} else if (valueArrD[1] === 4) {
+		dcard4.src = heartCards[3];
+	} else if (valueArrD[1] === 5) {
+		dcard4.src = heartCards[4];
+	} else if (valueArrD[1] === 6) {
+		dcard4.src = heartCards[5];
+	} else if (valueArrD[1] === 7) {
+		dcard4.src = heartCards[6];
+	} else if (valueArrD[1] === 8) {
+		dcard4.src = heartCards[7];
+	} else if (valueArrD[1] === 9) {
+		dcard4.src = heartCards[8];
+	} else if (valueArrD[1] === 10) {
+		dcard4.src = heartCards[9];
+	} else if (valueArrD[1] === 'Jack') {
+		dcard4.src = heartCards[10];
+	} else if (valueArrD[1] === 'Queen') {
+		dcard4.src = heartCards[11];
+	} else if (valueArrD[1] === 'King') {
+		dcard4.src = heartCards[12];
 	};
+};
 
-	if (hitCount===3) {
-		dealText.innerHTML = `${cardValue[randValue1DOut]} of ${cardSuit[randSuit1DOut]} and 
-		${cardValue[randValue2DOut]} of ${cardSuit[randSuit2DOut]} and 
-		${valueArrD[0]} of ${suitArrD[0]} and ${valueArrD[1]} of ${suitArrD[1]} 
-		and ${valueArrD[2]} of ${suitArrD[2]}`;
+
+if (suitArrD[1] === 'diamonds') {
+	if (valueArrD[1] === 'Ace') {
+		dcard4.src = diamondCards[0];
+	} else if (valueArrD[1] === 2) {
+		dcard4.src = diamondCards[1];
+	} else if (valueArrD[1] === 3) {
+		dcard4.src = diamondCards[2];
+	} else if (valueArrD[1] === 4) {
+		dcard4.src = diamondCards[3];
+	} else if (valueArrD[1] === 5) {
+		dcard4.src = diamondCards[4];
+	} else if (valueArrD[1] === 6) {
+		dcard4.src = diamondCards[5];
+	} else if (valueArrD[1] === 7) {
+		dcard4.src = diamondCards[6];
+	} else if (valueArrD[1] === 8) {
+		dcard4.src = diamondCards[7];
+	} else if (valueArrD[1] === 9) {
+		dcard4.src = diamondCards[8];
+	} else if (valueArrD[1] === 10) {
+		dcard4.src = diamondCards[9];
+	} else if (valueArrD[1] === 'Jack') {
+		dcard4.src = diamondCards[10];
+	} else if (valueArrD[1] === 'Queen') {
+		dcard4.src = diamondCards[11];
+	} else if (valueArrD[1] === 'King') {
+		dcard4.src = diamondCards[12];
+	}; 
+};
+
+
+/*card5*/
+if (suitArrD[2] === 'clubs') {
+	if (valueArrD[2] === 'Ace') {
+		dcard5.src = clubCards[0];
+	} else if (valueArrD[2] === 2) {
+		dcard5.src = clubCards[1];
+	} else if (valueArrD[2] === 3) {
+		dcard5.src = clubCards[2];
+	} else if (valueArrD[2] === 4) {
+		dcard5.src = clubCards[3];
+	} else if (valueArrD[2] === 5) {
+		dcard5.src = clubCards[4];
+	} else if (valueArrD[2] === 6) {
+		dcard5.src = clubCards[5];
+	} else if (valueArrD[2] === 7) {
+		dcard5.src = clubCards[6];
+	} else if (valueArrD[2] === 8) {
+		dcard5.src = clubCards[7];
+	} else if (valueArrD[2] === 9) {
+		dcard5.src = clubCards[8];
+	} else if (valueArrD[2] === 10) {
+		dcard5.src = clubCards[9];
+	} else if (valueArrD[2] === 'Jack') {
+		dcard5.src = clubCards[10];
+	} else if (valueArrD[2] === 'Queen') {
+		dcard5.src = clubCards[11];
+	} else if (valueArrD[2] === 'King') {
+		dcard5.src = clubCards[12];
+	}; 
+};
+
+
+if (suitArrD[2] === 'spades') {
+	if (valueArrD[2] === 'Ace') {
+		dcard5.src = spadeCards[0];
+	} else if (valueArrD[2] === 2) {
+		dcard5.src = spadeCards[1];
+	} else if (valueArrD[2] === 3) {
+		dcard5.src = spadeCards[2];
+	} else if (valueArrD[2] === 4) {
+		dcard5.src = spadeCards[3];
+	} else if (valueArrD[2] === 5) {
+		dcard5.src = spadeCards[4];
+	} else if (valueArrD[2] === 6) {
+		dcard5.src = spadeCards[5];
+	} else if (valueArrD[2] === 7) {
+		dcard5.src = spadeCards[6];
+	} else if (valueArrD[2] === 8) {
+		dcard5.src = spadeCards[7];
+	} else if (valueArrD[2] === 9) {
+		dcard5.src = spadeCards[8];
+	} else if (valueArrD[2] === 10) {
+		dcard5.src = spadeCards[9];
+	} else if (valueArrD[2] === 'Jack') {
+		dcard5.src = spadeCards[10];
+	} else if (valueArrD[2] === 'Queen') {
+		dcard5.src = spadeCards[11];
+	} else if (valueArrD[2] === 'King') {
+		dcard5.src = spadeCards[12];
+	}; 
+};
+
+
+if (suitArrD[2] === 'hearts') {
+	if (valueArrD[2] === 'Ace') {
+		dcard5.src = heartCards[0];
+	} else if (valueArrD[2] === 2) {
+		dcard5.src = heartCards[1];
+	} else if (valueArrD[2] === 3) {
+		dcard5.src = heartCards[2];
+	} else if (valueArrD[2] === 4) {
+		dcard5.src = heartCards[3];
+	} else if (valueArrD[2] === 5) {
+		dcard5.src = heartCards[4];
+	} else if (valueArrD[2] === 6) {
+		dcard5.src = heartCards[5];
+	} else if (valueArrD[2] === 7) {
+		dcard5.src = heartCards[6];
+	} else if (valueArrD[2] === 8) {
+		dcard5.src = heartCards[7];
+	} else if (valueArrD[2] === 9) {
+		dcard5.src = hearCards[8];
+	} else if (valueArrD[2] === 10) {
+		dcard5.src = heartCards[9];
+	} else if (valueArrD[2] === 'Jack') {
+		dcard5.src = heartCards[10];
+	} else if (valueArrD[2] === 'Queen') {
+		dcard5.src = heartCards[11];
+	} else if (valueArrD[2] === 'King') {
+		dcard5.src = heartCards[12];
 	};
+};
 
 
-	/*Creating the primary sum and secondary sum for the ace values, 2ndary 
-	isn't fully working yet for card four and up at least when 2 aces are dealt
-	earlier, I had put number 4 in the 5 statement. I think that was the problem
-	but I'll test*/
+if (suitArrD[2] === 'diamonds') {
+	if (valueArrD[2] === 'Ace') {
+		dcard5.src = diamondCards[0];
+	} else if (valueArrD[2] === 2) {
+		dcard5.src = diamondCards[1];
+	} else if (valueArrD[2] === 3) {
+		dcard5.src = diamondCards[2];
+	} else if (valueArrD[2] === 4) {
+		dcard5.src = diamondCards[3];
+	} else if (valueArrD[2] === 5) {
+		dcard5.src = diamondCards[4];
+	} else if (valueArrD[2] === 6) {
+		dcard5.src = diamondCards[5];
+	} else if (valueArrD[2] === 7) {
+		dcard5.src = diamondCards[6];
+	} else if (valueArrD[2] === 8) {
+		dcard5.src = diamondCards[7];
+	} else if (valueArrD[2] === 9) {
+		dcard5.src = diamondCards[8];
+	} else if (valueArrD[2] === 10) {
+		dcard5.src = diamondCards[9];
+	} else if (valueArrD[2] === 'Jack') {
+		dcard5.src = diamondCards[10];
+	} else if (valueArrD[2] === 'Queen') {
+		dcard5.src = diamondCards[11];
+	} else if (valueArrD[2] === 'King') {
+		dcard5.src = diamondCards[12];
+	}; 
+};
+
+
+
+
+
+
+	/*Creating the primary sum and secondary sum for the ace values.*/
 	
 	cardSum1New1D = cardSum1D + cardNumber3Opt1D;
 	cardSum1New2D = cardSum1New1D + cardNumber4Opt1D;
@@ -663,85 +1667,147 @@ I'm doing here manually*/
 	dealBust.innerHTML = 'HOLY SHIT!!!';
 	};
 
-	/*I still don't know if two ace situations will compleatly work*/
-
-/*
-	if (cardSum1New3D > 21) {
-		dealBust.innerHTML = 'Bust';
-		winFunction();
-		};
-
-	 const sevteentotwent = () => {
-	 	if (cardSum2 === 0) {
-
-	 	if (cardSum1New3D > cardSum1New3) {
-	 		winFunctionD();
-	 	} else if (cardSum1New3D < cardSum1New3) {
-	 		winFunction();
-	 	}; 
-	 };
-
-	 	if (cardSum2 > 0) {
-	 	
-	 	if (cardSum1New3D > cardSum2) {
-	 		winFunctionD();
-	 	} else if (cardSum1New3D < cardSum2) {
-	 		winFunction();
-	 	}; 
-
-	 	};
-
-
-	 };
-
-	if (cardSum1New3D >= 17 && cardSum1New3D <= 21) {
-			sevteentotwent();
-		};
-*/
-		/*I feel like nesting may be a better way to approach this type of thing
-		idk though*/
-/*
-	if (cardSum1New3D < 17 && cardSum1New3D < cardSum2D) {
-		timeFunction2();
-	
-	};
-
-	if (cardSum1New3D < 17 && cardSum1New3D < cardSum1New3) {
-		timeFunction2();
-	};
-
-	if (cardSum2 === 0 && cardSum1New3D > 
-		cardSum1New3Out) {
-		winFunctionD();
-	}	else if (cardSum2 > 0 && cardSum1New3D > cardSum2) {
-		winFunctionD();
-	};*/
-
-
-
-
-
 	
 	stay.removeEventListener('click', timeFunction);
 	timeFunction2();
 	
 };
 
-/*ocassionaly when the dealer runs out of iterations before reaching seventeen
-it will automatically start dealing cards when i press start new hand because I
-think because I haven't really told it to stop at that point. This should be
-fixed when I add a few more iterations. */
+
 
 const timeFunction = () => {
 	if (cardSum1New3Out !== cardNumber3Opt1 + cardNumber4Opt1 + cardNumber5Opt1 + cardSum1) {
 		cardSum1New3Out = cardSum1;
 	};  
 	
-	/*test.innerHTML = `${cardSum1} ${cardSum1New3Out}`;*/
 
-	dealText.innerHTML = `${cardValue[randValue1DOut]} of ${cardSuit[randSuit1DOut]} and 
-		${cardValue[randValue2DOut]} of ${cardSuit[randSuit2DOut]}`;
-	
+
+	if (cardSuit[randSuit1DOut] === 'clubs') {
+		if (cardValue[randValue1DOut] === 'Ace') {
+		dcard1.src = clubCards[0];
+	} else if (cardValue[randValue1DOut] === 2) {
+		dcard1.src = clubCards[1];
+	} else if (cardValue[randValue1DOut] === 3) {
+		dcard1.src = clubCards[2];
+	} else if (cardValue[randValue1DOut] === 4) {
+		dcard1.src = clubCards[3];
+	} else if (cardValue[randValue1DOut] === 5) {
+		dcard1.src = clubCards[4];
+	} else if (cardValue[randValue1DOut] === 6) {
+		dcard1.src = clubCards[5];
+	} else if (cardValue[randValue1DOut] === 7) {
+		dcard1.src = clubCards[6];
+	} else if (cardValue[randValue1DOut] === 8) {
+		dcard1.src = clubCards[7];
+	} else if (cardValue[randValue1DOut] === 9) {
+		dcard1.src = clubCards[8];
+	} else if (cardValue[randValue1DOut] === 10) {
+		dcard1.src = clubCards[9];
+	} else if (cardValue[randValue1DOut] === 'Jack') {
+		dcard1.src = clubCards[10];
+	} else if (cardValue[randValue1DOut] === 'Queen') {
+		dcard1.src = clubCards[11];
+	} else if (cardValue[randValue1DOut] === 'King') {
+		dcard1.src = clubCards[12];
+	}; 
+};
+
+
+if (cardSuit[randSuit1DOut] === 'spades') {
+	if (cardValue[randValue1DOut] === 'Ace') {
+		dcard1.src = spadeCards[0];
+	} else if (cardValue[randValue1DOut] === 2) {
+		dcard1.src = spadeCards[1];
+	} else if (cardValue[randValue1DOut] === 3) {
+		dcard1.src = spadeCards[2];
+	} else if (cardValue[randValue1DOut] === 4) {
+		dcard1.src = spadeCards[3];
+	} else if (cardValue[randValue1DOut] === 5) {
+		dcard1.src = spadeCards[4];
+	} else if (cardValue[randValue1DOut] === 6) {
+		dcard1.src = spadeCards[5];
+	} else if (cardValue[randValue1DOut] === 7) {
+		dcard1.src = spadeCards[6];
+	} else if (cardValue[randValue1DOut] === 8) {
+		dcard1.src = spadeCards[7];
+	} else if (cardValue[randValue1DOut] === 9) {
+		dcard1.src = spadeCards[8];
+	} else if (cardValue[randValue1DOut] === 10) {
+		dcard1.src = spadeCards[9];
+	} else if (cardValue[randValue1DOut] === 'Jack') {
+		dcard1.src = spadeCards[10];
+	} else if (cardValue[randValue1DOut] === 'Queen') {
+		dcard1.src = spadeCards[11];
+	} else if (cardValue[randValue1DOut] === 'King') {
+		dcard1.src = spadeCards[12];
+	}; 
+};
+
+
+if (cardSuit[randSuit1DOut] === 'hearts') {
+	if (cardValue[randValue1DOut] === 'Ace') {
+		dcard1.src = heartCards[0];
+	} else if (cardValue[randValue1DOut] === 2) {
+		dcard1.src = heartCards[1];
+	} else if (cardValue[randValue1DOut] === 3) {
+		dcard1.src = heartCards[2];
+	} else if (cardValue[randValue1DOut] === 4) {
+		dcard1.src = heartCards[3];
+	} else if (cardValue[randValue1DOut] === 5) {
+		dcard1.src = heartCards[4];
+	} else if (cardValue[randValue1DOut] === 6) {
+		dcard1.src = heartCards[5];
+	} else if (cardValue[randValue1DOut] === 7) {
+		dcard1.src = heartCards[6];
+	} else if (cardValue[randValue1DOut] === 8) {
+		dcard1.src = heartCards[7];
+	} else if (cardValue[randValue1DOut] === 9) {
+		dcard1.src = hearCards[8];
+	} else if (cardValue[randValue1DOut] === 10) {
+		dcard1.src = heartCards[9];
+	} else if (cardValue[randValue1DOut] === 'Jack') {
+		dcard1.src = heartCards[10];
+	} else if (cardValue[randValue1DOut] === 'Queen') {
+		dcard1.src = heartCards[11];
+	} else if (cardValue[randValue1DOut] === 'King') {
+		dcard1.src = heartCards[12];
+	}; 
+};
+
+
+if (cardSuit[randSuit1DOut] === 'diamonds') {
+	if (cardValue[randValue1DOut] === 'Ace') {
+		dcard1.src = diamondCards[0];
+	} else if (cardValue[randValue1DOut] === 2) {
+		dcard1.src = diamondCards[1];
+	} else if (cardValue[randValue1DOut] === 3) {
+		dcard1.src = diamondCards[2];
+	} else if (cardValue[randValue1DOut] === 4) {
+		dcard1.src = diamondCards[3];
+	} else if (cardValue[randValue1DOut] === 5) {
+		dcard1.src = diamondCards[4];
+	} else if (cardValue[randValue1DOut] === 6) {
+		dcard1.src = diamondCards[5];
+	} else if (cardValue[randValue1DOut] === 7) {
+		dcard1.src = diamondCards[6];
+	} else if (cardValue[randValue1DOut] === 8) {
+		dcard1.src = diamondCards[7];
+	} else if (cardValue[randValue1DOut] === 9) {
+		dcard1.src = diamondCards[8];
+	} else if (cardValue[randValue1DOut] === 10) {
+		dcard1.src = diamondCards[9];
+	} else if (cardValue[randValue1DOut] === 'Jack') {
+		dcard1.src = diamondCards[10];
+	} else if (cardValue[randValue1DOut] === 'Queen') {
+		dcard1.src = diamondCards[11];
+	} else if (cardValue[randValue1DOut] === 'King') {
+		dcard1.src = diamondCards[12];
+	}; 
+};
+
+
+
+
 	if (cardSum2D > 0) {
 		dealVal.innerHTML = `${cardSum1D} or ${cardSum2D}`
 	} else {
@@ -750,11 +1816,7 @@ const timeFunction = () => {
 
 	
 	const playerAce = () => {
-		/*Just one more thing to fix, other than maybe two ace scenerios but I haven't yet
-		noticed a problem with that, is that whenever the dealer busts it evaluates as a 
-		win for the dealer. Every other scenario seems to be working. I was thinking this
-		might possibly be for basically the same reason that the cardsum1new3out on the
-		origional time function wasn't working and was causing problems. I'll check tomorrow*/
+
 
 			const dealerNoAce = () => {
 				if (cardSum1D > 21) {
@@ -794,6 +1856,7 @@ const timeFunction = () => {
 			};
 
 		};
+
 
 		const playerNoAce = () => {
 
@@ -848,26 +1911,19 @@ const timeFunction = () => {
 				playerAce();
 				
 			};
-			/*CardSum1New3Out is giving a value 1 higher than what it should be for some reason
-			and when there's an ace it reads 0 but I guess that just because sum1 isn't inside the
-			function that's being read for that instance so I don't think that's the problem
-			the problem seems to come when I don't hit. if I go n many times without hitting
-			the value of sum1 stays at the value of the first hand that was dealt in that
-			time frame that i didn't hit. I think this has to do with it being in the origiona
-			hand function. I'm thinking maybe making an out for that as well. idk*/
-		
 	
 };
 
-/*I think the above should operate like a dealer would in a real casino
-situation, I haven't played enough hands since I upgraded it to see if the
-dealer will correctly choose when to hit on a soft 17*/
+
 
 const timeFunction2 = () => {
 
+
 	const playerAce2 = () => {
 
+
 			const dealerNoAce2 = () => {
+
 
 				if (cardSum1New3DOut > 21) {
 					dealBust.innerHTML = 'Bust';
@@ -886,6 +1942,7 @@ const timeFunction2 = () => {
 					draw();
 				}; 
 			};
+
 
 			const dealerAce2 = () => {
 				if (cardSum2D > cardSum2) {
@@ -908,6 +1965,7 @@ const timeFunction2 = () => {
 
 		};
 
+
 		const playerNoAce2 = () => {
 
 			const dealerNoAce2 = () => {
@@ -928,6 +1986,7 @@ const timeFunction2 = () => {
 					draw();
 				}; 
 			};
+
 
 			const dealerAce2 = () => {
 				if (cardSum2D > cardSum1New3Out) {
@@ -960,16 +2019,9 @@ const timeFunction2 = () => {
 	
 };
 
-/*It's working pretty good I just need to add a few more rules to the dealer
-side like if it gets a black jack it'll still hit because first value is 
-under 17. Then I need to make it compare the player and dealer values and
-print a message of who won and then maybe keep a score board. And then add
-card pictures and maybe animations and then maybe create more functionalilty
-like allowing splits and then possibly a betting system. I want to make this
-compleatly functional and I want it to look good*/
+
 
 const genDealerHand = () => {
-
 
 	const randValue1D = Math.floor(Math.random()*13);
 	const randSuit1D = Math.floor(Math.random()*4);
@@ -1011,9 +2063,135 @@ const genDealerHand = () => {
 	};
 
 
-	/*displaying the cards that are generated*/
+/*card 1 blank*/
 
-	dealText.innerHTML = `Blank and ${cardValue[randValue2D]} of ${cardSuit[randSuit2D]}`;
+	dcard1.src = 'resources/pictures/cardback.jpg';
+
+
+/*card 2*/
+if (cardSuit[randSuit2D] === 'clubs') {
+	if (cardValue[randValue2D] === 'Ace') {
+		dcard2.src = clubCards[0];
+	} else if (cardValue[randValue2D] === 2) {
+		dcard2.src = clubCards[1];
+	} else if (cardValue[randValue2D] === 3) {
+		dcard2.src = clubCards[2];
+	} else if (cardValue[randValue2D] === 4) {
+		dcard2.src = clubCards[3];
+	} else if (cardValue[randValue2D] === 5) {
+		dcard2.src = clubCards[4];
+	} else if (cardValue[randValue2D] === 6) {
+		dcard2.src = clubCards[5];
+	} else if (cardValue[randValue2D] === 7) {
+		dcard2.src = clubCards[6];
+	} else if (cardValue[randValue2D] === 8) {
+		dcard2.src = clubCards[7];
+	} else if (cardValue[randValue2D] === 9) {
+		dcard2.src = clubCards[8];
+	} else if (cardValue[randValue2D] === 10) {
+		dcard2.src = clubCards[9];
+	} else if (cardValue[randValue2D] === 'Jack') {
+		dcard2.src = clubCards[10];
+	} else if (cardValue[randValue2D] === 'Queen') {
+		dcard2.src = clubCards[11];
+	} else if (cardValue[randValue2D] === 'King') {
+		dcard2.src = clubCards[12];
+	}; 
+};
+
+
+if (cardSuit[randSuit2D] === 'spades') {
+	if (cardValue[randValue2D] === 'Ace') {
+		dcard2.src = spadeCards[0];
+	} else if (cardValue[randValue2D] === 2) {
+		dcard2.src = spadeCards[1];
+	} else if (cardValue[randValue2D] === 3) {
+		dcard2.src = spadeCards[2];
+	} else if (cardValue[randValue2D] === 4) {
+		dcard2.src = spadeCards[3];
+	} else if (cardValue[randValue2D] === 5) {
+		dcard2.src = spadeCards[4];
+	} else if (cardValue[randValue2D] === 6) {
+		dcard2.src = spadeCards[5];
+	} else if (cardValue[randValue2D] === 7) {
+		dcard2.src = spadeCards[6];
+	} else if (cardValue[randValue2D] === 8) {
+		dcard2.src = spadeCards[7];
+	} else if (cardValue[randValue2D] === 9) {
+		dcard2.src = spadeCards[8];
+	} else if (cardValue[randValue2D] === 10) {
+		dcard2.src = spadeCards[9];
+	} else if (cardValue[randValue2D] === 'Jack') {
+		dcard2.src = spadeCards[10];
+	} else if (cardValue[randValue2D] === 'Queen') {
+		dcard2.src = spadeCards[11];
+	} else if (cardValue[randValue2D] === 'King') {
+		dcard2.src = spadeCards[12];
+	}; 
+};
+
+
+if (cardSuit[randSuit2D] === 'hearts') {
+	if (cardValue[randValue2D] === 'Ace') {
+		dcard2.src = heartCards[0];
+	} else if (cardValue[randValue2D] === 2) {
+		dcard2.src = heartCards[1];
+	} else if (cardValue[randValue2D] === 3) {
+		dcard2.src = heartCards[2];
+	} else if (cardValue[randValue2D] === 4) {
+		dcard2.src = heartCards[3];
+	} else if (cardValue[randValue2D] === 5) {
+		dcard2.src = heartCards[4];
+	} else if (cardValue[randValue2D] === 6) {
+		dcard2.src = heartCards[5];
+	} else if (cardValue[randValue2D] === 7) {
+		dcard2.src = heartCards[6];
+	} else if (cardValue[randValue2D] === 8) {
+		dcard2.src = heartCards[7];
+	} else if (cardValue[randValue2D] === 9) {
+		dcard2.src = heartCards[8];
+	} else if (cardValue[randValue2D] === 10) {
+		dcard2.src = heartCards[9];
+	} else if (cardValue[randValue2D] === 'Jack') {
+		dcard2.src = heartCards[10];
+	} else if (cardValue[randValue2D] === 'Queen') {
+		dcard2.src = heartCards[11];
+	} else if (cardValue[randValue2D] === 'King') {
+		dcard2.src = heartCards[12];
+	};
+};
+
+
+if (cardSuit[randSuit2D] === 'diamonds') {
+	if (cardValue[randValue2D] === 'Ace') {
+		dcard2.src = diamondCards[0];
+	} else if (cardValue[randValue2D] === 2) {
+		dcard2.src = diamondCards[1];
+	} else if (cardValue[randValue2D] === 3) {
+		dcard2.src = diamondCards[2];
+	} else if (cardValue[randValue2D] === 4) {
+		dcard2.src = diamondCards[3];
+	} else if (cardValue[randValue2D] === 5) {
+		dcard2.src = diamondCards[4];
+	} else if (cardValue[randValue2D] === 6) {
+		dcard2.src = diamondCards[5];
+	} else if (cardValue[randValue2D] === 7) {
+		dcard2.src = diamondCards[6];
+	} else if (cardValue[randValue2D] === 8) {
+		dcard2.src = diamondCards[7];
+	} else if (cardValue[randValue2D] === 9) {
+		dcard2.src = diamondCards[8];
+	} else if (cardValue[randValue2D] === 10) {
+		dcard2.src = diamondCards[9];
+	} else if (cardValue[randValue2D] === 'Jack') {
+		dcard2.src = diamondCards[10];
+	} else if (cardValue[randValue2D] === 'Queen') {
+		dcard2.src = diamondCards[11];
+	} else if (cardValue[randValue2D] === 'King') {
+		dcard2.src = diamondCards[12];
+	}; 
+};
+
 
 
 	/*creating the sum of the cards, as well as a second sum for ace values*/
@@ -1073,7 +2251,10 @@ const genDealerHand = () => {
 	valueArrD = [];
 	suitArrD = [];
 
-	
+	dcard3.src = '';
+	dcard4.src = '';
+	dcard5.src = '';
+
 
 
 	cardNumber1Opt1D = 0;
@@ -1087,85 +2268,27 @@ const genDealerHand = () => {
 	cardNumber5Opt1D = 0;
 	cardNumber5Opt2D = 0;
 
-	hitCount = 0;
-
-	/*Creating the event listiner for hit which will be removed when the player
-	busts or presses stay*/
-
-	
+	hitCount = 0;	
 };
+
 
 const dealerscore = document.querySelector('.dealerscore');
 const playerscore = document.querySelector('.playerscore');
 const winmessage = document.querySelector('.winmessage');
 
 
-/*Now that I'm thinking about it the or and statmenet in these two functions
-at all is unecesary. If it goes to win function that means you win and if
-goes to winfunction d that means dealer wins so I don't really need to put
-any of that in there. Just make a third function for draws.*/
-
 const winFunction = () => {
-	/*
-	if (cardSum1New3Out > cardSum1New3DOut && cardSum1New3Out > cardSum2D || 
-		cardSum1New3Out > cardSum1New3DOut && cardSum2D === 0) {
-		playerscore.innerHTML ++;
-		winmessage.innerHTML = 'You win';
-	} else if (cardSum2 > cardSum1New3DOut && cardSum2 > cardSum2D || 
-		cardSum2 > cardSum1New3DOut && cardSum2D === 0) {
-		playerscore.innerHTML ++;
-		winmessage.innerHTML = 'You win';
-	} else if (cardSum1New3DOut > 21) {
-		playerscore.innerHTML ++;
-		winmessage.innerHTML = 'You win';
-	} else {
-		winmessage.innerHTML = 'Draw';
-	};
-	*/
-
 	playerscore.innerHTML ++;
 	winmessage.innerHTML = 'You Win'
-/*I'm thinkign I may have to make the above an inner function that is called
-when the buttom part is not true IE when 3d out <= 21*/
-
-/*this might not work completely now that I'm thinking about it*/
-/*it's not working at least in the case of a draw but maybe other scenarios
-as well. */
-/*It's just always saying I win. I feel like there's probably a way to fix it
-inside of this but I'm thinking I could create two seperate functions, one
-for when the dealer wins and one for when the player wins and just call each
-one when it's appropriate.*/
-/*It's saying dealer wins occasionaly when I bust now but adds a point to each
-*/
-
 };
 
+
 const winFunctionD = () => {
-		/*I guess the below is a little excessive. If cards sum2!==0 then it
-		will be higher then it's related cardsume1. so I only really need to
-		put if > card sum2 and then just specify the cardsum 2 ===0 scenario*/
-		/*
-		if (cardSum1New3DOut > cardSum1New3Out && cardSum1New3DOut > cardSum2 ||
-			cardSum1New3DOut > cardSum1New3Out && cardSum2 === 0) {
-		dealerscore.innerHTML ++;
-		winmessage.innerHTML = 'Dealer wins';
-	
-	} else if (cardSum2D > cardSum1New3Out && cardSum2D > cardSum2 || 
-		cardSum2D > cardSum1New3Out && cardSum2 === 0) { 
-		dealerscore.innerHTML ++;
-		winmessage.innerHTML = 'Dealer wins';
-
-	} else if (cardSum1New3Out > 21) {
-		dealerscore.innerHTML ++;
-		winmessage.innerHTML = 'Dealer wins';
-
-	} else {
-		winmessage.innerHTML = 'Draw';
-	};*/
 	dealerscore.innerHTML ++;
 	winmessage.innerHTML = 'Dealer Wins';
 
 };
+
 
 const draw = () => {
 	winmessage.innerHTML = 'Draw';
@@ -1176,11 +2299,3 @@ newHandButton.addEventListener("click", generateHands);
 newHandButton.addEventListener('click', genDealerHand);
 
 const test = document.querySelector('.test');
-
-
-
-
-
-
-/*I could probably seperate some parts of these functions into smaller funcions
-and then just call the functions inside the other functions.*/
