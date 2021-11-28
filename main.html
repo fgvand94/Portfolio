@@ -39,62 +39,161 @@
 				<p>This was an idea for a website that I built from scratch. I wasn't given any direction on this. It utilizes more concepts then any of the other things on this short portfolio although it is still in progress.</p>
 		</section>
 		<section class="blackj">
-			<h2>Jave script programs</h2>
+			<h2>Java script programs</h2>
 			<h3>Black jack</h3>
 			<p>This is a program I made to simulate playing black jack at a casino.</p> 
-			<div class="black-jack">
-				<div class="dealer">
-					<p>Dealers hand</p>
-					<div class="dealer-hand">
-						<p class="dealbust"></p>
-						<!--<p class="dealtext"></p>-->
-						<div class="dcardcontainer">
-							<img src="" class='dcard1'>
-							<img src="" class='dcard2'>
-							<img src="" class='dcard3'>
-							<img src="" class='dcard4'>
-							<img src="" class='dcard5'>
-						</div>
-					
-						<p class="dealsum"></p>
+			<div class="center">	
+				<div class="black-jack">
+					<div class="dealer">
+						<p>Dealers hand</p>
+						<div class="dealer-hand">
+							<p class="dealbust"></p>
+							<!--<p class="dealtext"></p>-->
+							
+							<div class="dealsumwrap">
+							<p class="dealsum"></p>
+							</div>
 
-						<p class="hitcount"></p>
+							
+						</div>
 					</div>
-				</div>
-				<div class="score">
-					<p>Score</p>
-					<div class="scorenumber">
-						<p class="dealerscore">0</p>
-						<p class="playerscore">0</p>
-					</div>
-					<p class="winmessage"></p>
-					<!--<p class="test"></p>-->
-				</div>
-				<div id="playerhand">
-					<!-- I should maybe change some of the id's and classes on this now that I got all the js stuff working. IDK though it's not bad I just normally would do it differntly I was just fiddling with stuff when I was first making the js stuff work correctly-->
-					<p>Your hand</p>
-					<div class="playerhand">
-						<p class="bust"></p>
-						<!--<p id="newtext"></p>-->
+					<div class="score">
+						<p>Score</p>
+						<div class="scorenumber">
+							<p class="dealerscore">0</p>
+							<p class="playerscore">0</p>
+						</div>
+						<p class="winmessage"></p>
+						<div class="deck">
+							<img src="resources/pictures/cardback.jpg" class="">
+						</div>
 						<div class="cardcontainer">
-							<img src="" class='pcard1'>
-							<img src="" class='pcard2'>
-							<img src="" class='pcard3'>
-							<img src="" class='pcard4'>
-							<img src="" class='pcard5'>
+							<div class="flipcard flipcard1" id="">
+								<div class="flipinner flipinner1" id="">
+									<div class="playercardback">
+										<img src="resources/pictures/cardback.jpg" class="pback">
+									</div>
+									<div class="playercardfront">
+										<img src="" class='pcard1 pcard'>
+									</div>
+								</div>
+							</div>
+							<div class="flipcard flipcard2" id="">	
+								<div class="flipinner flipinner2" id="">
+									<div class="playercardback">
+										<img src="resources/pictures/cardback.jpg">
+									</div>
+									<div class="playercardfront">
+										<img src="" class='pcard2 pcard'>
+									</div>	
+								</div>
+							</div>	
+							<div class="flipcard flipcard3" id="">	
+								<div class="flipinner3" id="">
+									<div class="playercardback">
+										<img src="resources/pictures/cardback.jpg">
+									</div>
+									<div class='playercardfront'>	
+										<img src="" class='pcard3 pcard'>
+									</div>
+								</div>
+							</div>
+							<div class="flipcard flipcard4" id="">
+								<div class="flipinner4" id="">
+									<div class="playercardback">
+										<img src="resources/pictures/cardback.jpg">
+									</div>
+									<div class='playercardfront'>	
+										<img src="" class='pcard4 pcard'>
+									</div>	
+								</div>
+							</div>	
+							<div class="flipcard flipcard5" id="">	
+								<div class="flipinner5" id="">		
+									<div class="playercardback">
+										<img src="resources/pictures/cardback.jpg">
+									</div>
+									<div class='playercardfront'>
+										<img src="" class='pcard5 pcard'>
+									</div>	
+								</div>
+							</div>	
 						</div>
-
-						<div class="sumwrap">
-							<p class="cardvalue"></p>
-						</div>
+						<div class="dcardcontainer">
+								<div class="dflipcard dflipcard1" id="">
+									<div class="dflipinner dflipinner1" id="">
+										<div class="dcardback">
+											<img src="resources/pictures/cardback.jpg">
+										</div>
+										<div class="dcardfront">
+											<img src="" class='dcard1'>
+										</div>
+									</div>
+								</div>
+								<div class="dflipcard dflipcard2" id="">
+									<div class="dflipinner dflipinner2" id="">
+										<div class="dcardback">
+											<img src="resources/pictures/cardback.jpg">
+										</div>
+										<div class="dcardfront">
+											<img src="" class='dcard2'>
+										</div>
+									</div>
+								</div>
+								<div class="dflipcard dflipcard3" id="">
+									<div class="dflipinner dflipinner3" id="">
+										<div class="dcardback">
+											<img src="resources/pictures/cardback.jpg">
+										</div>
+										<div class="dcardfront">
+											<img src="" class='dcard3'>
+										</div>
+									</div>
+								</div>
+				 				<div class="dflipcard dflipcard4" id="">
+									<div class="dflipinner dflipinner4" id="">
+										<div class="dcardback">
+											<img src="resources/pictures/cardback.jpg">
+										</div>
+										<div class="dcardfront">
+											<img src="" class='dcard4'>
+										</div>
+									</div>
+								</div>
+								<div class="dflipcard dflipcard5" id="">
+									<div class="dflipinner dflipinner5" id="">
+										<div class="dcardback">
+											<img src="resources/pictures/cardback.jpg">
+										</div>
+										<div class="dcardfront">
+											<img src="" class='dcard5'>
+										</div>
+									</div>
+								</div>	
+							</div>
+						
 					</div>
-					<div class="buttons">
-							<button id="newhand">Start new hand</button>
-							<button class="hit">Hit</button>
-							<button class="stay">Stay</button>
-					</div>	
+					<div id="playerhand">
+						<!-- I should maybe change some of the id's and classes on this now that I got all the js stuff working. IDK though it's not bad I just normally would do it differntly I was just fiddling with stuff when I was first making the js stuff work correctly-->
+						<p>Your hand</p>
+						<div class="playerhand">
+							<p class="bust"></p>
+							<!--<p id="newtext"></p>-->
+							
+
+							<div class="sumwrap">
+								<p class="cardvalue"></p>
+							</div>
+						</div>
+							
+							<div class="buttons">
+									<button id="newhand">Start new hand</button>
+									<button class="hit">Hit</button>
+									<button class="stay">Stay</button>
+							</div>	
+					</div>
+					
 				</div>
-				
 			</div>
 		</section>
 	</main>

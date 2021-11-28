@@ -137,15 +137,27 @@ it doesn't look great on the phone screen. Maybe make a hamburger menu or someth
 	padding-bottom: 50px;
 }
 
+.center {
+	display: flex;
+	justify-content: center;
+}
 
 .number {
 	width: 18.64625rem;
 	text-align: center;
 }
 
+/*the width of the black-jack container shrinks itself unlike the hand containers so it'll
+scew the placement when I zoom in. I'll need to change that and then maybe just make a scroll
+bar when it gets over and then do media queries when it gets below certain sizes. This should
+still mean less media queries need than before and the placement ontop of the deck will be aligned
+throughout the zoom. I see no reason why this won't work. Although I might try to think of anothe
+possibly simpler solution before I actually implement this. IDK if i'll find one though.*/
 .black-jack {
+	width: 1200px;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
+	position: relative;
 }
 
 .blackj h2, .blackj h3, .blackj p {
@@ -175,7 +187,11 @@ because, if I'm remembering right, it's a block level element so takes up the wh
 	
 }
 
-.dealer, .score, #playerhand {
+/*one more problem i'm noticing is when zoomed in when the win message is displayed in the
+score area it shifts things just a tiny bit from how they were before. So I'll need to try
+to fix that*/
+
+.dealer, #playerhand {
 	width: 25rem;
 	max-width: 25rem;
 	height: 15rem;
@@ -183,12 +199,17 @@ because, if I'm remembering right, it's a block level element so takes up the wh
 
 }
 
-.dealer{
-	margin-left: 6.25rem;
-}
 
+
+
+/*I waws going to take the relative position off of this. I would then have to also move the
+buttons based off of the full thing and not the container for the hand. Or I tried making a
+second container for the buttons setting that to relative. That worked but the words when a hand
+is dealt from the beggining pushed it down. I could work around this possibly by just setting the
+buttons above the words there and then positioning accordingly. Although I'm thinking now what
+might be easier than all that is just putton both the dealer and player hands in the deck area
+and just making that part absolute positioning relative to the whole thing*/
 #playerhand {
-	margin-right: 6.25rem;
 	position: relative;
 }
 
@@ -204,11 +225,11 @@ because, if I'm remembering right, it's a block level element so takes up the wh
 }
 
 .dealerscore {
-	margin-right: 5%;
+	margin-right: 20px;
 }
 
 .playerscore {
-	margin-left: 5%;
+	margin-left: 20px;
 }
 
 .sumwrap {
@@ -227,11 +248,16 @@ because, if I'm remembering right, it's a block level element so takes up the wh
 	I'm thinking I maybe could've just made the width 100% and then did text allign center or something
 */
 
-.cardcontainer {
-	width: 100%;
-	
 
+.cardcontainer {
+	width: 400px;
+	display: flex;
+	justify-content: center;
+	
 }
+
+/*I'll change the visibility of this back to normal when I press deal hand. I think this 
+should work*/
 
 
 .buttons {
@@ -244,6 +270,646 @@ because, if I'm remembering right, it's a block level element so takes up the wh
 
 
 }
+
+.deck {
+
+}
+
+.playercardback {
+
+}
+
+/*actually looking at it the cards aren't stacked right on the deck in there initial position
+this might be part of why the animation looks slightl different. I'm not going to worry about
+is right now. But it shouldn't be to hard to fix. I should have double checked that before i
+did all the animations I just was going based of the look of the animation and called it good.
+also if I get them all stacked on the deck I probably won't have to change the display from
+none to block they'll all just be there*/
+.dealer {
+	position: relative;
+}
+
+/*I should be able to make the dealer and player flip cards and the deck line up at any zoom
+level by defining a set width for the blackjack container that they are all in and then setting
+that to relative instead of the parent container from each section. Then the movements would all
+be based on the same thing but they would still be in a definite width. It just might be harder
+to keep them all lined up in their sub containers when they get dealt. Probably possible i'll just
+have to make sure that the player/dealer hand containers stay in such a way that the any given percentage
+of movement given to the cards will always place it in the same spot relative to the player hand
+container. So essentially it will just have to scale in a prefectly semectrical way. I think that
+is possible. maybe if i set the whole container to like 1000 or something that will make it so
+that the hands will be where they normally are at 100% but the continers will be on the end of
+the grandparent containe with flexend or whatever that one is called. Then if they are always
+on the ends and always the same size I think a given percentage for the whole grandparent element
+should keep them placed corectly inside the hand containers as well. I'm not 100% but I think that'll
+work.*/
+.flipcard {
+	width: 70px;
+	height: 92px;
+	perspective: 1000px;
+	position: absolute;
+	top: 70%;
+	right: 54.1666666666666666666666666666666666666666666667%;
+	z-index: 11;
+}
+/*I'll just do position ablolute for the inital animation and then make it back to normal...
+or some shit... yeah I think that should work. Instead of playing it backward like I was thinking
+I'll just have all of them start at the same absolute position, then it'll all be the same
+and then move them over. The only thing is unless i want to shift them over sllightly after
+each hit to keep everything centered like it is when the position is normal i'll have to switch
+the postion back to normal at the end of the animation. I just think this might cause problems
+with things jumping slightly to the left after every card is dealt*/
+
+
+.flipinner {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+
+}
+
+
+
+
+/*you need the flipcard and flip inner because you need everything in the container which
+is sized how you want -theflipcard- to be set to 100% so the elements automatically stack
+ontop of eachother without having to move things around. This is the part I was overlooking
+initially and was why I left out the .flipcard container initially. You could probably just
+set back and front to 100% but then you'd only be flipping the back or front, not the whole
+container with both ontop of eachother, that's why it works the way it does.*/
+
+
+
+
+.playercardback, .playercardfront {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.flipinner1, .flipinner2, .flipinner3, .flipinner4, .flipinner5 {
+	
+  	transform-style: preserve-3d;
+  	
+
+}
+
+
+
+
+/*I might not have to define this increment step for each card. just say #increment 1 2 3 etc
+because it's the same movement for each cards*/
+
+#flipinner1 {
+	animation: flip 1s forwards;
+}
+
+#flipinner2 {
+	animation: flip 1s forwards;
+}
+/*I didn't have this flipcard1 here and i have no idea how it was still working. i noticed
+using flipcard in js seems to work on the first flip card and not the rest in some cases. 
+maybe there's a different conection i really have no idea. no actually it probably just
+doesn't need to actually be defined in the css before hand. When i set card1 style animation
+to this in js it essentially just makes that a css property in the virtual dom without it needing to
+initially be here in the source code.*/
+
+#flipcard1 {
+	animation: move 1s forwards;
+}
+
+.flipcard11 {
+	animation: moveincriment 1s forwards;
+}
+
+#flipcard2 {
+	animation: move2 1s forwards;
+}
+
+#flipinner3 {
+	animation: flip 1s forwards;
+}
+
+#flipcard3 {
+	animation: move3 1s forwards;
+}
+
+#flipinner4 {
+	animation: flip 1s forwards;
+}
+
+#flipcard4 {
+	animation: move4 1s forwards;
+}
+
+#flipinner5 {
+	animation: flip 1s forwards;
+}
+
+#flipcard5 {
+	animation: move5 1s forwards;
+}
+/*
+@keyframes flip {
+	0% {
+		transform: rotateY(180deg);
+	}
+}
+*/
+
+
+.playercardfront {
+	transform: rotateY(180deg);
+}
+/*idk why but in the example the person had this structured exactly the way i do and didn't
+need the z-index.. I don't anymore, idk why. I wouldn't think i would need to in the first place.
+idk what i had differently that made it not work that way initially*/
+
+
+
+
+
+/*
+.score {
+	position: relative;
+}
+*/
+/*the deck is being pushed slightly over when the win text appears because it expands the score
+area and since it's based off a percent of that it moves slightly. when i make them all absolute
+to the grandparent that'll fix it. also just making the score larger would. I need to check and see if there
+are any other things that are absolutele and relative to the card score areas. If so I'll either need
+to position them also in the scope of the grandparent or ill just put them in another div, put the div
+for that at 100% width etc and set that to relative. Either way I should be able to get this working
+exactly how i want*/
+
+.deck {
+	position: absolute;
+	width: 70px;
+	height: 92px;
+	top: 70%;
+	left: 40%;
+	z-index: -1;
+}
+/*there's a slight overlap between the player hand area and the score and win message area,
+also my image is shifting slightly out of it's conatianer when I move it around in absolute
+it works fine but it's going to make positioning things harder and i don't know why either of
+these two things are happening. lawl i had both the image and the container set to class deck
+so it was moving both an absolute percentage out of their parent container*/
+
+.deckinner {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+
+ 
+}
+
+.deckback, .deckfront {
+	position: absolute;	
+	backface-visibility: hidden;
+}
+
+ 
+
+
+@keyframes flip {
+	100% {
+	transform: rotateY(180deg);
+	
+		
+	}
+}
+
+@keyframes moveincriment {
+	100% {
+		transform: translate(-35px, 0px);
+	}
+}
+
+@keyframes moveincriment2 {
+	100% {
+		transform: translate(-35px, 0px);
+	}
+}
+
+
+@keyframes moveincriment3 {
+	100% {
+		transform: translate(-35px, 0px);
+	}
+}
+/*I'mstill trying to think of a way to make these shifts happen more precisely. Theres a gap
+between each of the containers that's making it hard to measure with 100% accuracy so I just
+kind of eye ball it. The idea for responsivness for mobile is still to define the absolute 
+position before the next hit if that's possible while mainaining the animation... well actually
+that won't really work. it seems like setting it as a percentage should help. I want a way to
+make it exactly centered regardless of the size of the screen it's being viewed on. */
+/*I wonder if i used ems if that would make things work better from a responsive standepoint
+I'm just thinking if I used ems in the text as well that would maybe work because the movement
+would be proportional to the way the text size is changing.*/
+/*vh is a measure based on the size of the viewport, it could be more responsive, it seems a
+bit better but i haven't totally worked with it yet. I was looking at all the other animatable
+properties and it sounds like flex position isn't animatable-although shrink and grown and
+such is- but it seemed there may be a work around to this from a flex animation webpage i was
+looking at. I haven't really looked to deep into that and understood it yet but there's two ideas
+i'll try later*/
+/*the reason left wasn't working right is because my previous posiion was based on right so
+it didn't flow properly I guess. This works, And if I do it based on a percentage of the parent
+container it should be responsive. Once i've finished this with all the animations and added
+a few more cards in the off chance you need more than five. All I'll really need to do to make
+this work the way I want-aside from maybe adding a betting system and the option to split and
+things-is to either make the animations more fluid somehow-if that's possible, i can't think
+of a way at the moment to do that-so that they can run at the same time. or possibly prevent
+you from being able to deal a new hand. Oh also, if I don't prevent you from being able
+to deal a new hand in the middle of a hand, which I don't want to do that honestly, I'll need
+to find a way to make the dealer time function stop without the win functions excecuting or
+the card limit being reached. After that this should be prety much fully functional. I'll just
+need to add nicer card pictures/crop these ones better. Probably pictures with more resolution.
+and then i need to organize my code and things better and get rid of any errounous code from
+previous versions of this that i don't need any mroe just to clean things up. and then maybe i'll
+make a toggle switch for the animations as well as a switch for style. Let you pick the color
+of the deck and the style of the card faces maybe just to make it cooler lawl. adn then i need
+to finish the codecademy lessons. I might start some of the back end course before i finish the
+front end. not finish it, and i'll still mainly focus on front end for now. But I might put like
+ten or twenty percent of my learning time for coding into back end stuff. And this is off topic
+so I'll erase it and write it somewhere else but I need to also keep up with my math stuff that
+I haven't been doing as well as possibly start learning excel and bookeeping stuff. I'm thinking
+if I can learn enough to pass that accounting assessment from robert half I might be able to
+get a job doing that until I can get a job programming.*/
+/*putting the animations as top and right instead of translate works alot better but stil not
+perfect. and the deck doesn't stack exactly right at different zooms. IDK if absolute postion
+will work out that responsive unless I put the cards in the same container as the deck. If I
+had the whole width inside of one container It would probably work better. The fact that they're
+moving left/right etc from three different containers makes it so they won't line up like that. 
+Just putting display none works pretty good though and if I did that it would be harder again to
+position the cards in there hand areas. Unless I changed the parent relationship. Put everything
+in a container and had it start as being a relationship to the whole thing and then as it moved or
+after it moved become relational to the paticular container of the card hand/dealer hand. I think
+If I'm remembering right you can do that. Change the level up the parent tree that it is inheriting
+things from but idk. If I could do that that would probably work out. and anything that doesn't
+really because it gets to squished I would just fix using a media query but that would get the
+responsiveness working to a degree where I shouldn't have to do all that much in media queries. 
+ */
+ /*50% is always 50 % of a container but when trying to adjust by 70px as the screen shrinks it becomes that and 17.5% shift doesn't 
+ equal 70px anymore so only the card at 50% is exactly wherer it's supposed to be. IDK exactly at the moment how to work around this other
+ then maybe just setting one of the parent containers to always be 400px. It might not even have to be the main one and possibly could be one
+ that doesn't actually effect any of the other elements in the dealer and player hand area*/
+ /*that works but I almost kind of like the slightly overlaped card look at zoomed perspectives
+ but they weren't centered properly before. I could make it both be centered and overlaped at
+ zoomed perspectives idk if I will though yet or not. now i just need to either switch the display
+ from none to visable or find a way to keep the cards always stacked on the deck then it'll be
+ almost perfect. Other than maybe trying to make the animations more fluid still. IdK 100% how
+ I will go about doing that though but i would like to be able to hit quickly and have the
+ two animations run smoothly instead of cutting off the previous animations eacrly because I 
+ had to define the new position. If I could do that and then upload perfectly cropped higher resolution
+ images it would be perfect as far as the images and responsiveness went. I would just need to
+  add a betting system and the ability to split. Also I need to fix the problem where if you
+  press the deal new hand button before the dealer finishes dealing that it just auto deals a bunch
+  either make that button unpressable or just make sure the time functions and everything stop
+  excecuting when you press that button. Also i need to check for double ace scenarios because
+  I still think there may be a prblem there at least when you have small numbers that would allow
+  one of the two aces to be a one and then just now I had it happen that i pressed hit and it dealt
+  two cards although I might have just accidently double clicked. and it happens occasionally
+  when the dealer busts that it will just auto deal an extra card to them. They already busted
+  so it doesn't really make a differences as far as who wins or anything but idk why that happens
+  */
+@keyframes moved {
+	100% {
+		top: 40%;
+		left: 10.8333333333333333333333333333333333333333%;
+	}
+
+	
+}
+
+@keyframes move2d {
+	100% {
+		top: 40%;
+		left: 16.666666666666666666666666666666666666667%;
+	}
+}
+
+/*this at 579px puts the third card where it slightl overlaps. I think this is because my position statement
+inside the js when you hit aren't exactly the same as they are after the initial animation 
+the only reason i can't calculate it exactly is because the deck when i move it shifts out 
+of it's container slightly. 
+
+I got it looking better*/
+
+/*this has varying levels of responsiveness at zoomed perspectives. the last card dealt doesn't
+work quite right because it's absolute position hasn't been redefined. Maybe i should do that
+right after the animation happens. That would probably work setting these as a percent didn't
+help*/
+
+@keyframes move3d {
+	100% {
+		top: 40%;
+		left: 19.58333333333333333333333333333333333333333333333%;
+	}
+}
+
+@keyframes move4d {
+	100% {
+		top: 40%;
+		left: 22.5%;
+	}
+}
+
+@keyframes move5d {
+	100% {
+		top: 40%;
+		left: 25.4166666666666666666666666666666666666666666666666666667%;
+	}
+}
+
+
+
+
+.dflipcard {
+	width: 70px;
+	height: 92px;
+	position: absolute;
+	left: 40%;
+	top: 70%;
+
+}
+
+.dflipinner {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-style: preserve-3d;
+}
+
+.dcardfront {
+	transform: rotateY(180deg);
+}
+
+
+.dcardcontainer {
+	width: 400px;
+}
+/*this was .dcardfron*/
+.dcardfront, .dcardback {
+	backface-visibility: hidden;
+	position: absolute;
+}
+
+#dflipinner1 {
+	
+}
+
+#dflipinner2 {
+	animation: flip 1s forwards;
+}
+/*I didn't have this flipcard1 here and i have no idea how it was still working. i noticed
+using flipcard in js seems to work on the first flip card and not the rest in some cases. 
+maybe there's a different conection i really have no idea. no actually it probably just
+doesn't need to actually be defined in the css before hand. When i set card1 style animation
+to this in js it essentially just makes that a css property in the virtual dom without it needing to
+initially be here in the source code.*/
+
+
+/*This is what you have to do to get the cards to look like they're comming of the top of the deck
+if you don't set everthing to display none and then to display static when they're dealt. but
+then to keep it looking unifomr I"ll need to essentially reverse these after the animation plays or during
+the animation. for some reason i don't need to do this with the playhand cards. But the dealer
+only shows the 5th card being dealt from the top unless I do this. There are quite a few subtle
+and maybe not so subtle differences in the way I set up the css for the deale and player hands
+they have the same function but I"m wondering if something about those differenes makes this happen. 
+I don't really see why it would though I'm just not sure what's causing this.*/
+/*I started deleating things i don't need but when i deleate .deck or .playercardback it
+always says dealer wins. Also I deleated a few other things and there was one instance where
+the dealer had 18 and i had 16 and it said that i won. IDK if this was just something wrong
+in my JS in general or if it had something to do with something i deleated in css. I'm glad
+I copied what i had before on the calculator though. Atleast everything before the animations
+to the dealer. I haven't noticed any problems so I don't think there's any thing wrong that 
+I'd have to go any further back than that. If I do it's not really a big deal I have how it was
+writtin in calculator as well and I could change it back pretty quick if I need to although I
+see no reason why I would. I just need to figure out what's wrong when i deleate .deck and
+why that scenario with the 18 and 16 giving the wrong result happened. I need to be using
+git more. I should have used it from the beggining but that's fine I don't think I'll need it
+tbh just for safety. Most everything I've pasted in the calculator text so that's basically doing
+the same thing that git would've been doing lol*/
+/*I had another error when The dealer won when it should've been a draw. I realised that i had
+the if cardsum3out yada yada then cardsum3 =carsum 1 on just the dealer hand. Origionally i think
+I had it on the player hand only and then changed it cause i got some error and was didn't analyse
+it much and was just like oh it must be that because that would've have definitly caused problems.
+And in fact that probably was the issue at the time i just wasn't thinking for some reason I would
+really need both for it to work properly because if it's not on the player side then anytime
+you don't hit the sum3out isn't defined and that was the issue with this recent error where
+it was a draw and said dealer wins and now it seems to be working when i remove deck and
+dealerback so i'm thinking that was just a coincedence being caused by this same problem and
+i just happened to have scenarios pop up when i did this that caused it or some other something lawl
+ although I'm worried to remove it now lawl*/
+/*.dflipcard1 {
+	z-index: 10;
+}
+
+.dflipcard2 {
+	z-index: 9;
+}
+
+.dflipcard3 {
+	z-index: 8;
+}
+
+.dflipcard4 {
+	z-index: 7;
+}*/
+
+
+#dflipcard1 {
+	animation: moved 1s forwards;
+}
+
+
+#dflipcard2 {
+	animation: move2d 1s forwards;
+}
+
+#dflipinner3 {
+	animation: flip 1s forwards;
+}
+
+#dflipcard3 {
+	animation: move3d 1s forwards;
+}
+
+#dflipinner4 {
+	animation: flip 1s forwards;
+}
+
+#dflipcard4 {
+	animation: move4d 1s forwards;
+}
+
+#dflipinner5 {
+	animation: flip 1s forwards;
+}
+
+#dflipcard5 {
+	animation: move5d 1s forwards;
+}
+
+
+@keyframes moveincriment {
+	100% {
+		transform: translate(-35px, 0px);
+	}
+}
+
+@keyframes moveincriment2 {
+	100% {
+		transform: translate(-35px, 0px);
+	}
+}
+
+
+@keyframes moveincriment3 {
+	100% {
+		transform: translate(-35px, 0px);
+	}
+}
+
+
+@keyframes move {
+	100% {
+		top: 40%;
+		right: 16.6666666666666666666666666666666666666666666666667%;
+	}
+
+	
+}
+
+@keyframes move2 {
+	100% {
+		top: 40%;
+		right: 10.833333333333333333333333333333333333333333333333333333%;
+	}
+}
+
+/*this at 579px puts the third card where it slightl overlaps. I think this is because my position statement
+inside the js when you hit aren't exactly the same as they are after the initial animation 
+the only reason i can't calculate it exactly is because the deck when i move it shifts out 
+of it's container slightly. 
+
+I got it looking better*/
+
+/*this has varying levels of responsiveness at zoomed perspectives. the last card dealt doesn't
+work quite right because it's absolute position hasn't been redefined. Maybe i should do that
+right after the animation happens. That would probably work setting these as a percent didn't
+help*/
+
+@keyframes move3 {
+	100% {
+		top: 40%;
+		right: 7.916666666666666666666666666666666666666666666666666667%;
+	}
+}
+
+@keyframes move4 {
+	100% {
+		top: 40%;
+		right: 5%;
+	}
+}
+
+@keyframes move5 {
+	100% {
+		top: 40%;
+		right: 2.0833333333333333333333333333333333333333333333333333333333333%;
+	}
+}
+
+.dealsumwrap {
+	display: flex;
+	justify-content: center;
+}
+
+.dealsum {
+	position: absolute;
+	top: 200px;
+}
+
+.dflipinner1 {
+	z-index: 2;
+}
+/* I guess I already accomplished positioning the cards above the deck so when they get dealt
+they'll be dealt form the right spot at any zoom. My idea was to essentially do the thing below
+and then switch the z index to one after each card is dealt and increase the z-index when a given
+card is being dealt but really it might make more sense and look the same if i just kept with
+the switching between display none and display block thing that I had before*/
+/*setting all the display none and everything back didn't help, something about putting 
+the dealer card and card in the same container for the deck changed something. I think
+because the player card was after the dealer before in its own container it made them stay
+on top or something idk. But now the flip card 3 etc are being dealt from the bottom which
+they never were before*/
+/*nevermind i think i just forgot to save the css again or i forgot to refresh the page lawl
+it's working now. or at least the player hand is. The dealer hand is still not working as
+before for some reason. i added the display none and then block in the js which i didn't need
+before and it fixed the cards 3-5 but the first two cards still get dealt upside down and i'm
+actually not sure why it's different now. The next project i do I'll use git more but this one
+i'm going to continue not using it and just saving stuff to the calculator. Which works just
+as good only that i didn't do it quite as often as i should have. I have a version of the js
+saved from before i did the dealer animations. I did actually have the dealer cards set
+up[ with the z index but i feel llke they were working without that. I actually don't completly
+remember now. I'll make it work in any case it's just curious that it seems different now. idk
+why.*/
+/*thinking about it now though the only differnces to the js was the actual position values
+i changed and the the fact that now i'm doing the display block thing. So it almost definitly
+has nothing to do with the js. And i have saved like three copies of css now one from before
+i did any of this so if I really felt like it I could probably find out what the difference is
+because i have the old html saved to. So i just replace the old css and html and put the postions
+in the js back to where they were and it'll work exactly as it did before. I don't think I 
+care to do that though at least not at the moment cause i should be able to make it work just
+by moving the dlipinner1 up in zindex. it's display turns to block after the player card 1 and 2
+so it should be fine*/
+/*
+.flipcard1, .flipinner1{
+	z-index: 10;
+}
+
+.flipcard2, .flipinner2 {
+	z-index: 9;
+}
+
+.dflipcard1 {
+	z-index: 8;
+}
+
+.dflipcard2 {
+	z-index: 7;
+}
+
+.flipcard3, .flipcard4, .flipcard5, .dflipcard3, .dflipcard4, .dflipcard5 {
+	z-index: 1;
+}*/
+
+/*I thought the percent value was when the animation started, but that's actuall where it ends
+saying 100% means the animation that's defined inside will excuate between the time of 0%
+to the time of 100%. I didn't reread the notes enough. I didn't take great notes on this 
+section tbh though. I need to re write all my notes. well there not bad i just didn't go up
+and read what the percent actually stood for. I didn't get enough practice with the animations
+so this is good*/
+/*I want to have it animate the card flipping because i want to get a better understanding
+of how the animations work but also it takes extra time to play when you have to watch it
+being dealt so unltimatly my goal is to have the animations able to be toggles. So you can
+turn them on and off from within the webpage.*/
+
+/* I need to change the display from none to block so that the cards are centered like they 
+normally would be since visibility essentially leaves them there just invisible but display
+none compleatly removes it. */
+
+
+/*I'm thinking to create the move effect for when it's dealt I'll create a js function like
+the one from the md docs and then I'll just run it backward. So its final position is it's
+standard and it's position on the deck is the end position after the animation so I don't
+have to change all the initial positions and then I'll just run the animation backward and 
+do the flip animation as the movement animation is happening at the same time*/
 /*The buttons need to be resized for mobile and also maybe the whole area resized because
 it's pretty squished right now on mobile. I might do that after i replace the text with
 pictures of the cards though*/
