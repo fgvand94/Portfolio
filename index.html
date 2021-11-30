@@ -13,10 +13,15 @@
 		</div>
 		<div class="nav_center">
 			<h1>Forrest Van Duren</h1>
-			<h2><a href="#projects">Projects</a></h2>
+			<h2 class="navp"><a href="#projects">Projects</a></h2>
 		</div>
 		<div class="nav_right">
 			<h2><a href="#contact">Contact</a></h2>
+		</div>
+		<div class="hamburger">
+			<div class="hampart1"></div>
+			<div class="hampart2"></div>
+			<div class="hampart3"></div>
 		</div>
 	</nav>
 	<main>
@@ -187,7 +192,7 @@
 	</main>
 	<footer class="contact">
 		<div class="emailcontainer">
-		<p class="email">Email: <span class="email2">forrestvanduren1@gmail.com</span></p>
+			<p class="email">Email: <span class="email2">forrestvanduren1<span class="email3">@gmail.com</span></span></p>
 		</div>
 		<div class="leave-message">
 			<p class="contact"><a name="contact">Send me an email</a></p>
@@ -195,13 +200,17 @@
 					<label for="name-input"></label>
 					<label for="email-input"></label>
 					<label for="message-input"></label>
-					<input type="text" name="name-input" id="name-input" placeholder="Enter your name">
-					<input type="text" name="email-input" id="email-input" placeholder="Enter your email">
+					<div class="sidebyside">					
+						<input type="text" name="name-input" id="name-input" placeholder="Enter your name">
+						<input type="text" name="email-input" id="email-input" placeholder="Enter your email">
+				    </div>
 					<br>
 					<textarea type="text" name="message-input" id="message-input" placeholder="Leave a message" rows="5" cols="44"></textarea>
 			</form>
 		</div>
-		<p class="number">Phone: 801-604-6833</p>
+		<div class="phonecontainer">
+			<p class="number">Phone: <span class="phone2">801-604-6833</span></p>
+		</div>
 	</footer>
 <script src="./resources/javasc/blackjack.js"></script>
 </body>

@@ -24,13 +24,14 @@ p {
 
 
 /*Nav*/
-
+.hamburger {
+	display: none;
+}
 
 nav {
 	display: flex;
 	position: fixed;
-	z-index: 1;
-	background-color: white;
+	z-index: 12;
 	top: 0;
 	width: 100%;
 	justify-content: space-between;
@@ -136,8 +137,10 @@ nav h1, nav h2 {
 }
 
 .center {
+	width: 100%;
 	display: flex;
 	justify-content: center;
+
 }
 
 .number {
@@ -595,39 +598,140 @@ footer {
 
 
 
-
 footer p {
 	color:  white;
 }
+
 
 .leave-message {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	font-size: 1.25rem;
+	font-size: 1.25rem;	
 }
 
+
+.sidebyside {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+
+#name-input, #email-input {
+	width: 100%;
+	border: 0px;	
+}
+
+
+#name-input {
+	margin-right: 1px;
+}
+
+
+#email-input {
+	margin-left: 1px;
+}
+
+
+#message-input {
+	position: relative;
+	width: 100%;
+	border: 0px;
+	padding: 0px;
+	bottom: 24px;
+}
 
 
 footer form {
 	margin-bottom: 1.25rem;
 }
 
+
 .labels {
 	display: block;
 }
+
 
 footer form label {
 	color: white;
 }
 
+
 footer form textarea {
 	margin-top: 5px;
 }
 
-@media only screen and (max-width: 520px) {
-	html, body {width: auto!important; overflow-x: hidden!important}
-	.buttons {top: 30%;}
+
+.email, .number {
+	text-align: center;
+}
+
+
+/
+@media only screen and (max-width: 1000px) {
+	
+	
+	.emailcontainer, .phonecontainer, .leave-message {
+		display: inline;
+		width: 33.333333%;
+
+	}
+	.number {
+		max-width: 100%;
+	}
+
+}	
+
+@media only screen and (max-width: 755px) {
+	html, body {
+		width: auto!important; overflow-x: hidden!important
+	}
+
+
+	.hamburger {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 30px;
+		justify-content: space-around;
+		right: 10px;
+	}
+
+	.hampart1 {
+		margin-top: 10px;
+		background-color: white;
+		width: 100%;
+		height: 10%;
+	}
+
+	.hampart2 {
+		background-color: white;
+		width: 100%;
+		height: 10%;
+	}
+
+	.hampart3 {
+		background-color: white;
+		width: 100%;
+		height: 10%;
+		margin-bottom: 10px;	
+	}
+
+	.nav_left, .nav_right, .navp {
+		display: none;
+	}
+
+	.nav_center {
+		position: relative;
+		left: 20px;
+
+	}
+
+	.buttons {
+		top: 30%;
+	}
+	
 	footer {
 		flex-direction: column;
 		justify-items: center;
@@ -636,38 +740,66 @@ footer form textarea {
 		justify-content: center;
 		height: 500px;
 	}
-	footer form label, footer form textarea{max-width: 50%;
-		max-height: 50%;} 
+	
+	footer form label, footer form textarea{
+		max-width: 100%;
+		max-height: 50%;
+	} 
 		footer p {max-width: 30%;
 			}
-		.about, .projects {margin-left: 0px;
-			margin-right: 0px;}
-			.email {order: 1;
+		.about, .projects {
+			margin-left: 0px;
+			margin-right: 0px;
+		}
+			.email {
+				order: 1;
 				width: 200px;
-				text-align: center;}
-	.contact {text-align: center;}
-	.leave-message {justify-content: center;
-		align-items: center; justify-items: center;
-		align-content: center;}
+				text-align: center;
+			}
+	.contact {
+		text-align: center;
+	}
+
+
+	.leave-message {
+		width: 66%;
+		display: flex;
+		justify-content: center;
+		align-items: center; 
+		justify-items: center;
+		align-content: center;
+	}
+
 		.emailcontainer {
 			order: 1;
 			display: flex;
 			justify-content: center;
+			width: 200px;
 		}
+		
 		.email2 {
-			text-align: center;
 			position: relative;
 			right: 150%;
-
-
 		}
-		textarea {
-			width: 50.5em;
-			margin-bottom: 0px;
-		}
+
+		
 
 		footer form {
 			margin-bottom: 0px;
+		}
+
+		.sidebyside {
+			display: inherit;
+		}
+
+		#name-input, #email-input {
+			padding: 0px;
+			margin: 0px;
+		}
+		
+		.phonecontainer {
+			display: flex;
+			justify-content: center;
 		}
 	}
 }
