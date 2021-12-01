@@ -1,10 +1,10 @@
- 
+
 * {
 
 }
 
 body {
-	overflow-x: hidden;
+	width: 100%;
 	margin: 0;
 }
 
@@ -65,15 +65,17 @@ a:hover {
 .reflect {
 	position: relative;
 	bottom: 310px;
-	left: 1100px;
+	left: 72.41606319947333%;
 	font-size: 40px;
 	font-family: "Parisienne";
+	width: 50px;
 }
 
 .words {
 	position: relative;
 	left: 20px;
 	font-family: "Caveat";
+	width: 500px;
 }
 
 .container {

@@ -394,9 +394,11 @@ nav h1, nav h2 {
 
 
 @keyframes moved {
+
 	100% {
 		top: 40%;
 		left: 10.8333333333333333333333333333333333333333%;
+
 	}	
 }
 
@@ -585,6 +587,13 @@ nav h1, nav h2 {
 	z-index: 2;
 }
 
+
+		.scoremobile {
+			display: none;
+		}
+
+
+
 /*Footer*/
 
 footer {
@@ -668,7 +677,171 @@ footer form textarea {
 }
 
 
-/
+/*everything is fully responsive up to 200% zoom now and only the blackjack game needs to be refactored
+at smart phone scale. I think I'll need to shift stuff around. I'm thinking it'll work out okay
+if I move the score either above or below the player and dealer hand area and then center the hit buttons
+between both of these instead of having it centered in the player hand specifically. Even then I think
+I'll probably either need to overlap the cards by more then half. Maybe overlap 3/4 or just barely have
+the card value showing. Or I'll have to link to smaller card pictures at that scale.*/
+@media only screen and (max-width: 1214px) {
+	.flipcard {
+	
+	top: 80%;
+	right: 48.3333333333333333333333333333333333333333333333%;
+	
+}
+
+.dflipcard {
+	left: 40%;
+	top: 80%;
+
+}
+
+.black-jack {
+	width: 600px;
+
+}
+
+	.dealer, #playerhand {
+	width: 200px;
+	max-width: 200px;
+
+
+}
+
+.blackj {
+	padding-bottom: 60px;
+}
+
+.buttons {
+	width: 100%;
+	left: 0;
+}
+
+
+.score {
+	width: 200px;
+}
+
+.deck {
+	top: 80%;	
+}
+
+
+
+@keyframes move {
+	100% {
+		top: 40%;
+		right: 13.75%;
+	}
+}
+
+@keyframes move2 {
+	100% {
+		top: 40%;
+		right: 7.916666666666666666666666666666666666666666666666666667%;
+	}
+}
+
+
+@keyframes move3 {
+	100% {
+		top: 40%;
+		right: 5%;
+	}
+}
+
+@keyframes move4 {
+	100% {
+		top: 40%;
+		right: 2.083333333333333333333333333333333333333333333333333333333334%;
+	}
+}
+
+@keyframes move5 {
+	100% {
+		top: 40%;
+		right: -.833333333333333333333333333333333333333333333333333333333333333%;
+	}
+}
+
+@keyframes moveincriment {
+	100% {
+		transform: translate(-17.5px, 0px);
+	}
+}
+
+@keyframes moveincriment2 {
+	100% {
+		transform: translate(-17.5px, 0px);
+	}
+}
+
+
+@keyframes moveincriment3 {
+	100% {
+		transform: translate(-17.5px, 0px);
+	}
+}
+
+@keyframes moveincrimentpre {
+	100% {
+		transform: translate(17.5px, 0px);
+	}
+}
+
+@keyframes moveincrimentpre2 {
+	100% {
+		transform: translate(-17.5px, 0px);
+	}
+}
+
+
+
+@keyframes moved {
+
+	100% {
+		top: 40%;
+		left: 5.72%;
+
+	}	
+}
+
+@keyframes move2d {
+	100% {
+		top: 40%;
+		left: 16.66666666666666666666666666666666666666666666666666666666667%;
+	}
+}
+
+
+
+@keyframes move3d {
+	100% {
+		top: 40%;
+		left: 16.6666666666666666666666666666666666666666666666666666666667%;
+	}
+}
+
+@keyframes move4d {
+	100% {
+		top: 40%;
+		left: 19.5833333333333333333333333333333333333333333333333333333333333%;
+	}
+}
+
+@keyframes move5d {
+	100% {
+		top: 40%;
+		left: 22.49999999999999999999999999999999999999999999999999999999999999999%;
+	}
+}
+
+}
+
+
+
+
 @media only screen and (max-width: 1000px) {
 	
 	
@@ -680,6 +853,9 @@ footer form textarea {
 	.number {
 		max-width: 100%;
 	}
+
+
+
 
 }	
 
@@ -729,7 +905,7 @@ footer form textarea {
 	}
 
 	.buttons {
-		top: 30%;
+		top: 110%;
 	}
 	
 	footer {
@@ -745,17 +921,22 @@ footer form textarea {
 		max-width: 100%;
 		max-height: 50%;
 	} 
-		footer p {max-width: 30%;
+
+		footer p {
+			max-width: 30%;
 			}
+
 		.about, .projects {
 			margin-left: 0px;
 			margin-right: 0px;
 		}
+
 			.email {
 				order: 1;
 				width: 200px;
 				text-align: center;
 			}
+
 	.contact {
 		text-align: center;
 	}
@@ -801,7 +982,156 @@ footer form textarea {
 			display: flex;
 			justify-content: center;
 		}
-	}
+
+		.score {
+			display: block;
+			position: absolute;
+			bottom: 125%;
+			left: 35.7142857142857142857%;
+			width: 100px;
+		}
+
+		.deck {
+			left: 15%;
+		}
+
+		.flipcard {
+			left: 15%;
+			
+		}
+
+		.dflipcard {
+			left: 15%;
+		}
+		
+
+		.black-jack {
+	width: 350px;
+
 }
+
+	.dealer, #playerhand {
+	width: 170px;
+	max-width: 170px;
+}
+
+	.blackjp {
+		padding-bottom: 200px;
+	}
+
+
+
+
+	@keyframes move {
+		100% {
+			top: 215%;
+			left: 100%;
+		}
+	}
+
+	@keyframes move2 {
+		100% {
+			top: 215%;
+			left: 100%;
+		}
+	}
+
+
+	@keyframes move3 {
+		100% {
+			top: 215%;
+			left: 100%;
+		}
+	}
+
+	@keyframes move4 {
+		100% {
+			top: 215%;
+			left: 100%;
+		}
+	}
+
+	@keyframes move5 {
+		100% {
+			top: 215%;
+			left: 100%;
+		}
+	}
+
+	@keyframes moveincriment {
+		100% {
+			transform: translate(-17.5px, 0px);
+		}
+	}
+
+	@keyframes moveincriment2 {
+		100% {
+			transform: translate(-17.5px, 0px);
+		}
+	}
+
+
+	@keyframes moveincriment3 {
+		100% {
+			transform: translate(-17.5px, 0px);
+		}
+	}
+
+	@keyframes moveincrimentpre {
+		100% {
+			transform: translate(17.5px, 0px);
+		}
+	}
+
+	@keyframes moveincrimentpre2 {
+		100% {
+			transform: translate(-17.5px, 0px);
+		}
+	}
+
+
+
+	@keyframes moved {
+
+		100% {
+			top: 215%;
+			left: -100%;
+
+		}	
+	}
+
+	@keyframes move2d {
+		100% {
+			top: 215%;
+			left: -100%;
+		}
+	}
+
+
+
+	@keyframes move3d {
+		100% {
+			top: 215%;
+			right: 100%;
+		}
+	}
+
+	@keyframes move4d {
+		100% {
+			top: 215%;
+			right: 100%;
+		}
+	}
+
+	@keyframes move5d {
+		100% {
+			top: 215%;
+			right: 100%;
+		}
+	}
+
+}
+
+
 
 

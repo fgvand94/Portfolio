@@ -130,6 +130,12 @@ let suitArr = [];
 
 let clickCount = 0;
 
+/*Scalling variable for responsiveness*/
+
+const scale = window.matchMedia("(max-width: 1214px)");
+
+const scale2 = window.matchMedia("(max-width: 755px)");
+
 
 
 const addCard = () => {
@@ -702,9 +708,55 @@ if (suitArr[2] === 'diamonds') {
 		winFunctionD();
 	};
 
+/*shift everything by 2.916666666666666666666666666666666666666666667%*/
 
+	if (scale.matches) {
+			if (clickCount === 1) {
+		
+		flipcard1.style.top = '40%';
+		flipcard1.style.right = '13.75%';
+		flipcard2.style.top = '40%';
+		flipcard2.style.right = '7.916666666666666666666666666666666666666667%';
+		flipinner3.id = 'flipinner3';
+		flipcard3.id = 'flipcard3';
+		
+		document.querySelector('#flipcard1').style.animation = 'moveincriment 1s forwards';
+		document.querySelector('#flipcard2').style.animation = 'moveincriment 1s forwards';
+		document.querySelector('#flipcard3').style.animation = 'move3 1s forwards';
+		
+	} else if (clickCount === 2) {
+		flipcard1.style.top = '40%';
+		flipcard1.style.right = '16.666666666666666666666666666666666666666666666666666666667%';
+		flipcard2.style.top = '40%';
+		flipcard2.style.right = '10.83333333333333333333333333333333333333333333333333%';
+		flipcard3.style.top = '40%';
+		flipcard3.style.right = '5%';
+		flipinner4.id = 'flipinner4';
+		flipcard4.id = 'flipcard4';
 
-	/*Amimations*/
+		document.querySelector('#flipcard1').style.animation = 'moveincriment2 1s forwards';
+		document.querySelector('#flipcard2').style.animation = 'moveincriment2 1s forwards';
+		document.querySelector('#flipcard3').style.animation = 'moveincriment 1s forwards';
+		document.querySelector('#flipcard4').style.animation = 'move4 1s forwards';
+	} else if (clickCount === 3) {
+		flipcard1.style.top = '40%';
+		flipcard1.style.right = '19.58333333333333333333333333333333333333333333333333333%';
+		flipcard2.style.top = '40%';
+		flipcard2.style.right = '13.7499999999999999999999999999999999999999999999999999%';
+		flipcard3.style.top = '40%';
+		flipcard3.style.right = '7.9166666666666666666666666666666666666666666666666666666%';
+		flipcard4.style.top = '40%';
+		flipcard4.style.right = '2.083333333333333333333333333333333333333333333333333333333334%';
+		flipinner5.id = 'flipinner5';
+		flipcard5.id = 'flipcard5';
+
+		document.querySelector('#flipcard1').style.animation = 'moveincriment3 1s forwards';
+		document.querySelector('#flipcard2').style.animation = 'moveincriment3 1s forwards';
+		document.querySelector('#flipcard3').style.animation = 'moveincriment2 1s forwards';
+		document.querySelector('#flipcard4').style.animation = 'moveincriment 1s forwards';
+		document.querySelector('#flipcard5').style.animation = 'move5 1s forwards';
+	}
+	} else {
 
 	if (clickCount === 1) {
 		
@@ -750,7 +802,8 @@ if (suitArr[2] === 'diamonds') {
 		document.querySelector('#flipcard3').style.animation = 'moveincriment2 1s forwards';
 		document.querySelector('#flipcard4').style.animation = 'moveincriment 1s forwards';
 		document.querySelector('#flipcard5').style.animation = 'move5 1s forwards';
-	};
+	}
+};
 	
 };
 
@@ -1810,7 +1863,53 @@ if (suitArrD[2] === 'diamonds') {
 
 	
 	/*Animations*/
+	if (scale.matches) {
+			if (hitCount === 1) {
+		
+		dflipcard1.style.top = '40%';
+		dflipcard1.style.left = '8.636666666666666666666666666666666666666666667%';
+		dflipcard2.style.top = '40%';
+		dflipcard2.style.left = '13.7499999999999999999999999999999999999999999999999999999%';
+		dflipinner3.id = 'dflipinner3';
+		dflipcard3.id = 'dflipcard3';
+		
+		document.querySelector('#dflipcard1').style.animation = 'moveincriment 1s forwards';
+		document.querySelector('#dflipcard2').style.animation = 'moveincriment 1s forwards';
+		document.querySelector('#dflipcard3').style.animation = 'move3d 1s forwards';
+		
+	} else if (hitCount === 2) {
+		dflipcard1.style.top = '40%';
+		dflipcard1.style.left = '5.72%';
+		dflipcard2.style.top = '40%';
+		dflipcard2.style.left = '10.833333333333333333333333333333333333333333333333333333333%';
+		dflipcard3.style.top = '40%';
+		dflipcard3.style.left = '16.6666666666666666666666666666666666666666666666666666666667%';
+		dflipinner4.id = 'dflipinner4';
+		dflipcard4.id = 'dflipcard4';
 
+		document.querySelector('#dflipcard1').style.animation = 'moveincriment2 1s forwards';
+		document.querySelector('#dflipcard2').style.animation = 'moveincriment2 1s forwards';
+		document.querySelector('#dflipcard3').style.animation = 'moveincriment 1s forwards';
+		document.querySelector('#dflipcard4').style.animation = 'move4d 1s forwards';
+	} else if (hitCount === 3) {
+		dflipcard1.style.top = '40%';
+		dflipcard1.style.left = '2.8033333333333333333333333333333333333333333333333333333333%';
+		dflipcard2.style.top = '40%';
+		dflipcard2.style.left = '7.9166666666666666666666666666666666666666666666666666666666%';
+		dflipcard3.style.top = '40%';
+		dflipcard3.style.left = '13.7499999999999999999999999999999999999999999999999999999999%';
+		dflipcard4.style.top = '40%';
+		dflipcard4.style.left = '19.5833333333333333333333333333333333333333333333333333333333333%';
+		dflipinner5.id = 'dflipinner5';
+		dflipcard5.id = 'dflipcard5';
+
+		document.querySelector('#dflipcard1').style.animation = 'moveincriment3 1s forwards';
+		document.querySelector('#dflipcard2').style.animation = 'moveincriment3 1s forwards';
+		document.querySelector('#dflipcard3').style.animation = 'moveincriment2 1s forwards';
+		document.querySelector('#dflipcard4').style.animation = 'moveincriment 1s forwards';
+		document.querySelector('#dflipcard5').style.animation = 'move5d 1s forwards';
+	}
+	} else {
 	if (hitCount === 1) {
 		
 		dflipcard1.style.top = '40%';
@@ -1855,7 +1954,8 @@ if (suitArrD[2] === 'diamonds') {
 		document.querySelector('#dflipcard3').style.animation = 'moveincriment2 1s forwards';
 		document.querySelector('#dflipcard4').style.animation = 'moveincriment 1s forwards';
 		document.querySelector('#dflipcard5').style.animation = 'move5d 1s forwards';
-	};
+	}
+}
 
 
 
@@ -1878,8 +1978,19 @@ const timeFunction = () => {
 		cardSum1New3Out = cardSum1;
 	 }; 
 	dflipinner1.id = 'dflipinner1';
+
+		if(scale.matches) {
+				dflipcard1.style.top = '40%';
+				dflipcard1.style.left = '5.72%';
+				dflipcard2.style.top = '40%';
+				dflipcard2.style.left = '16.66666666666666666666666666666666666666666666666666666666667%';
+				document.querySelector('#dflipcard1').style.animation = 'moveincrimentpre 1s forwards 1s';
+				document.querySelector('#dflipcard2').style.animation = 'moveincrimentpre2 1s forwards 1s';
+			}
+
 		
 		document.querySelector('#dflipinner1').style.animation =  'flip 1s forwards';
+
 
 	if (cardSuit[randSuit1DOut] === 'clubs') {
 		if (cardValue[randValue1DOut] === 'Ace') {
@@ -2533,6 +2644,31 @@ const resetAnimations = () => {
 
 	dflipinner1.id = 'dflipinner1';
 
+/*
+ if (scale2.matches) {
+	flipcard1.style.left = '15%';
+	flipcard2.style.left = '15%';
+	flipcard3.style.left = '15%';
+	flipcard4.style.left = '15%';
+	flipcard5.style.left = '15%';
+
+};*/
+
+
+if(scale.matches) {
+	
+	flipcard1.style.top = '80%';
+	flipcard1.style.right = '48.3333333333333333333333333333333333333333333333%';
+	flipcard2.style.right = '48.333333333333333333333333333333333333333333333%';
+	flipcard2.style.top = '80%';
+	flipcard3.style.right = '48.333333333333333333333333333333333333333333333%';
+	flipcard3.style.top = '80%';
+	flipcard4.style.right = '48.333333333333333333333333333333333333333333333%';
+	flipcard4.style.top = '80%';
+	flipcard5.style.right = '48.333333333333333333333333333333333333333333333%';
+	flipcard5.style.top = '80%';
+
+}else {
 	flipcard1.style.top = '70%';
 	flipcard1.style.right = '54.16666666666666666666666666666666666667%';
 	flipcard2.style.top = '70%';
@@ -2543,7 +2679,33 @@ const resetAnimations = () => {
 	flipcard4.style.right = '54.1666666666666666666666666666666666666667%';
 	flipcard5.style.top = '70%';
 	flipcard5.style.right = '54.16666666666666666666666666666666666666667%';
+};
 
+
+	
+/*
+	if (scale2.matches) {
+	dflipcard1.style.right = '15%';
+	dflipcard2.style.right = '15%';
+	dflipcard3.style.right = '15%';
+	dflipcard4.style.right = '15%';
+	dflipcard5.style.right = '15%';
+
+}; 
+*/
+
+if(scale.matches) {
+	dflipcard1.style.left = '40%';
+	dflipcard1.style.top = '80%';
+	dflipcard2.style.left = '40%';
+	dflipcard2.style.top = '80%';
+	dflipcard3.style.left = '40%';
+	dflipcard3.style.top = '80%';
+	dflipcard4.style.left = '40%';
+	dflipcard4.style.top = '80%';
+	dflipcard5.style.left = '40%';
+	dflipcard5.style.top = '80%';			
+} else {
 
 	dflipcard1.style.top = '70%';
 	dflipcard1.style.left = '40%';
@@ -2555,7 +2717,7 @@ const resetAnimations = () => {
 	dflipcard4.style.left = '40%';
 	dflipcard5.style.top = '70%';
 	dflipcard5.style.left = '40%';
-
+};
 
 
 	flipinner3.style.display = 'none';
