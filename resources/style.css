@@ -137,7 +137,7 @@ nav h1, nav h2 {
 }
 
 .center {
-	width: 100%;
+	
 	display: flex;
 	justify-content: center;
 
@@ -439,6 +439,7 @@ nav h1, nav h2 {
 	position: absolute;
 	left: 40%;
 	top: 70%;
+	perspective: 1000px;
 
 }
 
@@ -588,9 +589,7 @@ nav h1, nav h2 {
 }
 
 
-		.scoremobile {
-			display: none;
-		}
+		
 
 
 
@@ -676,6 +675,10 @@ footer form textarea {
 	text-align: center;
 }
 
+.phone2 {
+	display: hidden;
+}
+
 
 /*everything is fully responsive up to 200% zoom now and only the blackjack game needs to be refactored
 at smart phone scale. I think I'll need to shift stuff around. I'm thinking it'll work out okay
@@ -700,6 +703,11 @@ the card value showing. Or I'll have to link to smaller card pictures at that sc
 .black-jack {
 	width: 600px;
 
+}
+
+
+.cardcontainer, .dcardcontainer {
+	width: 70px;
 }
 
 	.dealer, #playerhand {
@@ -860,9 +868,10 @@ the card value showing. Or I'll have to link to smaller card pictures at that sc
 }	
 
 @media only screen and (max-width: 755px) {
-	html, body {
-		width: auto!important; overflow-x: hidden!important
-	}
+body {
+	width: 100%;
+}
+
 
 
 	.hamburger {
@@ -871,7 +880,7 @@ the card value showing. Or I'll have to link to smaller card pictures at that sc
 		flex-direction: column;
 		width: 30px;
 		justify-content: space-around;
-		right: 10px;
+		right: 2%;
 	}
 
 	.hampart1 {
@@ -923,7 +932,7 @@ the card value showing. Or I'll have to link to smaller card pictures at that sc
 	} 
 
 		footer p {
-			max-width: 30%;
+			
 			}
 
 		.about, .projects {
@@ -960,7 +969,8 @@ the card value showing. Or I'll have to link to smaller card pictures at that sc
 		
 		.email2 {
 			position: relative;
-			right: 150%;
+			right: 10%;
+			
 		}
 
 		
@@ -981,99 +991,152 @@ the card value showing. Or I'll have to link to smaller card pictures at that sc
 		.phonecontainer {
 			display: flex;
 			justify-content: center;
+			width: 100%;
+			overflow: hidden;
 		}
 
 		.score {
 			display: block;
 			position: absolute;
 			bottom: 125%;
-			left: 35.7142857142857142857%;
+			left: 34.375%;
 			width: 100px;
+			height: 150px;
 		}
-
+/*I'm not sure what the inital top would be on these. I'd think 70 cause that's the origional but
+it looks almost exactly like 80 which is the one for the scale before this. Maybe it inheriets 
+from the closest media query above it if nothing is specified idk. Also I think I have the z-index
+mixed up. it looks like the bottom card on the first two is dealing first. It just looked good
+that card two went over the top and cause the deal was so close on each two I guess i didn't realise
+but if card two goes over the top that means it has to be highter up which means card 1 is dealt
+from underneath. Ill fix this by changing the z index mid animation so i can still get the 2nd
+card passing over the first from the top. I wish i would have noticed these things and just had
+it more complete in general when I sent it to robert half but i'm not worried about it. I didn't
+expect to be good enough to actually get a job for at least another few months anyway. works out
+though cause it made me work on this more. I was going to anyway i just wanted to learn some back
+end stuff first. I think it's maybe a good idea to finish this first though just so my first solo
+project is totaly done. changing the z inded isn't going to work really for higher zoom because
+the cards are basically always on top of eachother. I was thinking of lengthening the animation
+and maybe going back and forth like how it would actually be, player 1 dealer1 player 2 dealer2 I
+just kind of like the way it looks like this for some reason lol. As long as it doesn't cause problems
+There was some issue I had earlier on when the timing was longer but idk if it was that aspect of
+it. If I pressed hit or something to soon after it would make the card fly off from the center
+cause it hadn't been defined or something to that effect. In any case there's probably a way around
+this. I still want to try to make the animations able to be played together so they don't jump
+when you press hit to fast but if i don't get to that point right away i'm not to worried about it.
+*/
 		.deck {
-			left: 15%;
+			left: -75%;
+			top: 70%;
 		}
 
 		.flipcard {
-			left: 15%;
-			
+			right: 105%;
+			top: 70%;
 		}
 
 		.dflipcard {
-			left: 15%;
+			left: -75%;
+			top: 70%;
 		}
 		
 
 		.black-jack {
-	width: 350px;
+	width: 320px;
 
 }
 
 	.dealer, #playerhand {
-	width: 170px;
-	max-width: 170px;
+	width: 160px;
+	max-width: 160px;
 }
 
 	.blackjp {
 		padding-bottom: 200px;
 	}
 
-
+	.phone {
+		width: 50%;
+		overflow: hidden;
+		
+	}
 
 
 	@keyframes move {
 		100% {
 			top: 215%;
-			left: 100%;
+			right: -56.25%;
 		}
 	}
 
 	@keyframes move2 {
 		100% {
 			top: 215%;
-			left: 100%;
+			right: -73.75%;
 		}
 	}
 
-
+/*I was getting all caught up on 2 and 3 being the same cause for some reason I wasn't thinking
+they were on the other ones. But i was like they have to be lawl. They do have to be. But also 
+it seems like it couldn't be that way because then the end on the right would be at the same place
+and the end on the left would've shifted. IDK why the fact that they are overlapped is confusing
+me but I'm pretty sure i got it wrong on the scale1. idk what i was trying to do. The below is
+actually right though. the width of the container is 100px and it's centered between the two 160px
+containers of the hands. so exactly center is at 50px from either side. the card is 70px so shifting
+-20px right puts the left of the card at the center which is the start of the player hand container
+from there I kept doing different things and getting the wrong answer. There must be something
+small that i'm not considering cause I feel like they should work. What did work is basically saying
+-20 is the start. -80 is half 160 so -80-20 get the left of the card in the center. the card two
+need to be shifted -17.5 if the cards were overlapped in half and than another -8.75 if the cards are 
+oveerlapped three quarters. (because the card one also has a 17.5 shift making the 35 shift to 
+overlap and keeping both edges centered) for card one you +70 off -100 and then -17.5-8.75. then 
+each next card you just -8.75 cause the cards shift left 8.75 and they are all spaced 17.5. so
+when the left edge goes left 8.75 you have to put the new card right by8.75 of where the right most
+card was which both keeps things centered and keeps the 17.5 spacing. the other thing I was trying
+was saying... actually never mind that works to. I think I kept makingsmall errors with both method
+as I was comparing them to eachother and to the values I already had and was getting things mixed
+up because of that. idk what I was thinking origionally saying 2 and 3 should be the same. In my
+head I was thinking the amount they move over is the amoun that they're spaced for some reason but
+they're spaced twice as much as they move which keeps everything centered because the extrea length
+off the end of the new card is offset by half when it's shifted. I think that's what I was thinking
+on scale 1 so I'm going to have to change that also.*/
 	@keyframes move3 {
 		100% {
 			top: 215%;
-			left: 100%;
+			right: -82.5%;
 		}
 	}
 
 	@keyframes move4 {
 		100% {
 			top: 215%;
-			left: 100%;
+			right: -90%;
 		}
 	}
 
 	@keyframes move5 {
 		100% {
 			top: 215%;
-			left: 100%;
+			right: -98.75%;
 		}
 	}
 
 	@keyframes moveincriment {
 		100% {
-			transform: translate(-17.5px, 0px);
+			transform: translate(-8.75px, 0px);
 		}
 	}
 
 	@keyframes moveincriment2 {
 		100% {
-			transform: translate(-17.5px, 0px);
+			transform: translate(-8.75px, 0px);
 		}
 	}
 
 
 	@keyframes moveincriment3 {
 		100% {
-			transform: translate(-17.5px, 0px);
+			transform: translate(-8.75px, 0px);
 		}
 	}
 
@@ -1095,7 +1158,7 @@ the card value showing. Or I'll have to link to smaller card pictures at that sc
 
 		100% {
 			top: 215%;
-			left: -100%;
+			left: -90%;
 
 		}	
 	}
@@ -1103,7 +1166,7 @@ the card value showing. Or I'll have to link to smaller card pictures at that sc
 	@keyframes move2d {
 		100% {
 			top: 215%;
-			left: -100%;
+			left: -20%;
 		}
 	}
 
@@ -1112,25 +1175,27 @@ the card value showing. Or I'll have to link to smaller card pictures at that sc
 	@keyframes move3d {
 		100% {
 			top: 215%;
-			right: 100%;
+			left: -100%;
 		}
 	}
 
 	@keyframes move4d {
 		100% {
 			top: 215%;
-			right: 100%;
+			left: -100%;
 		}
 	}
 
 	@keyframes move5d {
 		100% {
 			top: 215%;
-			right: 100%;
+			left: -100%;
 		}
 	}
 
 }
+
+
 
 
 

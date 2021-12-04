@@ -705,12 +705,68 @@ if (suitArr[2] === 'diamonds') {
 	if (cardSum1New1 > 21 || cardSum1New2 > 21 || cardSum1New3 > 21) {
 		bust.innerHTML = 'Bust';
 		hit.removeEventListener("click", addCard);
+		stay.removeEventListener("click", timeFunction);
 		winFunctionD();
 	};
 
+	
+
+/*Beings how the widths of all the parts that these animations have to do with have fixed sizes
+and they scale with media queries I proabably don't need to put percents in here at all but oh
+well it looks more crazy lawl. I don't feel like changeing them now. I started with percents
+because I was thinking I might be able to find a way to make the containers and animations scale
+together. There still might be a way to do that but I haven't thought of one yet and this works
+fine. I might do the rest of this in pixels just to make it easier but idk*/
+
 /*shift everything by 2.916666666666666666666666666666666666666666667%*/
 
-	if (scale.matches) {
+	if (scale2.matches) {
+		if (clickCount === 1) {
+
+		flipcard1.style.top = '215%';
+		flipcard1.style.right = '-56.25%';
+		flipcard2.style.top = '215%';
+		flipcard2.style.right = '-73.75%';
+		flipinner3.id = 'flipinner3';
+		flipcard3.id = 'flipcard3';
+		
+		document.querySelector('#flipcard1').style.animation = 'moveincriment 1s forwards';
+		document.querySelector('#flipcard2').style.animation = 'moveincriment 1s forwards';
+		document.querySelector('#flipcard3').style.animation = 'move3 1s forwards';
+		
+	} else if (clickCount === 2) {
+		flipcard1.style.top = '215%';
+		flipcard1.style.right = '-47.5%';
+		flipcard2.style.top = '215%';
+		flipcard2.style.right = '-65%';
+		flipcard3.style.top = '215%';
+		flipcard3.style.right = '-81.25%';
+		flipinner4.id = 'flipinner4';
+		flipcard4.id = 'flipcard4';
+
+		document.querySelector('#flipcard1').style.animation = 'moveincriment2 1s forwards';
+		document.querySelector('#flipcard2').style.animation = 'moveincriment2 1s forwards';
+		document.querySelector('#flipcard3').style.animation = 'moveincriment 1s forwards';
+		document.querySelector('#flipcard4').style.animation = 'move4 1s forwards';
+	} else if (clickCount === 3) {
+		flipcard1.style.top = '215%';
+		flipcard1.style.right = '-38.75%';
+		flipcard2.style.top = '215%';
+		flipcard2.style.right = '-56.25%';
+		flipcard3.style.top = '215%';
+		flipcard3.style.right = '-72.5%';
+		flipcard4.style.top = '215%';
+		flipcard4.style.right = '-90%';
+		flipinner5.id = 'flipinner5';
+		flipcard5.id = 'flipcard5';
+
+		document.querySelector('#flipcard1').style.animation = 'moveincriment3 1s forwards';
+		document.querySelector('#flipcard2').style.animation = 'moveincriment3 1s forwards';
+		document.querySelector('#flipcard3').style.animation = 'moveincriment2 1s forwards';
+		document.querySelector('#flipcard4').style.animation = 'moveincriment 1s forwards';
+		document.querySelector('#flipcard5').style.animation = 'move5 1s forwards';
+	}
+}  else if (scale.matches) {
 			if (clickCount === 1) {
 		
 		flipcard1.style.top = '40%';
@@ -755,10 +811,12 @@ if (suitArr[2] === 'diamonds') {
 		document.querySelector('#flipcard3').style.animation = 'moveincriment2 1s forwards';
 		document.querySelector('#flipcard4').style.animation = 'moveincriment 1s forwards';
 		document.querySelector('#flipcard5').style.animation = 'move5 1s forwards';
-	}
-	} else {
+	
+	} 
 
-	if (clickCount === 1) {
+}  else {
+
+  if (clickCount === 1) {
 		
 		flipcard1.style.top = '40%';
 		flipcard1.style.right = '16.666666666666666666666666666666666666666666667%';
@@ -811,6 +869,7 @@ if (suitArr[2] === 'diamonds') {
 
 const pressStay = () => {
 	hit.removeEventListener("click", addCard);
+	
 };
 
 
@@ -1910,6 +1969,7 @@ if (suitArrD[2] === 'diamonds') {
 		document.querySelector('#dflipcard5').style.animation = 'move5d 1s forwards';
 	}
 	} else {
+	
 	if (hitCount === 1) {
 		
 		dflipcard1.style.top = '40%';
@@ -1961,7 +2021,7 @@ if (suitArrD[2] === 'diamonds') {
 
 
 
-	stay.removeEventListener('click', timeFunction);
+	
 	timeFunction2();
 
 	
@@ -1978,6 +2038,8 @@ const timeFunction = () => {
 		cardSum1New3Out = cardSum1;
 	 }; 
 	dflipinner1.id = 'dflipinner1';
+
+	stay.removeEventListener("click", timeFunction);
 
 		if(scale.matches) {
 				dflipcard1.style.top = '40%';
@@ -2644,18 +2706,22 @@ const resetAnimations = () => {
 
 	dflipinner1.id = 'dflipinner1';
 
-/*
+/*Doing these as left when you go to a wider size the left never resets and it causes problems.
+so instead of resetting left to zero everytime it's better to just set everything that was right
+to negative right instead of left*/
  if (scale2.matches) {
-	flipcard1.style.left = '15%';
-	flipcard2.style.left = '15%';
-	flipcard3.style.left = '15%';
-	flipcard4.style.left = '15%';
-	flipcard5.style.left = '15%';
+	flipcard1.style.right = '105%';
+	flipcard2.style.right = '105%';
+	flipcard3.style.right = '105%';
+	flipcard4.style.right = '105%';
+	flipcard5.style.right = '105%';
+	flipcard1.style.top = '70%';
+	flipcard2.style.top = '70%';
+	flipcard3.style.top = '70%';
+	flipcard4.style.top = '70%';
+	flipcard5.style.top = '70%';
 
-};*/
-
-
-if(scale.matches) {
+} else if(scale.matches) {
 	
 	flipcard1.style.top = '80%';
 	flipcard1.style.right = '48.3333333333333333333333333333333333333333333333%';
@@ -2683,18 +2749,14 @@ if(scale.matches) {
 
 
 	
-/*
+
 	if (scale2.matches) {
 	dflipcard1.style.right = '15%';
 	dflipcard2.style.right = '15%';
 	dflipcard3.style.right = '15%';
 	dflipcard4.style.right = '15%';
 	dflipcard5.style.right = '15%';
-
-}; 
-*/
-
-if(scale.matches) {
+} else if(scale.matches) {
 	dflipcard1.style.left = '40%';
 	dflipcard1.style.top = '80%';
 	dflipcard2.style.left = '40%';
