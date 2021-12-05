@@ -130,6 +130,10 @@ let suitArr = [];
 
 let clickCount = 0;
 
+
+
+let gameOn = 0
+
 /*Scalling variable for responsiveness*/
 
 const scale = window.matchMedia("(max-width: 1214px)");
@@ -869,7 +873,7 @@ fine. I might do the rest of this in pixels just to make it easier but idk*/
 
 const pressStay = () => {
 	hit.removeEventListener("click", addCard);
-	
+	gameOn = 1;
 };
 
 
@@ -1285,7 +1289,7 @@ if (cardSuit[randSuit2] === 'diamonds') {
 
 	stay.addEventListener("click", timeFunction);
 	}
-	setTimeout(hitStayDelay, 1200);
+	setTimeout(hitStayDelay, 1300);
 	
 };
 
@@ -1360,7 +1364,7 @@ let hitCount = 0;
 
 
 const genDealerHand2 = () => {
-	
+	if (gameOn === 1) {
 
 	hitCount ++;
 
@@ -2072,7 +2076,7 @@ if (suitArrD[2] === 'diamonds') {
 	
 	timeFunction2();
 
-	
+	};
 };
 
 
@@ -2897,6 +2901,8 @@ to negative right instead of left*/
 	flipinner1.style.display = 'none';
 	flipinner2.style.display = 'none';
 	
+	gameOn = 0;
+
    generateHands();
 
 	

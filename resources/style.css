@@ -126,8 +126,7 @@ nav h1, nav h2 {
 	padding-bottom: 1.25rem;
 }
 
-.projects p {
-}
+
 
 
 
@@ -598,13 +597,6 @@ nav h1, nav h2 {
 	top: 200px;
 }
 
-.dflipinner1 {
-	
-}
-
-
-		
-
 
 
 /*Footer*/
@@ -703,156 +695,155 @@ footer form textarea {
 	
 }
 
-.dflipcard {
-	left: 40%;
-	top: 80%;
+	.dflipcard {
+		left: 40%;
+		top: 80%;
 
-}
+	}
 
-.black-jack {
-	width: 600px;
+	.black-jack {
+		width: 600px;
 
-}
+	}
 
 
-.cardcontainer, .dcardcontainer {
-	width: 70px;
-}
+	.cardcontainer, .dcardcontainer {
+		width: 70px;
+	}
 
 	.dealer, #playerhand {
 	width: 200px;
 	max-width: 200px;
 
-
-}
-
-.blackj {
-	padding-bottom: 60px;
-}
-
-.buttons {
-	width: 100%;
-	left: 0;
-}
-
-
-.score {
-	width: 200px;
-}
-
-.deck {
-	top: 80%;	
-}
-
-
-
-@keyframes move {
-	100% {
-		top: 40%;
-		right: 82.5px;
 	}
-}
 
-@keyframes move2 {
-	100% {
-		top: 40%;
-		right: 47.5px;
+	.blackj {
+		padding-bottom: 60px;
 	}
-}
 
-
-@keyframes move3 {
-	100% {
-		top: 40%;
-		right: 30px;
+	.buttons {
+		width: 100%;
+		left: 0;
 	}
-}
 
-@keyframes move4 {
-	100% {
-		top: 40%;
-		right: 12.5px;
+
+	.score {
+		width: 200px;
 	}
-}
 
-@keyframes move5 {
-	100% {
-		top: 40%;
-		right: -5px;
+	.deck {
+		top: 80%;	
 	}
-}
 
-@keyframes moveincriment {
-	100% {
-		transform: translate(-17.5px, 0px);
+
+
+	@keyframes move {
+		100% {
+			top: 40%;
+			right: 82.5px;
+		}
 	}
-}
 
-@keyframes moveincriment2 {
-	100% {
-		transform: translate(-17.5px, 0px);
+	@keyframes move2 {
+		100% {
+			top: 40%;
+			right: 47.5px;
+		}
 	}
-}
 
 
-@keyframes moveincriment3 {
-	100% {
-		transform: translate(-17.5px, 0px);
+	@keyframes move3 {
+		100% {
+			top: 40%;
+			right: 30px;
+		}
 	}
-}
 
-@keyframes moveincrimentpre {
-	100% {
-		transform: translate(17.5px, 0px);
+	@keyframes move4 {
+		100% {
+			top: 40%;
+			right: 12.5px;
+		}
 	}
-}
 
-@keyframes moveincrimentpre2 {
-	100% {
-		transform: translate(-17.5px, 0px);
+	@keyframes move5 {
+		100% {
+			top: 40%;
+			right: -5px;
+		}
 	}
-}
 
-
-
-@keyframes moved {
-
-	100% {
-		top: 40%;
-		left: 30px;
-		/*34.32px*/
-	}	
-}
-
-@keyframes move2d {
-	100% {
-		top: 40%;
-		left: 100px;
+	@keyframes moveincriment {
+		100% {
+			transform: translate(-17.5px, 0px);
+		}
 	}
-}
 
-
-
-@keyframes move3d {
-	100% {
-		top: 40%;
-		left: 100px;
+	@keyframes moveincriment2 {
+		100% {
+			transform: translate(-17.5px, 0px);
+		}
 	}
-}
 
-@keyframes move4d {
-	100% {
-		top: 40%;
-		left: 117.5px;
-	}
-}
 
-@keyframes move5d {
-	100% {
-		top: 40%;
-		left: 135px;
+	@keyframes moveincriment3 {
+		100% {
+			transform: translate(-17.5px, 0px);
+		}
 	}
-}
+
+	@keyframes moveincrimentpre {
+		100% {
+			transform: translate(17.5px, 0px);
+		}
+	}
+
+	@keyframes moveincrimentpre2 {
+		100% {
+			transform: translate(-17.5px, 0px);
+		}
+	}
+
+
+
+	@keyframes moved {
+
+		100% {
+			top: 40%;
+			left: 30px;
+			/*34.32px*/
+		}	
+	}
+
+	@keyframes move2d {
+		100% {
+			top: 40%;
+			left: 100px;
+		}
+	}
+
+
+
+	@keyframes move3d {
+		100% {
+			top: 40%;
+			left: 100px;
+		}
+	}
+
+	@keyframes move4d {
+		100% {
+			top: 40%;
+			left: 117.5px;
+		}
+	}
+
+	@keyframes move5d {
+		100% {
+			top: 40%;
+			left: 135px;
+		}
+	}
 
 }
 
@@ -877,9 +868,9 @@ footer form textarea {
 }	
 
 @media only screen and (max-width: 755px) {
-body {
-	width: 100%;
-}
+	body {
+		width: 100%;
+	}
 
 
 
@@ -952,20 +943,20 @@ body {
 		max-height: 50%;
 	} 
 
-		footer p {
-			
-			}
-
-		.about, .projects {
-			margin-left: 0px;
-			margin-right: 0px;
+	footer p {
+		
 		}
 
-			.email {
-				order: 1;
-				width: 200px;
-				text-align: center;
-			}
+	.about, .projects {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	.email {
+		order: 1;
+		width: 200px;
+		text-align: center;
+	}
 
 	.contact {
 		text-align: center;
@@ -981,77 +972,77 @@ body {
 		align-content: center;
 	}
 
-		.emailcontainer {
-			order: 1;
-			display: flex;
-			justify-content: center;
-			width: 200px;
-		}
+	.emailcontainer {
+		order: 1;
+		display: flex;
+		justify-content: center;
+		width: 200px;
+	}
+	
+	.email2 {
+		position: relative;
+		right: 20px;
 		
-		.email2 {
-			position: relative;
-			right: 10%;
-			
-		}
+	}
 
-		
-
-		footer form {
-			margin-bottom: 0px;
-		}
-
-		.sidebyside {
-			display: inherit;
-		}
-
-		#name-input, #email-input {
-			padding: 0px;
-			margin: 0px;
-		}
-		
-		.phonecontainer {
-			display: flex;
-			justify-content: center;
-			width: 100%;
-			overflow: hidden;
-		}
-
-		.score {
-			display: block;
-			position: absolute;
-			bottom: 125%;
-			left: 34.375%;
-			width: 100px;
-			height: 150px;
-		}
-
-
-
-		.deck {
-			left: -75px;
-			top: 70%;
-		}
-
-		.flipcard {
-			right: 105px;
-			top: 70%;
-		}
-
-		.dflipcard {
-			left: -75px;
-			top: 70%;
-		}
 		
 
-		.black-jack {
-	width: 320px;
+	footer form {
+		margin-bottom: 0px;
+	}
 
-}
+	.sidebyside {
+		display: inherit;
+	}
+
+	#name-input, #email-input {
+		padding: 0px;
+		margin: 0px;
+	}
+	
+	.phonecontainer {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.score {
+		display: block;
+		position: absolute;
+		bottom: 125%;
+		left: 34.375%;
+		width: 100px;
+		height: 150px;
+	}
+
+
+
+	.deck {
+		left: -75px;
+		top: 70%;
+	}
+
+	.flipcard {
+		right: 105px;
+		top: 70%;
+	}
+
+	.dflipcard {
+		left: -75px;
+		top: 70%;
+	}
+	
+
+	.black-jack {
+		width: 320px;
+
+	}
 
 	.dealer, #playerhand {
-	width: 160px;
-	max-width: 160px;
-}
+		width: 160px;
+		max-width: 160px;
+	}
 
 	.blackjp {
 		padding-bottom: 200px;
@@ -1078,30 +1069,7 @@ body {
 		}
 	}
 
-/*I was getting all caught up on 2 and 3 being the same cause for some reason I wasn't thinking
-they were on the other ones. But i was like they have to be lawl. They do have to be. But also 
-it seems like it couldn't be that way because then the end on the right would be at the same place
-and the end on the left would've shifted. IDK why the fact that they are overlapped is confusing
-me but I'm pretty sure i got it wrong on the scale1. idk what i was trying to do. The below is
-actually right though. the width of the container is 100px and it's centered between the two 160px
-containers of the hands. so exactly center is at 50px from either side. the card is 70px so shifting
--20px right puts the left of the card at the center which is the start of the player hand container
-from there I kept doing different things and getting the wrong answer. There must be something
-small that i'm not considering cause I feel like they should work. What did work is basically saying
--20 is the start. -80 is half 160 so -80-20 get the left of the card in the center. the card two
-need to be shifted -17.5 if the cards were overlapped in half and than another -8.75 if the cards are 
-oveerlapped three quarters. (because the card one also has a 17.5 shift making the 35 shift to 
-overlap and keeping both edges centered) for card one you +70 off -100 and then -17.5-8.75. then 
-each next card you just -8.75 cause the cards shift left 8.75 and they are all spaced 17.5. so
-when the left edge goes left 8.75 you have to put the new card right by8.75 of where the right most
-card was which both keeps things centered and keeps the 17.5 spacing. the other thing I was trying
-was saying... actually never mind that works to. I think I kept makingsmall errors with both method
-as I was comparing them to eachother and to the values I already had and was getting things mixed
-up because of that. idk what I was thinking origionally saying 2 and 3 should be the same. In my
-head I was thinking the amount they move over is the amoun that they're spaced for some reason but
-they're spaced twice as much as they move which keeps everything centered because the extrea length
-off the end of the new card is offset by half when it's shifted. I think that's what I was thinking
-on scale 1 so I'm going to have to change that also.*/
+
 	@keyframes move3 {
 		100% {
 			top: 215%;
