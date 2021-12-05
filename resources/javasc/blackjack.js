@@ -31,8 +31,6 @@ const diamondCards = ['resources/pictures/diamonds/aced.svg', 'resources/picture
 'resources/pictures/diamonds/9d.svg', 'resources/pictures/diamonds/10d.svg', 'resources/pictures/diamonds/jd.svg', 'resources/pictures/diamonds/qd.svg',
 'resources/pictures/diamonds/kd.svg',];
 
-/*I'm going to replace the sources for these with higher quility images that are cropped nicer later but the ones I have should work for now
-I'll just replace the location with the better image and leave it the same name so I won't have to change any of my source code. */
 
 
 
@@ -54,7 +52,6 @@ const flipinner4 = document.querySelector('.flipinner4');
 const flipinner5 = document.querySelector('.flipinner5');
 
 
-const flipcardall = document.querySelector('.flipcard');
 const flipcard1 = document.querySelector('.flipcard1');
 const flipcard2 = document.querySelector('.flipcard2');
 const flipcard3 = document.querySelector('.flipcard3');
@@ -62,9 +59,6 @@ const flipcard4 = document.querySelector('.flipcard4');
 const flipcard5 = document.querySelector('.flipcard5');
 
 
-const flipcard1id = document.querySelector('#flipcard1');
-
-const inner1trans = document.querySelector('#flipinner1');
 
 
 
@@ -75,11 +69,13 @@ const hit = document.querySelector('.hit');
 const stay = document.querySelector('.stay');
 
 
+/*Variable for the container of the dealer and player hand*/
+
 const dealerHand = document.querySelector('.dealer-hand');
 const playerHand = document.querySelector('#playerhand');
 
 
-/*Variables for the numericle value of each card drawn, plus secondary values
+/*Variables for the numericle value of each card drawn and secondary values
 for aces*/
 
 let cardNumber1Opt1 = 0;
@@ -131,8 +127,11 @@ let suitArr = [];
 let clickCount = 0;
 
 
+/*Number switch that will stop the dealer hand function from executing if a new hand is dealt
+to soon*/
 
 let gameOn = 0
+
 
 /*Scalling variable for responsiveness*/
 
@@ -151,8 +150,6 @@ const addCard = () => {
 
 
 
-
-
 	/*Generating number values for the face cards for each click*/
 
 	if (cardValue[randValue3]==='Jack' && clickCount===1 || 
@@ -167,6 +164,7 @@ const addCard = () => {
 			cardNumber3Opt2 = 10;
 			valueArr.push(cardValue[randValue3]);
 			suitArr.push(cardSuit[randSuit3]);
+			
 
 	} else if (clickCount===1) {
 		cardNumber3Opt1 = cardValue[randValue3];
@@ -220,391 +218,391 @@ const addCard = () => {
 /*printing each card*/
 
 /*card3*/
-if (suitArr[0] === 'clubs') {
-	flipinner3.style.display = 'block'} 
-											{
-	if (valueArr[0] === 'Ace') {
-		card3.src = clubCards[0];
-	} else if (valueArr[0] === 2) {
-		card3.src = clubCards[1];
-	} else if (valueArr[0] === 3) {
-		card3.src = clubCards[2];
-	} else if (valueArr[0] === 4) {
-		card3.src = clubCards[3];
-	} else if (valueArr[0] === 5) {
-		card3.src = clubCards[4];
-	} else if (valueArr[0] === 6) {
-		card3.src = clubCards[5];
-	} else if (valueArr[0] === 7) {
-		card3.src = clubCards[6];
-	} else if (valueArr[0] === 8) {
-		card3.src = clubCards[7];
-	} else if (valueArr[0] === 9) {
-		card3.src = clubCards[8];
-	} else if (valueArr[0] === 10) {
-		card3.src = clubCards[9];
-	} else if (valueArr[0] === 'Jack') {
-		card3.src = clubCards[10];
-	} else if (valueArr[0] === 'Queen') {
-		card3.src = clubCards[11];
-	} else if (valueArr[0] === 'King') {
-		card3.src = clubCards[12];
-	}; 
-};
-
-
-if (suitArr[0] === 'spades') {
-	flipinner3.style.display = 'block'}{
-	if (valueArr[0] === 'Ace') {
-		card3.src = spadeCards[0];
-	} else if (valueArr[0] === 2) {
-		card3.src = spadeCards[1];
-	} else if (valueArr[0] === 3) {
-		card3.src = spadeCards[2];
-	} else if (valueArr[0] === 4) {
-		card3.src = spadeCards[3];
-	} else if (valueArr[0] === 5) {
-		card3.src = spadeCards[4];
-	} else if (valueArr[0] === 6) {
-		card3.src = spadeCards[5];
-	} else if (valueArr[0] === 7) {
-		card3.src = spadeCards[6];
-	} else if (valueArr[0] === 8) {
-		card3.src = spadeCards[7];
-	} else if (valueArr[0] === 9) {
-		card3.src = spadeCards[8];
-	} else if (valueArr[0] === 10) {
-		card3.src = spadeCards[9];
-	} else if (valueArr[0] === 'Jack') {
-		card3.src = spadeCards[10];
-	} else if (valueArr[0] === 'Queen') {
-		card3.src = spadeCards[11];
-	} else if (valueArr[0] === 'King') {
-		card3.src = spadeCards[12];
-	}; 
-};
-
-
-if (suitArr[0] === 'hearts') {
-	flipinner3.style.display = 'block'}{
-	if (valueArr[0] === 'Ace') {
-		card3.src = heartCards[0];
-	} else if (valueArr[0] === 2) {
-		card3.src = heartCards[1];
-	} else if (valueArr[0] === 3) {
-		card3.src = heartCards[2];
-	} else if (valueArr[0] === 4) {
-		card3.src = heartCards[3];
-	} else if (valueArr[0] === 5) {
-		card3.src = heartCards[4];
-	} else if (valueArr[0] === 6) {
-		card3.src = heartCards[5];
-	} else if (valueArr[0] === 7) {
-		card3.src = heartCards[6];
-	} else if (valueArr[0] === 8) {
-		card3.src = heartCards[7];
-	} else if (valueArr[0] === 9) {
-		card3.src = heartCards[8];
-	} else if (valueArr[0] === 10) {
-		card3.src = heartCards[9];
-	} else if (valueArr[0] === 'Jack') {
-		card3.src = heartCards[10];
-	} else if (valueArr[0] === 'Queen') {
-		card3.src = heartCards[11];
-	} else if (valueArr[0] === 'King') {
-		card3.src = heartCards[12];
+	if (suitArr[0] === 'clubs') {
+		flipinner3.style.display = 'block'} 
+												{
+		if (valueArr[0] === 'Ace') {
+			card3.src = clubCards[0];
+		} else if (valueArr[0] === 2) {
+			card3.src = clubCards[1];
+		} else if (valueArr[0] === 3) {
+			card3.src = clubCards[2];
+		} else if (valueArr[0] === 4) {
+			card3.src = clubCards[3];
+		} else if (valueArr[0] === 5) {
+			card3.src = clubCards[4];
+		} else if (valueArr[0] === 6) {
+			card3.src = clubCards[5];
+		} else if (valueArr[0] === 7) {
+			card3.src = clubCards[6];
+		} else if (valueArr[0] === 8) {
+			card3.src = clubCards[7];
+		} else if (valueArr[0] === 9) {
+			card3.src = clubCards[8];
+		} else if (valueArr[0] === 10) {
+			card3.src = clubCards[9];
+		} else if (valueArr[0] === 'Jack') {
+			card3.src = clubCards[10];
+		} else if (valueArr[0] === 'Queen') {
+			card3.src = clubCards[11];
+		} else if (valueArr[0] === 'King') {
+			card3.src = clubCards[12];
+		}; 
 	};
-};
 
 
-if (suitArr[0] === 'diamonds') {
-	flipinner3.style.display = 'block'}{
-	if (valueArr[0] === 'Ace') {
-		card3.src = diamondCards[0];
-	} else if (valueArr[0] === 2) {
-		card3.src = diamondCards[1];
-	} else if (valueArr[0] === 3) {
-		card3.src = diamondCards[2];
-	} else if (valueArr[0] === 4) {
-		card3.src = diamondCards[3];
-	} else if (valueArr[0] === 5) {
-		card3.src = diamondCards[4];
-	} else if (valueArr[0] === 6) {
-		card3.src = diamondCards[5];
-	} else if (valueArr[0] === 7) {
-		card3.src = diamondCards[6];
-	} else if (valueArr[0] === 8) {
-		card3.src = diamondCards[7];
-	} else if (valueArr[0] === 9) {
-		card3.src = diamondCards[8];
-	} else if (valueArr[0] === 10) {
-		card3.src = diamondCards[9];
-	} else if (valueArr[0] === 'Jack') {
-		card3.src = diamondCards[10];
-	} else if (valueArr[0] === 'Queen') {
-		card3.src = diamondCards[11];
-	} else if (valueArr[0] === 'King') {
-		card3.src = diamondCards[12];
-	}; 
-};
-
-
-/*card 4*/
-if (suitArr[1] === 'clubs') {
-	flipinner4.style.display = 'block'}{
-	if (valueArr[1] === 'Ace') {
-		card4.src = clubCards[0];
-	} else if (valueArr[1] === 2) {
-		card4.src = clubCards[1];
-	} else if (valueArr[1] === 3) {
-		card4.src = clubCards[2];
-	} else if (valueArr[1] === 4) {
-		card4.src = clubCards[3];
-	} else if (valueArr[1] === 5) {
-		card4.src = clubCards[4];
-	} else if (valueArr[1] === 6) {
-		card4.src = clubCards[5];
-	} else if (valueArr[1] === 7) {
-		card4.src = clubCards[6];
-	} else if (valueArr[1] === 8) {
-		card4.src = clubCards[7];
-	} else if (valueArr[1] === 9) {
-		card4.src = clubCards[8];
-	} else if (valueArr[1] === 10) {
-		card4.src = clubCards[9];
-	} else if (valueArr[1] === 'Jack') {
-		card4.src = clubCards[10];
-	} else if (valueArr[1] === 'Queen') {
-		card4.src = clubCards[11];
-	} else if (valueArr[1] === 'King') {
-		card4.src = clubCards[12];
-	}; 
-};
-
-
-if (suitArr[1] === 'spades') {
-	flipinner4.style.display = 'block'}{
-	if (valueArr[1] === 'Ace') {
-		card4.src = spadeCards[0];
-	} else if (valueArr[1] === 2) {
-		card4.src = spadeCards[1];
-	} else if (valueArr[1] === 3) {
-		card4.src = spadeCards[2];
-	} else if (valueArr[1] === 4) {
-		card4.src = spadeCards[3];
-	} else if (valueArr[1] === 5) {
-		card4.src = spadeCards[4];
-	} else if (valueArr[1] === 6) {
-		card4.src = spadeCards[5];
-	} else if (valueArr[1] === 7) {
-		card4.src = spadeCards[6];
-	} else if (valueArr[1] === 8) {
-		card4.src = spadeCards[7];
-	} else if (valueArr[1] === 9) {
-		card4.src = spadeCards[8];
-	} else if (valueArr[1] === 10) {
-		card4.src = spadeCards[9];
-	} else if (valueArr[1] === 'Jack') {
-		card4.src = spadeCards[10];
-	} else if (valueArr[1] === 'Queen') {
-		card4.src = spadeCards[11];
-	} else if (valueArr[1] === 'King') {
-		card4.src = spadeCards[12];
-	}; 
-};
-
-
-if (suitArr[1] === 'hearts') {
-	flipinner4.style.display = 'block'}{
-	if (valueArr[1] === 'Ace') {
-		card4.src = heartCards[0];
-	} else if (valueArr[1] === 2) {
-		card4.src = heartCards[1];
-	} else if (valueArr[1] === 3) {
-		card4.src = heartCards[2];
-	} else if (valueArr[1] === 4) {
-		card4.src = heartCards[3];
-	} else if (valueArr[1] === 5) {
-		card4.src = heartCards[4];
-	} else if (valueArr[1] === 6) {
-		card4.src = heartCards[5];
-	} else if (valueArr[1] === 7) {
-		card4.src = heartCards[6];
-	} else if (valueArr[1] === 8) {
-		card4.src = heartCards[7];
-	} else if (valueArr[1] === 9) {
-		card4.src = heartCards[8];
-	} else if (valueArr[1] === 10) {
-		card4.src = heartCards[9];
-	} else if (valueArr[1] === 'Jack') {
-		card4.src = heartCards[10];
-	} else if (valueArr[1] === 'Queen') {
-		card4.src = heartCards[11];
-	} else if (valueArr[1] === 'King') {
-		card4.src = heartCards[12];
+	if (suitArr[0] === 'spades') {
+		flipinner3.style.display = 'block'}{
+		if (valueArr[0] === 'Ace') {
+			card3.src = spadeCards[0];
+		} else if (valueArr[0] === 2) {
+			card3.src = spadeCards[1];
+		} else if (valueArr[0] === 3) {
+			card3.src = spadeCards[2];
+		} else if (valueArr[0] === 4) {
+			card3.src = spadeCards[3];
+		} else if (valueArr[0] === 5) {
+			card3.src = spadeCards[4];
+		} else if (valueArr[0] === 6) {
+			card3.src = spadeCards[5];
+		} else if (valueArr[0] === 7) {
+			card3.src = spadeCards[6];
+		} else if (valueArr[0] === 8) {
+			card3.src = spadeCards[7];
+		} else if (valueArr[0] === 9) {
+			card3.src = spadeCards[8];
+		} else if (valueArr[0] === 10) {
+			card3.src = spadeCards[9];
+		} else if (valueArr[0] === 'Jack') {
+			card3.src = spadeCards[10];
+		} else if (valueArr[0] === 'Queen') {
+			card3.src = spadeCards[11];
+		} else if (valueArr[0] === 'King') {
+			card3.src = spadeCards[12];
+		}; 
 	};
-};
 
 
-if (suitArr[1] === 'diamonds') {
-	flipinner4.style.display = 'block'}{
-	if (valueArr[1] === 'Ace') {
-		card4.src = diamondCards[0];
-	} else if (valueArr[1] === 2) {
-		card4.src = diamondCards[1];
-	} else if (valueArr[1] === 3) {
-		card4.src = diamondCards[2];
-	} else if (valueArr[1] === 4) {
-		card4.src = diamondCards[3];
-	} else if (valueArr[1] === 5) {
-		card4.src = diamondCards[4];
-	} else if (valueArr[1] === 6) {
-		card4.src = diamondCards[5];
-	} else if (valueArr[1] === 7) {
-		card4.src = diamondCards[6];
-	} else if (valueArr[1] === 8) {
-		card4.src = diamondCards[7];
-	} else if (valueArr[1] === 9) {
-		card4.src = diamondCards[8];
-	} else if (valueArr[1] === 10) {
-		card4.src = diamondCards[9];
-	} else if (valueArr[1] === 'Jack') {
-		card4.src = diamondCards[10];
-	} else if (valueArr[1] === 'Queen') {
-		card4.src = diamondCards[11];
-	} else if (valueArr[1] === 'King') {
-		card4.src = diamondCards[12];
-	}; 
-};
-
-
-/*card5*/
-if (suitArr[2] === 'clubs') {
-	flipinner5.style.display = 'block'}{
-	if (valueArr[2] === 'Ace') {
-		card5.src = clubCards[0];
-	} else if (valueArr[2] === 2) {
-		card5.src = clubCards[1];
-	} else if (valueArr[2] === 3) {
-		card5.src = clubCards[2];
-	} else if (valueArr[2] === 4) {
-		card5.src = clubCards[3];
-	} else if (valueArr[2] === 5) {
-		card5.src = clubCards[4];
-	} else if (valueArr[2] === 6) {
-		card5.src = clubCards[5];
-	} else if (valueArr[2] === 7) {
-		card5.src = clubCards[6];
-	} else if (valueArr[2] === 8) {
-		card5.src = clubCards[7];
-	} else if (valueArr[2] === 9) {
-		card5.src = clubCards[8];
-	} else if (valueArr[2] === 10) {
-		card5.src = clubCards[9];
-	} else if (valueArr[2] === 'Jack') {
-		card5.src = clubCards[10];
-	} else if (valueArr[2] === 'Queen') {
-		card5.src = clubCards[11];
-	} else if (valueArr[2] === 'King') {
-		card5.src = clubCards[12];
-	}; 
-};
-
-
-if (suitArr[2] === 'spades') {
-	flipinner5.style.display = 'block'}{
-	if (valueArr[2] === 'Ace') {
-		card5.src = spadeCards[0];
-	} else if (valueArr[2] === 2) {
-		card5.src = spadeCards[1];
-	} else if (valueArr[2] === 3) {
-		card5.src = spadeCards[2];
-	} else if (valueArr[2] === 4) {
-		card5.src = spadeCards[3];
-	} else if (valueArr[2] === 5) {
-		card5.src = spadeCards[4];
-	} else if (valueArr[2] === 6) {
-		card5.src = spadeCards[5];
-	} else if (valueArr[2] === 7) {
-		card5.src = spadeCards[6];
-	} else if (valueArr[2] === 8) {
-		card5.src = spadeCards[7];
-	} else if (valueArr[2] === 9) {
-		card5.src = spadeCards[8];
-	} else if (valueArr[2] === 10) {
-		card5.src = spadeCards[9];
-	} else if (valueArr[2] === 'Jack') {
-		card5.src = spadeCards[10];
-	} else if (valueArr[2] === 'Queen') {
-		card5.src = spadeCards[11];
-	} else if (valueArr[2] === 'King') {
-		card5.src = spadeCards[12];
-	}; 
-};
-
-
-if (suitArr[2] === 'hearts') {
-	flipinner5.style.display = 'block'}{
-	if (valueArr[2] === 'Ace') {
-		card5.src = heartCards[0];
-	} else if (valueArr[2] === 2) {
-		card5.src = heartCards[1];
-	} else if (valueArr[2] === 3) {
-		card5.src = heartCards[2];
-	} else if (valueArr[2] === 4) {
-		card5.src = heartCards[3];
-	} else if (valueArr[2] === 5) {
-		card5.src = heartCards[4];
-	} else if (valueArr[2] === 6) {
-		card5.src = heartCards[5];
-	} else if (valueArr[2] === 7) {
-		card5.src = heartCards[6];
-	} else if (valueArr[2] === 8) {
-		card5.src = heartCards[7];
-	} else if (valueArr[2] === 9) {
-		card5.src = heartCards[8];
-	} else if (valueArr[2] === 10) {
-		card5.src = heartCards[9];
-	} else if (valueArr[2] === 'Jack') {
-		card5.src = heartCards[10];
-	} else if (valueArr[2] === 'Queen') {
-		card5.src = heartCards[11];
-	} else if (valueArr[2] === 'King') {
-		card5.src = heartCards[12];
+	if (suitArr[0] === 'hearts') {
+		flipinner3.style.display = 'block'}{
+		if (valueArr[0] === 'Ace') {
+			card3.src = heartCards[0];
+		} else if (valueArr[0] === 2) {
+			card3.src = heartCards[1];
+		} else if (valueArr[0] === 3) {
+			card3.src = heartCards[2];
+		} else if (valueArr[0] === 4) {
+			card3.src = heartCards[3];
+		} else if (valueArr[0] === 5) {
+			card3.src = heartCards[4];
+		} else if (valueArr[0] === 6) {
+			card3.src = heartCards[5];
+		} else if (valueArr[0] === 7) {
+			card3.src = heartCards[6];
+		} else if (valueArr[0] === 8) {
+			card3.src = heartCards[7];
+		} else if (valueArr[0] === 9) {
+			card3.src = heartCards[8];
+		} else if (valueArr[0] === 10) {
+			card3.src = heartCards[9];
+		} else if (valueArr[0] === 'Jack') {
+			card3.src = heartCards[10];
+		} else if (valueArr[0] === 'Queen') {
+			card3.src = heartCards[11];
+		} else if (valueArr[0] === 'King') {
+			card3.src = heartCards[12];
+		};
 	};
-};
 
 
-if (suitArr[2] === 'diamonds') {
-	flipinner5.style.display = 'block'}{
-	if (valueArr[2] === 'Ace') {
-		card5.src = diamondCards[0];
-	} else if (valueArr[2] === 2) {
-		card5.src = diamondCards[1];
-	} else if (valueArr[2] === 3) {
-		card5.src = diamondCards[2];
-	} else if (valueArr[2] === 4) {
-		card5.src = diamondCards[3];
-	} else if (valueArr[2] === 5) {
-		card5.src = diamondCards[4];
-	} else if (valueArr[2] === 6) {
-		card5.src = diamondCards[5];
-	} else if (valueArr[2] === 7) {
-		card5.src = diamondCards[6];
-	} else if (valueArr[2] === 8) {
-		card5.src = diamondCards[7];
-	} else if (valueArr[2] === 9) {
-		card5.src = diamondCards[8];
-	} else if (valueArr[2] === 10) {
-		card5.src = diamondCards[9];
-	} else if (valueArr[2] === 'Jack') {
-		card5.src = diamondCards[10];
-	} else if (valueArr[2] === 'Queen') {
-		card5.src = diamondCards[11];
-	} else if (valueArr[2] === 'King') {
-		card5.src = diamondCards[12];
-	}; 
-};
+	if (suitArr[0] === 'diamonds') {
+		flipinner3.style.display = 'block'}{
+		if (valueArr[0] === 'Ace') {
+			card3.src = diamondCards[0];
+		} else if (valueArr[0] === 2) {
+			card3.src = diamondCards[1];
+		} else if (valueArr[0] === 3) {
+			card3.src = diamondCards[2];
+		} else if (valueArr[0] === 4) {
+			card3.src = diamondCards[3];
+		} else if (valueArr[0] === 5) {
+			card3.src = diamondCards[4];
+		} else if (valueArr[0] === 6) {
+			card3.src = diamondCards[5];
+		} else if (valueArr[0] === 7) {
+			card3.src = diamondCards[6];
+		} else if (valueArr[0] === 8) {
+			card3.src = diamondCards[7];
+		} else if (valueArr[0] === 9) {
+			card3.src = diamondCards[8];
+		} else if (valueArr[0] === 10) {
+			card3.src = diamondCards[9];
+		} else if (valueArr[0] === 'Jack') {
+			card3.src = diamondCards[10];
+		} else if (valueArr[0] === 'Queen') {
+			card3.src = diamondCards[11];
+		} else if (valueArr[0] === 'King') {
+			card3.src = diamondCards[12];
+		}; 
+	};
+
+
+	/*card 4*/
+	if (suitArr[1] === 'clubs') {
+		flipinner4.style.display = 'block'}{
+		if (valueArr[1] === 'Ace') {
+			card4.src = clubCards[0];
+		} else if (valueArr[1] === 2) {
+			card4.src = clubCards[1];
+		} else if (valueArr[1] === 3) {
+			card4.src = clubCards[2];
+		} else if (valueArr[1] === 4) {
+			card4.src = clubCards[3];
+		} else if (valueArr[1] === 5) {
+			card4.src = clubCards[4];
+		} else if (valueArr[1] === 6) {
+			card4.src = clubCards[5];
+		} else if (valueArr[1] === 7) {
+			card4.src = clubCards[6];
+		} else if (valueArr[1] === 8) {
+			card4.src = clubCards[7];
+		} else if (valueArr[1] === 9) {
+			card4.src = clubCards[8];
+		} else if (valueArr[1] === 10) {
+			card4.src = clubCards[9];
+		} else if (valueArr[1] === 'Jack') {
+			card4.src = clubCards[10];
+		} else if (valueArr[1] === 'Queen') {
+			card4.src = clubCards[11];
+		} else if (valueArr[1] === 'King') {
+			card4.src = clubCards[12];
+		}; 
+	};
+
+
+	if (suitArr[1] === 'spades') {
+		flipinner4.style.display = 'block'}{
+		if (valueArr[1] === 'Ace') {
+			card4.src = spadeCards[0];
+		} else if (valueArr[1] === 2) {
+			card4.src = spadeCards[1];
+		} else if (valueArr[1] === 3) {
+			card4.src = spadeCards[2];
+		} else if (valueArr[1] === 4) {
+			card4.src = spadeCards[3];
+		} else if (valueArr[1] === 5) {
+			card4.src = spadeCards[4];
+		} else if (valueArr[1] === 6) {
+			card4.src = spadeCards[5];
+		} else if (valueArr[1] === 7) {
+			card4.src = spadeCards[6];
+		} else if (valueArr[1] === 8) {
+			card4.src = spadeCards[7];
+		} else if (valueArr[1] === 9) {
+			card4.src = spadeCards[8];
+		} else if (valueArr[1] === 10) {
+			card4.src = spadeCards[9];
+		} else if (valueArr[1] === 'Jack') {
+			card4.src = spadeCards[10];
+		} else if (valueArr[1] === 'Queen') {
+			card4.src = spadeCards[11];
+		} else if (valueArr[1] === 'King') {
+			card4.src = spadeCards[12];
+		}; 
+	};
+
+
+	if (suitArr[1] === 'hearts') {
+		flipinner4.style.display = 'block'}{
+		if (valueArr[1] === 'Ace') {
+			card4.src = heartCards[0];
+		} else if (valueArr[1] === 2) {
+			card4.src = heartCards[1];
+		} else if (valueArr[1] === 3) {
+			card4.src = heartCards[2];
+		} else if (valueArr[1] === 4) {
+			card4.src = heartCards[3];
+		} else if (valueArr[1] === 5) {
+			card4.src = heartCards[4];
+		} else if (valueArr[1] === 6) {
+			card4.src = heartCards[5];
+		} else if (valueArr[1] === 7) {
+			card4.src = heartCards[6];
+		} else if (valueArr[1] === 8) {
+			card4.src = heartCards[7];
+		} else if (valueArr[1] === 9) {
+			card4.src = heartCards[8];
+		} else if (valueArr[1] === 10) {
+			card4.src = heartCards[9];
+		} else if (valueArr[1] === 'Jack') {
+			card4.src = heartCards[10];
+		} else if (valueArr[1] === 'Queen') {
+			card4.src = heartCards[11];
+		} else if (valueArr[1] === 'King') {
+			card4.src = heartCards[12];
+		};
+	};
+
+
+	if (suitArr[1] === 'diamonds') {
+		flipinner4.style.display = 'block'}{
+		if (valueArr[1] === 'Ace') {
+			card4.src = diamondCards[0];
+		} else if (valueArr[1] === 2) {
+			card4.src = diamondCards[1];
+		} else if (valueArr[1] === 3) {
+			card4.src = diamondCards[2];
+		} else if (valueArr[1] === 4) {
+			card4.src = diamondCards[3];
+		} else if (valueArr[1] === 5) {
+			card4.src = diamondCards[4];
+		} else if (valueArr[1] === 6) {
+			card4.src = diamondCards[5];
+		} else if (valueArr[1] === 7) {
+			card4.src = diamondCards[6];
+		} else if (valueArr[1] === 8) {
+			card4.src = diamondCards[7];
+		} else if (valueArr[1] === 9) {
+			card4.src = diamondCards[8];
+		} else if (valueArr[1] === 10) {
+			card4.src = diamondCards[9];
+		} else if (valueArr[1] === 'Jack') {
+			card4.src = diamondCards[10];
+		} else if (valueArr[1] === 'Queen') {
+			card4.src = diamondCards[11];
+		} else if (valueArr[1] === 'King') {
+			card4.src = diamondCards[12];
+		}; 
+	};
+
+
+	/*card5*/
+	if (suitArr[2] === 'clubs') {
+		flipinner5.style.display = 'block'}{
+		if (valueArr[2] === 'Ace') {
+			card5.src = clubCards[0];
+		} else if (valueArr[2] === 2) {
+			card5.src = clubCards[1];
+		} else if (valueArr[2] === 3) {
+			card5.src = clubCards[2];
+		} else if (valueArr[2] === 4) {
+			card5.src = clubCards[3];
+		} else if (valueArr[2] === 5) {
+			card5.src = clubCards[4];
+		} else if (valueArr[2] === 6) {
+			card5.src = clubCards[5];
+		} else if (valueArr[2] === 7) {
+			card5.src = clubCards[6];
+		} else if (valueArr[2] === 8) {
+			card5.src = clubCards[7];
+		} else if (valueArr[2] === 9) {
+			card5.src = clubCards[8];
+		} else if (valueArr[2] === 10) {
+			card5.src = clubCards[9];
+		} else if (valueArr[2] === 'Jack') {
+			card5.src = clubCards[10];
+		} else if (valueArr[2] === 'Queen') {
+			card5.src = clubCards[11];
+		} else if (valueArr[2] === 'King') {
+			card5.src = clubCards[12];
+		}; 
+	};
+
+
+	if (suitArr[2] === 'spades') {
+		flipinner5.style.display = 'block'}{
+		if (valueArr[2] === 'Ace') {
+			card5.src = spadeCards[0];
+		} else if (valueArr[2] === 2) {
+			card5.src = spadeCards[1];
+		} else if (valueArr[2] === 3) {
+			card5.src = spadeCards[2];
+		} else if (valueArr[2] === 4) {
+			card5.src = spadeCards[3];
+		} else if (valueArr[2] === 5) {
+			card5.src = spadeCards[4];
+		} else if (valueArr[2] === 6) {
+			card5.src = spadeCards[5];
+		} else if (valueArr[2] === 7) {
+			card5.src = spadeCards[6];
+		} else if (valueArr[2] === 8) {
+			card5.src = spadeCards[7];
+		} else if (valueArr[2] === 9) {
+			card5.src = spadeCards[8];
+		} else if (valueArr[2] === 10) {
+			card5.src = spadeCards[9];
+		} else if (valueArr[2] === 'Jack') {
+			card5.src = spadeCards[10];
+		} else if (valueArr[2] === 'Queen') {
+			card5.src = spadeCards[11];
+		} else if (valueArr[2] === 'King') {
+			card5.src = spadeCards[12];
+		}; 
+	};
+
+
+	if (suitArr[2] === 'hearts') {
+		flipinner5.style.display = 'block'}{
+		if (valueArr[2] === 'Ace') {
+			card5.src = heartCards[0];
+		} else if (valueArr[2] === 2) {
+			card5.src = heartCards[1];
+		} else if (valueArr[2] === 3) {
+			card5.src = heartCards[2];
+		} else if (valueArr[2] === 4) {
+			card5.src = heartCards[3];
+		} else if (valueArr[2] === 5) {
+			card5.src = heartCards[4];
+		} else if (valueArr[2] === 6) {
+			card5.src = heartCards[5];
+		} else if (valueArr[2] === 7) {
+			card5.src = heartCards[6];
+		} else if (valueArr[2] === 8) {
+			card5.src = heartCards[7];
+		} else if (valueArr[2] === 9) {
+			card5.src = heartCards[8];
+		} else if (valueArr[2] === 10) {
+			card5.src = heartCards[9];
+		} else if (valueArr[2] === 'Jack') {
+			card5.src = heartCards[10];
+		} else if (valueArr[2] === 'Queen') {
+			card5.src = heartCards[11];
+		} else if (valueArr[2] === 'King') {
+			card5.src = heartCards[12];
+		};
+	};
+
+
+	if (suitArr[2] === 'diamonds') {
+		flipinner5.style.display = 'block'}{
+		if (valueArr[2] === 'Ace') {
+			card5.src = diamondCards[0];
+		} else if (valueArr[2] === 2) {
+			card5.src = diamondCards[1];
+		} else if (valueArr[2] === 3) {
+			card5.src = diamondCards[2];
+		} else if (valueArr[2] === 4) {
+			card5.src = diamondCards[3];
+		} else if (valueArr[2] === 5) {
+			card5.src = diamondCards[4];
+		} else if (valueArr[2] === 6) {
+			card5.src = diamondCards[5];
+		} else if (valueArr[2] === 7) {
+			card5.src = diamondCards[6];
+		} else if (valueArr[2] === 8) {
+			card5.src = diamondCards[7];
+		} else if (valueArr[2] === 9) {
+			card5.src = diamondCards[8];
+		} else if (valueArr[2] === 10) {
+			card5.src = diamondCards[9];
+		} else if (valueArr[2] === 'Jack') {
+			card5.src = diamondCards[10];
+		} else if (valueArr[2] === 'Queen') {
+			card5.src = diamondCards[11];
+		} else if (valueArr[2] === 'King') {
+			card5.src = diamondCards[12];
+		}; 
+	};
 
 
 
@@ -618,12 +616,11 @@ if (suitArr[2] === 'diamonds') {
 	cardSum1New2Out = cardSum1New2;
 	cardSum1New3Out = cardSum1New3;
 	
-	
 
 	if (cardNumber3Opt1 === 1 && cardSum2 === 0) {
 		cardSum2 = cardSum1New1 + cardNumber3Opt2;
 	} else if (cardNumber3Opt1 === 1 && cardSum2 > 0) {
-		cardSum2 += cardNumber3Opt2;
+		cardSum2 += 1;
 	} else if (cardNumber3Opt1 !== 1 && cardSum2 > 0) {
 		cardSum2 += cardNumber3Opt1;
 	};
@@ -633,7 +630,7 @@ if (suitArr[2] === 'diamonds') {
 	if (cardNumber4Opt1 === 1 && cardSum2 === 0) {
 		cardSum2 = cardSum1New2 + cardNumber4Opt2;
 	} else if (cardNumber4Opt1 === 1 && cardSum2 > 0) {
-		cardSum2 += cardNumber4Opt2;
+		cardSum2 += 1;
 	} else if (cardNumber4Opt1 !== 1 && cardSum2 > 0) {
 		cardSum2 += cardNumber4Opt1;
 	};
@@ -642,7 +639,7 @@ if (suitArr[2] === 'diamonds') {
 	if (cardNumber5Opt1 === 1 && cardSum2 === 0) {
 		cardSum2 = cardSum1New3 + cardNumber5Opt2;
 	} else if (cardNumber5Opt1 === 1 && cardSum2 > 0) {
-		cardSum2 += cardNumber5Opt2;
+		cardSum2 += 1;
 	} else if (cardNumber5Opt1 !== 1 && cardSum2 > 0) {
 		cardSum2 += cardNumber5Opt1;
 	};
@@ -713,16 +710,7 @@ if (suitArr[2] === 'diamonds') {
 		winFunctionD();
 	};
 
-	
-
-/*Beings how the widths of all the parts that these animations have to do with have fixed sizes
-and they scale with media queries I proabably don't need to put percents in here at all but oh
-well it looks more crazy lawl. I don't feel like changeing them now. I started with percents
-because I was thinking I might be able to find a way to make the containers and animations scale
-together. There still might be a way to do that but I haven't thought of one yet and this works
-fine. I might do the rest of this in pixels just to make it easier but idk*/
-
-/*shift everything by 2.916666666666666666666666666666666666666666667%*/
+	/*Animation functions for each screen size break point*/
 
 	if (scale2.matches) {
 		if (clickCount === 1) {
@@ -738,39 +726,39 @@ fine. I might do the rest of this in pixels just to make it easier but idk*/
 		document.querySelector('#flipcard2').style.animation = 'moveincriment 1s forwards';
 		document.querySelector('#flipcard3').style.animation = 'move3 1s forwards';
 		
-	} else if (clickCount === 2) {
-		flipcard1.style.top = '215%';
-		flipcard1.style.right = '-47.5%';
-		flipcard2.style.top = '215%';
-		flipcard2.style.right = '-65%';
-		flipcard3.style.top = '215%';
-		flipcard3.style.right = '-82.5%';
-		flipinner4.id = 'flipinner4';
-		flipcard4.id = 'flipcard4';
+		} else if (clickCount === 2) {
+			flipcard1.style.top = '215%';
+			flipcard1.style.right = '-47.5%';
+			flipcard2.style.top = '215%';
+			flipcard2.style.right = '-65%';
+			flipcard3.style.top = '215%';
+			flipcard3.style.right = '-82.5%';
+			flipinner4.id = 'flipinner4';
+			flipcard4.id = 'flipcard4';
 
-		document.querySelector('#flipcard1').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#flipcard2').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#flipcard3').style.animation = 'moveincriment 1s forwards';
-		document.querySelector('#flipcard4').style.animation = 'move4 1s forwards';
-	} else if (clickCount === 3) {
-		flipcard1.style.top = '215%';
-		flipcard1.style.right = '-38.75%';
-		flipcard2.style.top = '215%';
-		flipcard2.style.right = '-56.25%';
-		flipcard3.style.top = '215%';
-		flipcard3.style.right = '-72.5%';
-		flipcard4.style.top = '215%';
-		flipcard4.style.right = '-91.25%';
-		flipinner5.id = 'flipinner5';
-		flipcard5.id = 'flipcard5';
+			document.querySelector('#flipcard1').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#flipcard2').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#flipcard3').style.animation = 'moveincriment 1s forwards';
+			document.querySelector('#flipcard4').style.animation = 'move4 1s forwards';
+		} else if (clickCount === 3) {
+			flipcard1.style.top = '215%';
+			flipcard1.style.right = '-38.75%';
+			flipcard2.style.top = '215%';
+			flipcard2.style.right = '-56.25%';
+			flipcard3.style.top = '215%';
+			flipcard3.style.right = '-72.5%';
+			flipcard4.style.top = '215%';
+			flipcard4.style.right = '-91.25%';
+			flipinner5.id = 'flipinner5';
+			flipcard5.id = 'flipcard5';
 
-		document.querySelector('#flipcard1').style.animation = 'moveincriment3 1s forwards';
-		document.querySelector('#flipcard2').style.animation = 'moveincriment3 1s forwards';
-		document.querySelector('#flipcard3').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#flipcard4').style.animation = 'moveincriment 1s forwards';
-		document.querySelector('#flipcard5').style.animation = 'move5 1s forwards';
-	}
-}  else if (scale.matches) {
+			document.querySelector('#flipcard1').style.animation = 'moveincriment3 1s forwards';
+			document.querySelector('#flipcard2').style.animation = 'moveincriment3 1s forwards';
+			document.querySelector('#flipcard3').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#flipcard4').style.animation = 'moveincriment 1s forwards';
+			document.querySelector('#flipcard5').style.animation = 'move5 1s forwards';
+		}
+	} else if (scale.matches) {
 			if (clickCount === 1) {
 		
 		flipcard1.style.top = '40%';
@@ -784,43 +772,43 @@ fine. I might do the rest of this in pixels just to make it easier but idk*/
 		document.querySelector('#flipcard2').style.animation = 'moveincriment 1s forwards';
 		document.querySelector('#flipcard3').style.animation = 'move3 1s forwards';
 		
-	} else if (clickCount === 2) {
-		flipcard1.style.top = '40%';
-		flipcard1.style.right = '100px';
-		flipcard2.style.top = '40%';
-		flipcard2.style.right = '65px';
-		flipcard3.style.top = '40%';
-		flipcard3.style.right = '30px';
-		flipinner4.id = 'flipinner4';
-		flipcard4.id = 'flipcard4';
+		} else if (clickCount === 2) {
+			flipcard1.style.top = '40%';
+			flipcard1.style.right = '100px';
+			flipcard2.style.top = '40%';
+			flipcard2.style.right = '65px';
+			flipcard3.style.top = '40%';
+			flipcard3.style.right = '30px';
+			flipinner4.id = 'flipinner4';
+			flipcard4.id = 'flipcard4';
 
-		document.querySelector('#flipcard1').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#flipcard2').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#flipcard3').style.animation = 'moveincriment 1s forwards';
-		document.querySelector('#flipcard4').style.animation = 'move4 1s forwards';
-	} else if (clickCount === 3) {
-		flipcard1.style.top = '40%';
-		flipcard1.style.right = '117.5px';
-		flipcard2.style.top = '40%';
-		flipcard2.style.right = '82.5px';
-		flipcard3.style.top = '40%';
-		flipcard3.style.right = '47.5px';
-		flipcard4.style.top = '40%';
-		flipcard4.style.right = '12.5px';
-		flipinner5.id = 'flipinner5';
-		flipcard5.id = 'flipcard5';
+			document.querySelector('#flipcard1').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#flipcard2').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#flipcard3').style.animation = 'moveincriment 1s forwards';
+			document.querySelector('#flipcard4').style.animation = 'move4 1s forwards';
+		} else if (clickCount === 3) {
+			flipcard1.style.top = '40%';
+			flipcard1.style.right = '117.5px';
+			flipcard2.style.top = '40%';
+			flipcard2.style.right = '82.5px';
+			flipcard3.style.top = '40%';
+			flipcard3.style.right = '47.5px';
+			flipcard4.style.top = '40%';
+			flipcard4.style.right = '12.5px';
+			flipinner5.id = 'flipinner5';
+			flipcard5.id = 'flipcard5';
 
-		document.querySelector('#flipcard1').style.animation = 'moveincriment3 1s forwards';
-		document.querySelector('#flipcard2').style.animation = 'moveincriment3 1s forwards';
-		document.querySelector('#flipcard3').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#flipcard4').style.animation = 'moveincriment 1s forwards';
-		document.querySelector('#flipcard5').style.animation = 'move5 1s forwards';
-	
-	} 
+			document.querySelector('#flipcard1').style.animation = 'moveincriment3 1s forwards';
+			document.querySelector('#flipcard2').style.animation = 'moveincriment3 1s forwards';
+			document.querySelector('#flipcard3').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#flipcard4').style.animation = 'moveincriment 1s forwards';
+			document.querySelector('#flipcard5').style.animation = 'move5 1s forwards';
+		
+		} 
 
-}  else {
+	} else {
 
-  if (clickCount === 1) {
+  		if (clickCount === 1) {
 		
 		flipcard1.style.top = '40%';
 		flipcard1.style.right = '200px';
@@ -833,49 +821,48 @@ fine. I might do the rest of this in pixels just to make it easier but idk*/
 		document.querySelector('#flipcard2').style.animation = 'moveincriment 1s forwards';
 		document.querySelector('#flipcard3').style.animation = 'move3 1s forwards';
 		
-	} else if (clickCount === 2) {
-		flipcard1.style.top = '40%';
-		flipcard1.style.right = '235px';
-		flipcard2.style.top = '40%';
-		flipcard2.style.right = '165px';
-		flipcard3.style.top = '40%';
-		flipcard3.style.right = '95px';
-		flipinner4.id = 'flipinner4';
-		flipcard4.id = 'flipcard4';
+		} else if (clickCount === 2) {
+			flipcard1.style.top = '40%';
+			flipcard1.style.right = '235px';
+			flipcard2.style.top = '40%';
+			flipcard2.style.right = '165px';
+			flipcard3.style.top = '40%';
+			flipcard3.style.right = '95px';
+			flipinner4.id = 'flipinner4';
+			flipcard4.id = 'flipcard4';
 
-		document.querySelector('#flipcard1').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#flipcard2').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#flipcard3').style.animation = 'moveincriment 1s forwards';
-		document.querySelector('#flipcard4').style.animation = 'move4 1s forwards';
-	} else if (clickCount === 3) {
-		flipcard1.style.top = '40%';
-		flipcard1.style.right = '270px';
-		flipcard2.style.top = '40%';
-		flipcard2.style.right = '200px';
-		flipcard3.style.top = '40%';
-		flipcard3.style.right = '130px';
-		flipcard4.style.top = '40%';
-		flipcard4.style.right = '60px';
-		flipinner5.id = 'flipinner5';
-		flipcard5.id = 'flipcard5';
+			document.querySelector('#flipcard1').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#flipcard2').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#flipcard3').style.animation = 'moveincriment 1s forwards';
+			document.querySelector('#flipcard4').style.animation = 'move4 1s forwards';
+		} else if (clickCount === 3) {
+			flipcard1.style.top = '40%';
+			flipcard1.style.right = '270px';
+			flipcard2.style.top = '40%';
+			flipcard2.style.right = '200px';
+			flipcard3.style.top = '40%';
+			flipcard3.style.right = '130px';
+			flipcard4.style.top = '40%';
+			flipcard4.style.right = '60px';
+			flipinner5.id = 'flipinner5';
+			flipcard5.id = 'flipcard5';
 
-		document.querySelector('#flipcard1').style.animation = 'moveincriment3 1s forwards';
-		document.querySelector('#flipcard2').style.animation = 'moveincriment3 1s forwards';
-		document.querySelector('#flipcard3').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#flipcard4').style.animation = 'moveincriment 1s forwards';
-		document.querySelector('#flipcard5').style.animation = 'move5 1s forwards';
-	}
+			document.querySelector('#flipcard1').style.animation = 'moveincriment3 1s forwards';
+			document.querySelector('#flipcard2').style.animation = 'moveincriment3 1s forwards';
+			document.querySelector('#flipcard3').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#flipcard4').style.animation = 'moveincriment 1s forwards';
+			document.querySelector('#flipcard5').style.animation = 'move5 1s forwards';
+		}
 };
 	
 };
 
-
+/*Remove event listener and flip the switch that lets the second dealer function execute*/
 
 const pressStay = () => {
 	hit.removeEventListener("click", addCard);
 	gameOn = 1;
 };
-
 
 
 
@@ -927,254 +914,254 @@ const generateHands = () => {
 
 /*card 1*/
 
-if (cardSuit[randSuit1] === 'clubs') {
-	if (cardValue[randValue1] === 'Ace') {
-		card1.src = clubCards[0];
-	} else if (cardValue[randValue1] === 2) {
-		card1.src = clubCards[1];
-	} else if (cardValue[randValue1] === 3) {
-		card1.src = clubCards[2];
-	} else if (cardValue[randValue1] === 4) {
-		card1.src = clubCards[3];
-	} else if (cardValue[randValue1] === 5) {
-		card1.src = clubCards[4];
-	} else if (cardValue[randValue1] === 6) {
-		card1.src = clubCards[5];
-	} else if (cardValue[randValue1] === 7) {
-		card1.src = clubCards[6];
-	} else if (cardValue[randValue1] === 8) {
-		card1.src = clubCards[7];
-	} else if (cardValue[randValue1] === 9) {
-		card1.src = clubCards[8];
-	} else if (cardValue[randValue1] === 10) {
-		card1.src = clubCards[9];
-	} else if (cardValue[randValue1] === 'Jack') {
-		card1.src = clubCards[10];
-	} else if (cardValue[randValue1] === 'Queen') {
-		card1.src = clubCards[11];
-	} else if (cardValue[randValue1] === 'King') {
-		card1.src = clubCards[12];
-	}; 
-};
-
-
-if (cardSuit[randSuit1] === 'spades') {
-	if (cardValue[randValue1] === 'Ace') {
-		card1.src = spadeCards[0];
-	} else if (cardValue[randValue1] === 2) {
-		card1.src = spadeCards[1];
-	} else if (cardValue[randValue1] === 3) {
-		card1.src = spadeCards[2];
-	} else if (cardValue[randValue1] === 4) {
-		card1.src = spadeCards[3];
-	} else if (cardValue[randValue1] === 5) {
-		card1.src = spadeCards[4];
-	} else if (cardValue[randValue1] === 6) {
-		card1.src = spadeCards[5];
-	} else if (cardValue[randValue1] === 7) {
-		card1.src = spadeCards[6];
-	} else if (cardValue[randValue1] === 8) {
-		card1.src = spadeCards[7];
-	} else if (cardValue[randValue1] === 9) {
-		card1.src = spadeCards[8];
-	} else if (cardValue[randValue1] === 10) {
-		card1.src = spadeCards[9];
-	} else if (cardValue[randValue1] === 'Jack') {
-		card1.src = spadeCards[10];
-	} else if (cardValue[randValue1] === 'Queen') {
-		card1.src = spadeCards[11];
-	} else if (cardValue[randValue1] === 'King') {
-		card1.src = spadeCards[12];
-	}; 
-};
-
-
-if (cardSuit[randSuit1] === 'hearts') {
-	if (cardValue[randValue1] === 'Ace') {
-		card1.src = heartCards[0];
-	} else if (cardValue[randValue1] === 2) {
-		card1.src = heartCards[1];
-	} else if (cardValue[randValue1] === 3) {
-		card1.src = heartCards[2];
-	} else if (cardValue[randValue1] === 4) {
-		card1.src = heartCards[3];
-	} else if (cardValue[randValue1] === 5) {
-		card1.src = heartCards[4];
-	} else if (cardValue[randValue1] === 6) {
-		card1.src = heartCards[5];
-	} else if (cardValue[randValue1] === 7) {
-		card1.src = heartCards[6];
-	} else if (cardValue[randValue1] === 8) {
-		card1.src = heartCards[7];
-	} else if (cardValue[randValue1] === 9) {
-		card1.src = heartCards[8];
-	} else if (cardValue[randValue1] === 10) {
-		card1.src = heartCards[9];
-	} else if (cardValue[randValue1] === 'Jack') {
-		card1.src = heartCards[10];
-	} else if (cardValue[randValue1] === 'Queen') {
-		card1.src = heartCards[11];
-	} else if (cardValue[randValue1] === 'King') {
-		card1.src = heartCards[12];
-	}; 
-};
-
-
-if (cardSuit[randSuit1] === 'diamonds') {
-	if (cardValue[randValue1] === 'Ace') {
-		card1.src = diamondCards[0];
-	} else if (cardValue[randValue1] === 2) {
-		card1.src = diamondCards[1];
-	} else if (cardValue[randValue1] === 3) {
-		card1.src = diamondCards[2];
-	} else if (cardValue[randValue1] === 4) {
-		card1.src = diamondCards[3];
-	} else if (cardValue[randValue1] === 5) {
-		card1.src = diamondCards[4];
-	} else if (cardValue[randValue1] === 6) {
-		card1.src = diamondCards[5];
-	} else if (cardValue[randValue1] === 7) {
-		card1.src = diamondCards[6];
-	} else if (cardValue[randValue1] === 8) {
-		card1.src = diamondCards[7];
-	} else if (cardValue[randValue1] === 9) {
-		card1.src = diamondCards[8];
-	} else if (cardValue[randValue1] === 10) {
-		card1.src = diamondCards[9];
-	} else if (cardValue[randValue1] === 'Jack') {
-		card1.src = diamondCards[10];
-	} else if (cardValue[randValue1] === 'Queen') {
-		card1.src = diamondCards[11];
-	} else if (cardValue[randValue1] === 'King') {
-		card1.src = diamondCards[12];
-	}; 
-};
-
-
-/*card 2*/
-
-if (cardSuit[randSuit2] === 'clubs') {
-	if (cardValue[randValue2] === 'Ace') {
-		card2.src = clubCards[0];
-	} else if (cardValue[randValue2] === 2) {
-		card2.src = clubCards[1];
-	} else if (cardValue[randValue2] === 3) {
-		card2.src = clubCards[2];
-	} else if (cardValue[randValue2] === 4) {
-		card2.src = clubCards[3];
-	} else if (cardValue[randValue2] === 5) {
-		card2.src = clubCards[4];
-	} else if (cardValue[randValue2] === 6) {
-		card2.src = clubCards[5];
-	} else if (cardValue[randValue2] === 7) {
-		card2.src = clubCards[6];
-	} else if (cardValue[randValue2] === 8) {
-		card2.src = clubCards[7];
-	} else if (cardValue[randValue2] === 9) {
-		card2.src = clubCards[8];
-	} else if (cardValue[randValue2] === 10) {
-		card2.src = clubCards[9];
-	} else if (cardValue[randValue2] === 'Jack') {
-		card2.src = clubCards[10];
-	} else if (cardValue[randValue2] === 'Queen') {
-		card2.src = clubCards[11];
-	} else if (cardValue[randValue2] === 'King') {
-		card2.src = clubCards[12];
-	}; 
-};
-
-
-if (cardSuit[randSuit2] === 'spades') {
-	if (cardValue[randValue2] === 'Ace') {
-		card2.src = spadeCards[0];
-	} else if (cardValue[randValue2] === 2) {
-		card2.src = spadeCards[1];
-	} else if (cardValue[randValue2] === 3) {
-		card2.src = spadeCards[2];
-	} else if (cardValue[randValue2] === 4) {
-		card2.src = spadeCards[3];
-	} else if (cardValue[randValue2] === 5) {
-		card2.src = spadeCards[4];
-	} else if (cardValue[randValue2] === 6) {
-		card2.src = spadeCards[5];
-	} else if (cardValue[randValue2] === 7) {
-		card2.src = spadeCards[6];
-	} else if (cardValue[randValue2] === 8) {
-		card2.src = spadeCards[7];
-	} else if (cardValue[randValue2] === 9) {
-		card2.src = spadeCards[8];
-	} else if (cardValue[randValue2] === 10) {
-		card2.src = spadeCards[9];
-	} else if (cardValue[randValue2] === 'Jack') {
-		card2.src = spadeCards[10];
-	} else if (cardValue[randValue2] === 'Queen') {
-		card2.src = spadeCards[11];
-	} else if (cardValue[randValue2] === 'King') {
-		card2.src = spadeCards[12];
-	}; 
-};
-
-
-if (cardSuit[randSuit2] === 'hearts') {
-	if (cardValue[randValue2] === 'Ace') {
-		card2.src = heartCards[0];
-	} else if (cardValue[randValue2] === 2) {
-		card2.src = heartCards[1];
-	} else if (cardValue[randValue2] === 3) {
-		card2.src = heartCards[2];
-	} else if (cardValue[randValue2] === 4) {
-		card2.src = heartCards[3];
-	} else if (cardValue[randValue2] === 5) {
-		card2.src = heartCards[4];
-	} else if (cardValue[randValue2] === 6) {
-		card2.src = heartCards[5];
-	} else if (cardValue[randValue2] === 7) {
-		card2.src = heartCards[6];
-	} else if (cardValue[randValue2] === 8) {
-		card2.src = heartCards[7];
-	} else if (cardValue[randValue2] === 9) {
-		card2.src = heartCards[8];
-	} else if (cardValue[randValue2] === 10) {
-		card2.src = heartCards[9];
-	} else if (cardValue[randValue2] === 'Jack') {
-		card2.src = heartCards[10];
-	} else if (cardValue[randValue2] === 'Queen') {
-		card2.src = heartCards[11];
-	} else if (cardValue[randValue2] === 'King') {
-		card2.src = heartCards[12];
+	if (cardSuit[randSuit1] === 'clubs') {
+		if (cardValue[randValue1] === 'Ace') {
+			card1.src = clubCards[0];
+		} else if (cardValue[randValue1] === 2) {
+			card1.src = clubCards[1];
+		} else if (cardValue[randValue1] === 3) {
+			card1.src = clubCards[2];
+		} else if (cardValue[randValue1] === 4) {
+			card1.src = clubCards[3];
+		} else if (cardValue[randValue1] === 5) {
+			card1.src = clubCards[4];
+		} else if (cardValue[randValue1] === 6) {
+			card1.src = clubCards[5];
+		} else if (cardValue[randValue1] === 7) {
+			card1.src = clubCards[6];
+		} else if (cardValue[randValue1] === 8) {
+			card1.src = clubCards[7];
+		} else if (cardValue[randValue1] === 9) {
+			card1.src = clubCards[8];
+		} else if (cardValue[randValue1] === 10) {
+			card1.src = clubCards[9];
+		} else if (cardValue[randValue1] === 'Jack') {
+			card1.src = clubCards[10];
+		} else if (cardValue[randValue1] === 'Queen') {
+			card1.src = clubCards[11];
+		} else if (cardValue[randValue1] === 'King') {
+			card1.src = clubCards[12];
+		}; 
 	};
-};
 
 
-if (cardSuit[randSuit2] === 'diamonds') {
-	if (cardValue[randValue2] === 'Ace') {
-		card2.src = diamondCards[0];
-	} else if (cardValue[randValue2] === 2) {
-		card2.src = diamondCards[1];
-	} else if (cardValue[randValue2] === 3) {
-		card2.src = diamondCards[2];
-	} else if (cardValue[randValue2] === 4) {
-		card2.src = diamondCards[3];
-	} else if (cardValue[randValue2] === 5) {
-		card2.src = diamondCards[4];
-	} else if (cardValue[randValue2] === 6) {
-		card2.src = diamondCards[5];
-	} else if (cardValue[randValue2] === 7) {
-		card2.src = diamondCards[6];
-	} else if (cardValue[randValue2] === 8) {
-		card2.src = diamondCards[7];
-	} else if (cardValue[randValue2] === 9) {
-		card2.src = diamondCards[8];
-	} else if (cardValue[randValue2] === 10) {
-		card2.src = diamondCards[9];
-	} else if (cardValue[randValue2] === 'Jack') {
-		card2.src = diamondCards[10];
-	} else if (cardValue[randValue2] === 'Queen') {
-		card2.src = diamondCards[11];
-	} else if (cardValue[randValue2] === 'King') {
-		card2.src = diamondCards[12];
-	}; 
-};
+	if (cardSuit[randSuit1] === 'spades') {
+		if (cardValue[randValue1] === 'Ace') {
+			card1.src = spadeCards[0];
+		} else if (cardValue[randValue1] === 2) {
+			card1.src = spadeCards[1];
+		} else if (cardValue[randValue1] === 3) {
+			card1.src = spadeCards[2];
+		} else if (cardValue[randValue1] === 4) {
+			card1.src = spadeCards[3];
+		} else if (cardValue[randValue1] === 5) {
+			card1.src = spadeCards[4];
+		} else if (cardValue[randValue1] === 6) {
+			card1.src = spadeCards[5];
+		} else if (cardValue[randValue1] === 7) {
+			card1.src = spadeCards[6];
+		} else if (cardValue[randValue1] === 8) {
+			card1.src = spadeCards[7];
+		} else if (cardValue[randValue1] === 9) {
+			card1.src = spadeCards[8];
+		} else if (cardValue[randValue1] === 10) {
+			card1.src = spadeCards[9];
+		} else if (cardValue[randValue1] === 'Jack') {
+			card1.src = spadeCards[10];
+		} else if (cardValue[randValue1] === 'Queen') {
+			card1.src = spadeCards[11];
+		} else if (cardValue[randValue1] === 'King') {
+			card1.src = spadeCards[12];
+		}; 
+	};
+
+
+	if (cardSuit[randSuit1] === 'hearts') {
+		if (cardValue[randValue1] === 'Ace') {
+			card1.src = heartCards[0];
+		} else if (cardValue[randValue1] === 2) {
+			card1.src = heartCards[1];
+		} else if (cardValue[randValue1] === 3) {
+			card1.src = heartCards[2];
+		} else if (cardValue[randValue1] === 4) {
+			card1.src = heartCards[3];
+		} else if (cardValue[randValue1] === 5) {
+			card1.src = heartCards[4];
+		} else if (cardValue[randValue1] === 6) {
+			card1.src = heartCards[5];
+		} else if (cardValue[randValue1] === 7) {
+			card1.src = heartCards[6];
+		} else if (cardValue[randValue1] === 8) {
+			card1.src = heartCards[7];
+		} else if (cardValue[randValue1] === 9) {
+			card1.src = heartCards[8];
+		} else if (cardValue[randValue1] === 10) {
+			card1.src = heartCards[9];
+		} else if (cardValue[randValue1] === 'Jack') {
+			card1.src = heartCards[10];
+		} else if (cardValue[randValue1] === 'Queen') {
+			card1.src = heartCards[11];
+		} else if (cardValue[randValue1] === 'King') {
+			card1.src = heartCards[12];
+		}; 
+	};
+
+
+	if (cardSuit[randSuit1] === 'diamonds') {
+		if (cardValue[randValue1] === 'Ace') {
+			card1.src = diamondCards[0];
+		} else if (cardValue[randValue1] === 2) {
+			card1.src = diamondCards[1];
+		} else if (cardValue[randValue1] === 3) {
+			card1.src = diamondCards[2];
+		} else if (cardValue[randValue1] === 4) {
+			card1.src = diamondCards[3];
+		} else if (cardValue[randValue1] === 5) {
+			card1.src = diamondCards[4];
+		} else if (cardValue[randValue1] === 6) {
+			card1.src = diamondCards[5];
+		} else if (cardValue[randValue1] === 7) {
+			card1.src = diamondCards[6];
+		} else if (cardValue[randValue1] === 8) {
+			card1.src = diamondCards[7];
+		} else if (cardValue[randValue1] === 9) {
+			card1.src = diamondCards[8];
+		} else if (cardValue[randValue1] === 10) {
+			card1.src = diamondCards[9];
+		} else if (cardValue[randValue1] === 'Jack') {
+			card1.src = diamondCards[10];
+		} else if (cardValue[randValue1] === 'Queen') {
+			card1.src = diamondCards[11];
+		} else if (cardValue[randValue1] === 'King') {
+			card1.src = diamondCards[12];
+		}; 
+	};
+
+
+	/*card 2*/
+
+	if (cardSuit[randSuit2] === 'clubs') {
+		if (cardValue[randValue2] === 'Ace') {
+			card2.src = clubCards[0];
+		} else if (cardValue[randValue2] === 2) {
+			card2.src = clubCards[1];
+		} else if (cardValue[randValue2] === 3) {
+			card2.src = clubCards[2];
+		} else if (cardValue[randValue2] === 4) {
+			card2.src = clubCards[3];
+		} else if (cardValue[randValue2] === 5) {
+			card2.src = clubCards[4];
+		} else if (cardValue[randValue2] === 6) {
+			card2.src = clubCards[5];
+		} else if (cardValue[randValue2] === 7) {
+			card2.src = clubCards[6];
+		} else if (cardValue[randValue2] === 8) {
+			card2.src = clubCards[7];
+		} else if (cardValue[randValue2] === 9) {
+			card2.src = clubCards[8];
+		} else if (cardValue[randValue2] === 10) {
+			card2.src = clubCards[9];
+		} else if (cardValue[randValue2] === 'Jack') {
+			card2.src = clubCards[10];
+		} else if (cardValue[randValue2] === 'Queen') {
+			card2.src = clubCards[11];
+		} else if (cardValue[randValue2] === 'King') {
+			card2.src = clubCards[12];
+		}; 
+	};
+
+
+	if (cardSuit[randSuit2] === 'spades') {
+		if (cardValue[randValue2] === 'Ace') {
+			card2.src = spadeCards[0];
+		} else if (cardValue[randValue2] === 2) {
+			card2.src = spadeCards[1];
+		} else if (cardValue[randValue2] === 3) {
+			card2.src = spadeCards[2];
+		} else if (cardValue[randValue2] === 4) {
+			card2.src = spadeCards[3];
+		} else if (cardValue[randValue2] === 5) {
+			card2.src = spadeCards[4];
+		} else if (cardValue[randValue2] === 6) {
+			card2.src = spadeCards[5];
+		} else if (cardValue[randValue2] === 7) {
+			card2.src = spadeCards[6];
+		} else if (cardValue[randValue2] === 8) {
+			card2.src = spadeCards[7];
+		} else if (cardValue[randValue2] === 9) {
+			card2.src = spadeCards[8];
+		} else if (cardValue[randValue2] === 10) {
+			card2.src = spadeCards[9];
+		} else if (cardValue[randValue2] === 'Jack') {
+			card2.src = spadeCards[10];
+		} else if (cardValue[randValue2] === 'Queen') {
+			card2.src = spadeCards[11];
+		} else if (cardValue[randValue2] === 'King') {
+			card2.src = spadeCards[12];
+		}; 
+	};
+
+
+	if (cardSuit[randSuit2] === 'hearts') {
+		if (cardValue[randValue2] === 'Ace') {
+			card2.src = heartCards[0];
+		} else if (cardValue[randValue2] === 2) {
+			card2.src = heartCards[1];
+		} else if (cardValue[randValue2] === 3) {
+			card2.src = heartCards[2];
+		} else if (cardValue[randValue2] === 4) {
+			card2.src = heartCards[3];
+		} else if (cardValue[randValue2] === 5) {
+			card2.src = heartCards[4];
+		} else if (cardValue[randValue2] === 6) {
+			card2.src = heartCards[5];
+		} else if (cardValue[randValue2] === 7) {
+			card2.src = heartCards[6];
+		} else if (cardValue[randValue2] === 8) {
+			card2.src = heartCards[7];
+		} else if (cardValue[randValue2] === 9) {
+			card2.src = heartCards[8];
+		} else if (cardValue[randValue2] === 10) {
+			card2.src = heartCards[9];
+		} else if (cardValue[randValue2] === 'Jack') {
+			card2.src = heartCards[10];
+		} else if (cardValue[randValue2] === 'Queen') {
+			card2.src = heartCards[11];
+		} else if (cardValue[randValue2] === 'King') {
+			card2.src = heartCards[12];
+		};
+	};
+
+
+	if (cardSuit[randSuit2] === 'diamonds') {
+		if (cardValue[randValue2] === 'Ace') {
+			card2.src = diamondCards[0];
+		} else if (cardValue[randValue2] === 2) {
+			card2.src = diamondCards[1];
+		} else if (cardValue[randValue2] === 3) {
+			card2.src = diamondCards[2];
+		} else if (cardValue[randValue2] === 4) {
+			card2.src = diamondCards[3];
+		} else if (cardValue[randValue2] === 5) {
+			card2.src = diamondCards[4];
+		} else if (cardValue[randValue2] === 6) {
+			card2.src = diamondCards[5];
+		} else if (cardValue[randValue2] === 7) {
+			card2.src = diamondCards[6];
+		} else if (cardValue[randValue2] === 8) {
+			card2.src = diamondCards[7];
+		} else if (cardValue[randValue2] === 9) {
+			card2.src = diamondCards[8];
+		} else if (cardValue[randValue2] === 10) {
+			card2.src = diamondCards[9];
+		} else if (cardValue[randValue2] === 'Jack') {
+			card2.src = diamondCards[10];
+		} else if (cardValue[randValue2] === 'Queen') {
+			card2.src = diamondCards[11];
+		} else if (cardValue[randValue2] === 'King') {
+			card2.src = diamondCards[12];
+		}; 
+	};
 
 
 
@@ -1237,7 +1224,7 @@ if (cardSuit[randSuit2] === 'diamonds') {
 	cardNumber1Opt1 = 0;
 	cardNumber1Opt2 = 0;
 	cardNumber2Opt1 = 0;
-   cardNumber2Opt2 = 0;
+    cardNumber2Opt2 = 0;
 	cardNumber3Opt1 = 0;
 	cardNumber3Opt2 = 0;
 	cardNumber4Opt1 = 0;
@@ -1264,7 +1251,7 @@ if (cardSuit[randSuit2] === 'diamonds') {
 	flipinner1.style.display = 'block';
 	flipinner1.id = 'flipinner1';
 	flipcard1.id = 'flipcard1';
-	document.querySelector('#flipcard1').style.animation = 'move 1s forwards, z 1s forwards';	
+	document.querySelector('#flipcard1').style.animation = 'move 1s forwards';	
 	};
 	
 	const dealcard2 = () => {
@@ -1280,8 +1267,9 @@ if (cardSuit[randSuit2] === 'diamonds') {
 
 
 
-	/*Creating the event listiner for hit which will be removed when the player
-	busts or presses stay*/
+	/*Creating a delay for the event listiner for hit and stay to prevent cross execution issues
+	of functions. These listiners are removed when appropriate for proper functionality. */
+
 	const hitStayDelay = () => {
 	hit.addEventListener("click", addCard);
 
@@ -1450,378 +1438,378 @@ const genDealerHand2 = () => {
 
 /*card 3*/
 
-if (suitArrD[0] === 'clubs') {
-	if (valueArrD[0] === 'Ace') {
-		dcard3.src = clubCards[0];
-	} else if (valueArrD[0] === 2) {
-		dcard3.src = clubCards[1];
-	} else if (valueArrD[0] === 3) {
-		dcard3.src = clubCards[2];
-	} else if (valueArrD[0] === 4) {
-		dcard3.src = clubCards[3];
-	} else if (valueArrD[0] === 5) {
-		dcard3.src = clubCards[4];
-	} else if (valueArrD[0] === 6) {
-		dcard3.src = clubCards[5];
-	} else if (valueArrD[0] === 7) {
-		dcard3.src = clubCards[6];
-	} else if (valueArrD[0] === 8) {
-		dcard3.src = clubCards[7];
-	} else if (valueArrD[0] === 9) {
-		dcard3.src = clubCards[8];
-	} else if (valueArrD[0] === 10) {
-		dcard3.src = clubCards[9];
-	} else if (valueArrD[0] === 'Jack') {
-		dcard3.src = clubCards[10];
-	} else if (valueArrD[0] === 'Queen') {
-		dcard3.src = clubCards[11];
-	} else if (valueArrD[0] === 'King') {
-		dcard3.src = clubCards[12];
-	}; 
-};
-
-
-if (suitArrD[0] === 'spades') {
-	if (valueArrD[0] === 'Ace') {
-		dcard3.src = spadeCards[0];
-	} else if (valueArrD[0] === 2) {
-		dcard3.src = spadeCards[1];
-	} else if (valueArrD[0] === 3) {
-		dcard3.src = spadeCards[2];
-	} else if (valueArrD[0] === 4) {
-		dcard3.src = spadeCards[3];
-	} else if (valueArrD[0] === 5) {
-		dcard3.src = spadeCards[4];
-	} else if (valueArrD[0] === 6) {
-		dcard3.src = spadeCards[5];
-	} else if (valueArrD[0] === 7) {
-		dcard3.src = spadeCards[6];
-	} else if (valueArrD[0] === 8) {
-		dcard3.src = spadeCards[7];
-	} else if (valueArrD[0] === 9) {
-		dcard3.src = spadeCards[8];
-	} else if (valueArrD[0] === 10) {
-		dcard3.src = spadeCards[9];
-	} else if (valueArrD[0] === 'Jack') {
-		dcard3.src = spadeCards[10];
-	} else if (valueArrD[0] === 'Queen') {
-		dcard3.src = spadeCards[11];
-	} else if (valueArrD[0] === 'King') {
-		dcard3.src = spadeCards[12];
-	}; 
-};
-
-
-if (suitArrD[0] === 'hearts') {
-	if (valueArrD[0] === 'Ace') {
-		dcard3.src = heartCards[0];
-	} else if (valueArrD[0] === 2) {
-		dcard3.src = heartCards[1];
-	} else if (valueArrD[0] === 3) {
-		dcard3.src = heartCards[2];
-	} else if (valueArrD[0] === 4) {
-		dcard3.src = heartCards[3];
-	} else if (valueArrD[0] === 5) {
-		dcard3.src = heartCards[4];
-	} else if (valueArrD[0] === 6) {
-		dcard3.src = heartCards[5];
-	} else if (valueArrD[0] === 7) {
-		dcard3.src = heartCards[6];
-	} else if (valueArrD[0] === 8) {
-		dcard3.src = heartCards[7];
-	} else if (valueArrD[0] === 9) {
-		dcard3.src = heartCards[8];
-	} else if (valueArrD[0] === 10) {
-		dcard3.src = heartCards[9];
-	} else if (valueArrD[0] === 'Jack') {
-		dcard3.src = heartCards[10];
-	} else if (valueArrD[0] === 'Queen') {
-		dcard3.src = heartCards[11];
-	} else if (valueArrD[0] === 'King') {
-		dcard3.src = heartCards[12];
+	if (suitArrD[0] === 'clubs') {
+		if (valueArrD[0] === 'Ace') {
+			dcard3.src = clubCards[0];
+		} else if (valueArrD[0] === 2) {
+			dcard3.src = clubCards[1];
+		} else if (valueArrD[0] === 3) {
+			dcard3.src = clubCards[2];
+		} else if (valueArrD[0] === 4) {
+			dcard3.src = clubCards[3];
+		} else if (valueArrD[0] === 5) {
+			dcard3.src = clubCards[4];
+		} else if (valueArrD[0] === 6) {
+			dcard3.src = clubCards[5];
+		} else if (valueArrD[0] === 7) {
+			dcard3.src = clubCards[6];
+		} else if (valueArrD[0] === 8) {
+			dcard3.src = clubCards[7];
+		} else if (valueArrD[0] === 9) {
+			dcard3.src = clubCards[8];
+		} else if (valueArrD[0] === 10) {
+			dcard3.src = clubCards[9];
+		} else if (valueArrD[0] === 'Jack') {
+			dcard3.src = clubCards[10];
+		} else if (valueArrD[0] === 'Queen') {
+			dcard3.src = clubCards[11];
+		} else if (valueArrD[0] === 'King') {
+			dcard3.src = clubCards[12];
+		}; 
 	};
-};
 
 
-if (suitArrD[0] === 'diamonds') {
-	if (valueArrD[0] === 'Ace') {
-		dcard3.src = diamondCards[0];
-	} else if (valueArrD[0] === 2) {
-		dcard3.src = diamondCards[1];
-	} else if (valueArrD[0] === 3) {
-		dcard3.src = diamondCards[2];
-	} else if (valueArrD[0] === 4) {
-		dcard3.src = diamondCards[3];
-	} else if (valueArrD[0] === 5) {
-		dcard3.src = diamondCards[4];
-	} else if (valueArrD[0] === 6) {
-		dcard3.src = diamondCards[5];
-	} else if (valueArrD[0] === 7) {
-		dcard3.src = diamondCards[6];
-	} else if (valueArrD[0] === 8) {
-		dcard3.src = diamondCards[7];
-	} else if (valueArrD[0] === 9) {
-		dcard3.src = diamondCards[8];
-	} else if (valueArrD[0] === 10) {
-		dcard3.src = diamondCards[9];
-	} else if (valueArrD[0] === 'Jack') {
-		dcard3.src = diamondCards[10];
-	} else if (valueArrD[0] === 'Queen') {
-		dcard3.src = diamondCards[11];
-	} else if (valueArrD[0] === 'King') {
-		dcard3.src = diamondCards[12];
-	}; 
-};
-
-
-/*card 4*/
-if (suitArrD[1] === 'clubs') {
-	if (valueArrD[1] === 'Ace') {
-		dcard4.src = clubCards[0];
-	} else if (valueArrD[1] === 2) {
-		dcard4.src = clubCards[1];
-	} else if (valueArrD[1] === 3) {
-		dcard4.src = clubCards[2];
-	} else if (valueArrD[1] === 4) {
-		dcard4.src = clubCards[3];
-	} else if (valueArrD[1] === 5) {
-		dcard4.src = clubCards[4];
-	} else if (valueArrD[1] === 6) {
-		dcard4.src = clubCards[5];
-	} else if (valueArrD[1] === 7) {
-		dcard4.src = clubCards[6];
-	} else if (valueArrD[1] === 8) {
-		dcard4.src = clubCards[7];
-	} else if (valueArrD[1] === 9) {
-		dcard4.src = clubCards[8];
-	} else if (valueArrD[1] === 10) {
-		dcard4.src = clubCards[9];
-	} else if (valueArrD[1] === 'Jack') {
-		dcard4.src = clubCards[10];
-	} else if (valueArrD[1] === 'Queen') {
-		dcard4.src = clubCards[11];
-	} else if (valueArrD[1] === 'King') {
-		dcard4.src = clubCards[12];
-	}; 
-};
-
-
-if (suitArrD[1] === 'spades') {
-	if (valueArrD[1] === 'Ace') {
-		dcard4.src = spadeCards[0];
-	} else if (valueArrD[1] === 2) {
-		dcard4.src = spadeCards[1];
-	} else if (valueArrD[1] === 3) {
-		dcard4.src = spadeCards[2];
-	} else if (valueArrD[1] === 4) {
-		dcard4.src = spadeCards[3];
-	} else if (valueArrD[1] === 5) {
-		dcard4.src = spadeCards[4];
-	} else if (valueArrD[1] === 6) {
-		dcard4.src = spadeCards[5];
-	} else if (valueArrD[1] === 7) {
-		dcard4.src = spadeCards[6];
-	} else if (valueArrD[1] === 8) {
-		dcard4.src = spadeCards[7];
-	} else if (valueArrD[1] === 9) {
-		dcard4.src = spadeCards[8];
-	} else if (valueArrD[1] === 10) {
-		dcard4.src = spadeCards[9];
-	} else if (valueArrD[1] === 'Jack') {
-		dcard4.src = spadeCards[10];
-	} else if (valueArrD[1] === 'Queen') {
-		dcard4.src = spadeCards[11];
-	} else if (valueArrD[1] === 'King') {
-		dcard4.src = spadeCards[12];
-	}; 
-};
-
-
-if (suitArrD[1] === 'hearts') {
-	if (valueArrD[1] === 'Ace') {
-		dcard4.src = heartCards[0];
-	} else if (valueArrD[1] === 2) {
-		dcard4.src = heartCards[1];
-	} else if (valueArrD[1] === 3) {
-		dcard4.src = heartCards[2];
-	} else if (valueArrD[1] === 4) {
-		dcard4.src = heartCards[3];
-	} else if (valueArrD[1] === 5) {
-		dcard4.src = heartCards[4];
-	} else if (valueArrD[1] === 6) {
-		dcard4.src = heartCards[5];
-	} else if (valueArrD[1] === 7) {
-		dcard4.src = heartCards[6];
-	} else if (valueArrD[1] === 8) {
-		dcard4.src = heartCards[7];
-	} else if (valueArrD[1] === 9) {
-		dcard4.src = heartCards[8];
-	} else if (valueArrD[1] === 10) {
-		dcard4.src = heartCards[9];
-	} else if (valueArrD[1] === 'Jack') {
-		dcard4.src = heartCards[10];
-	} else if (valueArrD[1] === 'Queen') {
-		dcard4.src = heartCards[11];
-	} else if (valueArrD[1] === 'King') {
-		dcard4.src = heartCards[12];
+	if (suitArrD[0] === 'spades') {
+		if (valueArrD[0] === 'Ace') {
+			dcard3.src = spadeCards[0];
+		} else if (valueArrD[0] === 2) {
+			dcard3.src = spadeCards[1];
+		} else if (valueArrD[0] === 3) {
+			dcard3.src = spadeCards[2];
+		} else if (valueArrD[0] === 4) {
+			dcard3.src = spadeCards[3];
+		} else if (valueArrD[0] === 5) {
+			dcard3.src = spadeCards[4];
+		} else if (valueArrD[0] === 6) {
+			dcard3.src = spadeCards[5];
+		} else if (valueArrD[0] === 7) {
+			dcard3.src = spadeCards[6];
+		} else if (valueArrD[0] === 8) {
+			dcard3.src = spadeCards[7];
+		} else if (valueArrD[0] === 9) {
+			dcard3.src = spadeCards[8];
+		} else if (valueArrD[0] === 10) {
+			dcard3.src = spadeCards[9];
+		} else if (valueArrD[0] === 'Jack') {
+			dcard3.src = spadeCards[10];
+		} else if (valueArrD[0] === 'Queen') {
+			dcard3.src = spadeCards[11];
+		} else if (valueArrD[0] === 'King') {
+			dcard3.src = spadeCards[12];
+		}; 
 	};
-};
 
 
-if (suitArrD[1] === 'diamonds') {
-	if (valueArrD[1] === 'Ace') {
-		dcard4.src = diamondCards[0];
-	} else if (valueArrD[1] === 2) {
-		dcard4.src = diamondCards[1];
-	} else if (valueArrD[1] === 3) {
-		dcard4.src = diamondCards[2];
-	} else if (valueArrD[1] === 4) {
-		dcard4.src = diamondCards[3];
-	} else if (valueArrD[1] === 5) {
-		dcard4.src = diamondCards[4];
-	} else if (valueArrD[1] === 6) {
-		dcard4.src = diamondCards[5];
-	} else if (valueArrD[1] === 7) {
-		dcard4.src = diamondCards[6];
-	} else if (valueArrD[1] === 8) {
-		dcard4.src = diamondCards[7];
-	} else if (valueArrD[1] === 9) {
-		dcard4.src = diamondCards[8];
-	} else if (valueArrD[1] === 10) {
-		dcard4.src = diamondCards[9];
-	} else if (valueArrD[1] === 'Jack') {
-		dcard4.src = diamondCards[10];
-	} else if (valueArrD[1] === 'Queen') {
-		dcard4.src = diamondCards[11];
-	} else if (valueArrD[1] === 'King') {
-		dcard4.src = diamondCards[12];
-	}; 
-};
-
-
-/*card5*/
-if (suitArrD[2] === 'clubs') {
-	if (valueArrD[2] === 'Ace') {
-		dcard5.src = clubCards[0];
-	} else if (valueArrD[2] === 2) {
-		dcard5.src = clubCards[1];
-	} else if (valueArrD[2] === 3) {
-		dcard5.src = clubCards[2];
-	} else if (valueArrD[2] === 4) {
-		dcard5.src = clubCards[3];
-	} else if (valueArrD[2] === 5) {
-		dcard5.src = clubCards[4];
-	} else if (valueArrD[2] === 6) {
-		dcard5.src = clubCards[5];
-	} else if (valueArrD[2] === 7) {
-		dcard5.src = clubCards[6];
-	} else if (valueArrD[2] === 8) {
-		dcard5.src = clubCards[7];
-	} else if (valueArrD[2] === 9) {
-		dcard5.src = clubCards[8];
-	} else if (valueArrD[2] === 10) {
-		dcard5.src = clubCards[9];
-	} else if (valueArrD[2] === 'Jack') {
-		dcard5.src = clubCards[10];
-	} else if (valueArrD[2] === 'Queen') {
-		dcard5.src = clubCards[11];
-	} else if (valueArrD[2] === 'King') {
-		dcard5.src = clubCards[12];
-	}; 
-};
-
-
-if (suitArrD[2] === 'spades') {
-	if (valueArrD[2] === 'Ace') {
-		dcard5.src = spadeCards[0];
-	} else if (valueArrD[2] === 2) {
-		dcard5.src = spadeCards[1];
-	} else if (valueArrD[2] === 3) {
-		dcard5.src = spadeCards[2];
-	} else if (valueArrD[2] === 4) {
-		dcard5.src = spadeCards[3];
-	} else if (valueArrD[2] === 5) {
-		dcard5.src = spadeCards[4];
-	} else if (valueArrD[2] === 6) {
-		dcard5.src = spadeCards[5];
-	} else if (valueArrD[2] === 7) {
-		dcard5.src = spadeCards[6];
-	} else if (valueArrD[2] === 8) {
-		dcard5.src = spadeCards[7];
-	} else if (valueArrD[2] === 9) {
-		dcard5.src = spadeCards[8];
-	} else if (valueArrD[2] === 10) {
-		dcard5.src = spadeCards[9];
-	} else if (valueArrD[2] === 'Jack') {
-		dcard5.src = spadeCards[10];
-	} else if (valueArrD[2] === 'Queen') {
-		dcard5.src = spadeCards[11];
-	} else if (valueArrD[2] === 'King') {
-		dcard5.src = spadeCards[12];
-	}; 
-};
-
-
-if (suitArrD[2] === 'hearts') {
-	if (valueArrD[2] === 'Ace') {
-		dcard5.src = heartCards[0];
-	} else if (valueArrD[2] === 2) {
-		dcard5.src = heartCards[1];
-	} else if (valueArrD[2] === 3) {
-		dcard5.src = heartCards[2];
-	} else if (valueArrD[2] === 4) {
-		dcard5.src = heartCards[3];
-	} else if (valueArrD[2] === 5) {
-		dcard5.src = heartCards[4];
-	} else if (valueArrD[2] === 6) {
-		dcard5.src = heartCards[5];
-	} else if (valueArrD[2] === 7) {
-		dcard5.src = heartCards[6];
-	} else if (valueArrD[2] === 8) {
-		dcard5.src = heartCards[7];
-	} else if (valueArrD[2] === 9) {
-		dcard5.src = heartCards[8];
-	} else if (valueArrD[2] === 10) {
-		dcard5.src = heartCards[9];
-	} else if (valueArrD[2] === 'Jack') {
-		dcard5.src = heartCards[10];
-	} else if (valueArrD[2] === 'Queen') {
-		dcard5.src = heartCards[11];
-	} else if (valueArrD[2] === 'King') {
-		dcard5.src = heartCards[12];
+	if (suitArrD[0] === 'hearts') {
+		if (valueArrD[0] === 'Ace') {
+			dcard3.src = heartCards[0];
+		} else if (valueArrD[0] === 2) {
+			dcard3.src = heartCards[1];
+		} else if (valueArrD[0] === 3) {
+			dcard3.src = heartCards[2];
+		} else if (valueArrD[0] === 4) {
+			dcard3.src = heartCards[3];
+		} else if (valueArrD[0] === 5) {
+			dcard3.src = heartCards[4];
+		} else if (valueArrD[0] === 6) {
+			dcard3.src = heartCards[5];
+		} else if (valueArrD[0] === 7) {
+			dcard3.src = heartCards[6];
+		} else if (valueArrD[0] === 8) {
+			dcard3.src = heartCards[7];
+		} else if (valueArrD[0] === 9) {
+			dcard3.src = heartCards[8];
+		} else if (valueArrD[0] === 10) {
+			dcard3.src = heartCards[9];
+		} else if (valueArrD[0] === 'Jack') {
+			dcard3.src = heartCards[10];
+		} else if (valueArrD[0] === 'Queen') {
+			dcard3.src = heartCards[11];
+		} else if (valueArrD[0] === 'King') {
+			dcard3.src = heartCards[12];
+		};
 	};
-};
 
 
-if (suitArrD[2] === 'diamonds') {
-	if (valueArrD[2] === 'Ace') {
-		dcard5.src = diamondCards[0];
-	} else if (valueArrD[2] === 2) {
-		dcard5.src = diamondCards[1];
-	} else if (valueArrD[2] === 3) {
-		dcard5.src = diamondCards[2];
-	} else if (valueArrD[2] === 4) {
-		dcard5.src = diamondCards[3];
-	} else if (valueArrD[2] === 5) {
-		dcard5.src = diamondCards[4];
-	} else if (valueArrD[2] === 6) {
-		dcard5.src = diamondCards[5];
-	} else if (valueArrD[2] === 7) {
-		dcard5.src = diamondCards[6];
-	} else if (valueArrD[2] === 8) {
-		dcard5.src = diamondCards[7];
-	} else if (valueArrD[2] === 9) {
-		dcard5.src = diamondCards[8];
-	} else if (valueArrD[2] === 10) {
-		dcard5.src = diamondCards[9];
-	} else if (valueArrD[2] === 'Jack') {
-		dcard5.src = diamondCards[10];
-	} else if (valueArrD[2] === 'Queen') {
-		dcard5.src = diamondCards[11];
-	} else if (valueArrD[2] === 'King') {
-		dcard5.src = diamondCards[12];
-	}; 
-};
+	if (suitArrD[0] === 'diamonds') {
+		if (valueArrD[0] === 'Ace') {
+			dcard3.src = diamondCards[0];
+		} else if (valueArrD[0] === 2) {
+			dcard3.src = diamondCards[1];
+		} else if (valueArrD[0] === 3) {
+			dcard3.src = diamondCards[2];
+		} else if (valueArrD[0] === 4) {
+			dcard3.src = diamondCards[3];
+		} else if (valueArrD[0] === 5) {
+			dcard3.src = diamondCards[4];
+		} else if (valueArrD[0] === 6) {
+			dcard3.src = diamondCards[5];
+		} else if (valueArrD[0] === 7) {
+			dcard3.src = diamondCards[6];
+		} else if (valueArrD[0] === 8) {
+			dcard3.src = diamondCards[7];
+		} else if (valueArrD[0] === 9) {
+			dcard3.src = diamondCards[8];
+		} else if (valueArrD[0] === 10) {
+			dcard3.src = diamondCards[9];
+		} else if (valueArrD[0] === 'Jack') {
+			dcard3.src = diamondCards[10];
+		} else if (valueArrD[0] === 'Queen') {
+			dcard3.src = diamondCards[11];
+		} else if (valueArrD[0] === 'King') {
+			dcard3.src = diamondCards[12];
+		}; 
+	};
+
+
+	/*card 4*/
+	if (suitArrD[1] === 'clubs') {
+		if (valueArrD[1] === 'Ace') {
+			dcard4.src = clubCards[0];
+		} else if (valueArrD[1] === 2) {
+			dcard4.src = clubCards[1];
+		} else if (valueArrD[1] === 3) {
+			dcard4.src = clubCards[2];
+		} else if (valueArrD[1] === 4) {
+			dcard4.src = clubCards[3];
+		} else if (valueArrD[1] === 5) {
+			dcard4.src = clubCards[4];
+		} else if (valueArrD[1] === 6) {
+			dcard4.src = clubCards[5];
+		} else if (valueArrD[1] === 7) {
+			dcard4.src = clubCards[6];
+		} else if (valueArrD[1] === 8) {
+			dcard4.src = clubCards[7];
+		} else if (valueArrD[1] === 9) {
+			dcard4.src = clubCards[8];
+		} else if (valueArrD[1] === 10) {
+			dcard4.src = clubCards[9];
+		} else if (valueArrD[1] === 'Jack') {
+			dcard4.src = clubCards[10];
+		} else if (valueArrD[1] === 'Queen') {
+			dcard4.src = clubCards[11];
+		} else if (valueArrD[1] === 'King') {
+			dcard4.src = clubCards[12];
+		}; 
+	};
+
+
+	if (suitArrD[1] === 'spades') {
+		if (valueArrD[1] === 'Ace') {
+			dcard4.src = spadeCards[0];
+		} else if (valueArrD[1] === 2) {
+			dcard4.src = spadeCards[1];
+		} else if (valueArrD[1] === 3) {
+			dcard4.src = spadeCards[2];
+		} else if (valueArrD[1] === 4) {
+			dcard4.src = spadeCards[3];
+		} else if (valueArrD[1] === 5) {
+			dcard4.src = spadeCards[4];
+		} else if (valueArrD[1] === 6) {
+			dcard4.src = spadeCards[5];
+		} else if (valueArrD[1] === 7) {
+			dcard4.src = spadeCards[6];
+		} else if (valueArrD[1] === 8) {
+			dcard4.src = spadeCards[7];
+		} else if (valueArrD[1] === 9) {
+			dcard4.src = spadeCards[8];
+		} else if (valueArrD[1] === 10) {
+			dcard4.src = spadeCards[9];
+		} else if (valueArrD[1] === 'Jack') {
+			dcard4.src = spadeCards[10];
+		} else if (valueArrD[1] === 'Queen') {
+			dcard4.src = spadeCards[11];
+		} else if (valueArrD[1] === 'King') {
+			dcard4.src = spadeCards[12];
+		}; 
+	};
+
+
+	if (suitArrD[1] === 'hearts') {
+		if (valueArrD[1] === 'Ace') {
+			dcard4.src = heartCards[0];
+		} else if (valueArrD[1] === 2) {
+			dcard4.src = heartCards[1];
+		} else if (valueArrD[1] === 3) {
+			dcard4.src = heartCards[2];
+		} else if (valueArrD[1] === 4) {
+			dcard4.src = heartCards[3];
+		} else if (valueArrD[1] === 5) {
+			dcard4.src = heartCards[4];
+		} else if (valueArrD[1] === 6) {
+			dcard4.src = heartCards[5];
+		} else if (valueArrD[1] === 7) {
+			dcard4.src = heartCards[6];
+		} else if (valueArrD[1] === 8) {
+			dcard4.src = heartCards[7];
+		} else if (valueArrD[1] === 9) {
+			dcard4.src = heartCards[8];
+		} else if (valueArrD[1] === 10) {
+			dcard4.src = heartCards[9];
+		} else if (valueArrD[1] === 'Jack') {
+			dcard4.src = heartCards[10];
+		} else if (valueArrD[1] === 'Queen') {
+			dcard4.src = heartCards[11];
+		} else if (valueArrD[1] === 'King') {
+			dcard4.src = heartCards[12];
+		};
+	};
+
+
+	if (suitArrD[1] === 'diamonds') {
+		if (valueArrD[1] === 'Ace') {
+			dcard4.src = diamondCards[0];
+		} else if (valueArrD[1] === 2) {
+			dcard4.src = diamondCards[1];
+		} else if (valueArrD[1] === 3) {
+			dcard4.src = diamondCards[2];
+		} else if (valueArrD[1] === 4) {
+			dcard4.src = diamondCards[3];
+		} else if (valueArrD[1] === 5) {
+			dcard4.src = diamondCards[4];
+		} else if (valueArrD[1] === 6) {
+			dcard4.src = diamondCards[5];
+		} else if (valueArrD[1] === 7) {
+			dcard4.src = diamondCards[6];
+		} else if (valueArrD[1] === 8) {
+			dcard4.src = diamondCards[7];
+		} else if (valueArrD[1] === 9) {
+			dcard4.src = diamondCards[8];
+		} else if (valueArrD[1] === 10) {
+			dcard4.src = diamondCards[9];
+		} else if (valueArrD[1] === 'Jack') {
+			dcard4.src = diamondCards[10];
+		} else if (valueArrD[1] === 'Queen') {
+			dcard4.src = diamondCards[11];
+		} else if (valueArrD[1] === 'King') {
+			dcard4.src = diamondCards[12];
+		}; 
+	};
+
+
+	/*card5*/
+	if (suitArrD[2] === 'clubs') {
+		if (valueArrD[2] === 'Ace') {
+			dcard5.src = clubCards[0];
+		} else if (valueArrD[2] === 2) {
+			dcard5.src = clubCards[1];
+		} else if (valueArrD[2] === 3) {
+			dcard5.src = clubCards[2];
+		} else if (valueArrD[2] === 4) {
+			dcard5.src = clubCards[3];
+		} else if (valueArrD[2] === 5) {
+			dcard5.src = clubCards[4];
+		} else if (valueArrD[2] === 6) {
+			dcard5.src = clubCards[5];
+		} else if (valueArrD[2] === 7) {
+			dcard5.src = clubCards[6];
+		} else if (valueArrD[2] === 8) {
+			dcard5.src = clubCards[7];
+		} else if (valueArrD[2] === 9) {
+			dcard5.src = clubCards[8];
+		} else if (valueArrD[2] === 10) {
+			dcard5.src = clubCards[9];
+		} else if (valueArrD[2] === 'Jack') {
+			dcard5.src = clubCards[10];
+		} else if (valueArrD[2] === 'Queen') {
+			dcard5.src = clubCards[11];
+		} else if (valueArrD[2] === 'King') {
+			dcard5.src = clubCards[12];
+		}; 
+	};
+
+
+	if (suitArrD[2] === 'spades') {
+		if (valueArrD[2] === 'Ace') {
+			dcard5.src = spadeCards[0];
+		} else if (valueArrD[2] === 2) {
+			dcard5.src = spadeCards[1];
+		} else if (valueArrD[2] === 3) {
+			dcard5.src = spadeCards[2];
+		} else if (valueArrD[2] === 4) {
+			dcard5.src = spadeCards[3];
+		} else if (valueArrD[2] === 5) {
+			dcard5.src = spadeCards[4];
+		} else if (valueArrD[2] === 6) {
+			dcard5.src = spadeCards[5];
+		} else if (valueArrD[2] === 7) {
+			dcard5.src = spadeCards[6];
+		} else if (valueArrD[2] === 8) {
+			dcard5.src = spadeCards[7];
+		} else if (valueArrD[2] === 9) {
+			dcard5.src = spadeCards[8];
+		} else if (valueArrD[2] === 10) {
+			dcard5.src = spadeCards[9];
+		} else if (valueArrD[2] === 'Jack') {
+			dcard5.src = spadeCards[10];
+		} else if (valueArrD[2] === 'Queen') {
+			dcard5.src = spadeCards[11];
+		} else if (valueArrD[2] === 'King') {
+			dcard5.src = spadeCards[12];
+		}; 
+	};
+
+
+	if (suitArrD[2] === 'hearts') {
+		if (valueArrD[2] === 'Ace') {
+			dcard5.src = heartCards[0];
+		} else if (valueArrD[2] === 2) {
+			dcard5.src = heartCards[1];
+		} else if (valueArrD[2] === 3) {
+			dcard5.src = heartCards[2];
+		} else if (valueArrD[2] === 4) {
+			dcard5.src = heartCards[3];
+		} else if (valueArrD[2] === 5) {
+			dcard5.src = heartCards[4];
+		} else if (valueArrD[2] === 6) {
+			dcard5.src = heartCards[5];
+		} else if (valueArrD[2] === 7) {
+			dcard5.src = heartCards[6];
+		} else if (valueArrD[2] === 8) {
+			dcard5.src = heartCards[7];
+		} else if (valueArrD[2] === 9) {
+			dcard5.src = heartCards[8];
+		} else if (valueArrD[2] === 10) {
+			dcard5.src = heartCards[9];
+		} else if (valueArrD[2] === 'Jack') {
+			dcard5.src = heartCards[10];
+		} else if (valueArrD[2] === 'Queen') {
+			dcard5.src = heartCards[11];
+		} else if (valueArrD[2] === 'King') {
+			dcard5.src = heartCards[12];
+		};
+	};
+
+
+	if (suitArrD[2] === 'diamonds') {
+		if (valueArrD[2] === 'Ace') {
+			dcard5.src = diamondCards[0];
+		} else if (valueArrD[2] === 2) {
+			dcard5.src = diamondCards[1];
+		} else if (valueArrD[2] === 3) {
+			dcard5.src = diamondCards[2];
+		} else if (valueArrD[2] === 4) {
+			dcard5.src = diamondCards[3];
+		} else if (valueArrD[2] === 5) {
+			dcard5.src = diamondCards[4];
+		} else if (valueArrD[2] === 6) {
+			dcard5.src = diamondCards[5];
+		} else if (valueArrD[2] === 7) {
+			dcard5.src = diamondCards[6];
+		} else if (valueArrD[2] === 8) {
+			dcard5.src = diamondCards[7];
+		} else if (valueArrD[2] === 9) {
+			dcard5.src = diamondCards[8];
+		} else if (valueArrD[2] === 10) {
+			dcard5.src = diamondCards[9];
+		} else if (valueArrD[2] === 'Jack') {
+			dcard5.src = diamondCards[10];
+		} else if (valueArrD[2] === 'Queen') {
+			dcard5.src = diamondCards[11];
+		} else if (valueArrD[2] === 'King') {
+			dcard5.src = diamondCards[12];
+		}; 
+	};
 
 
 
@@ -1903,30 +1891,17 @@ if (suitArrD[2] === 'diamonds') {
 	};
 
 	/*Printing messages that discribe how safe it is to hit again*/
-
-	if (cardSum1D <= 11 || cardSum1New1D <= 11 || cardSum1New2D <= 11 
-	|| cardSum1New3D <= 11) {
-	dealBust.innerHTML = 'All clear';
-	}; 
-
-	if (cardSum1D > 11 && cardSum1D <= 14 || cardSum1New1D > 11 && 
-	cardSum1New1D <= 14 || cardSum1New2D > 11 && cardSum1New2D <= 14 
-	|| cardSum1New3D > 11 && cardSum1New3D <= 14) {
-	dealBust.innerHTML = 'Careful';
-	}; 
-
-	if (cardSum1D > 14 && cardSum1D <= 17 || cardSum1New1D > 14 && 
-	cardSum1New1D <= 17 || cardSum1New2D > 14 && cardSum1New2D <= 17 
-	|| cardSum1New3D > 14 && cardSum1New3D <= 17) {
-	dealBust.innerHTML = 'CAREFUL!'; 
-	}; 
-
-	if (cardSum1D > 17 || cardSum1New1D > 17 || cardSum1New2D > 17 
-	|| cardSum1New3D > 17) {
-	dealBust.innerHTML = 'CAREFUL!!!';
+	if (cardSum2 > 0 && cardSum2D > 0) {
+		dealBust.innerHTML = `Your ${cardSum2-cardSum2D} ahead`;
+	} else if (cardSum2 > 0 && cardSum2D === 0) {
+		dealBust.innerHTML = `Your ${cardSum2-cardSum1New3DOut} ahead`;
+	} else if (cardSum2 === 0 && cardSum2D > 0) {
+		dealBust.innerHTML = `Your ${cardSum1New3Out-cardSum2D} ahead`;
+	} else if (cardSum2 === 0 && cardSum2D === 0) {
+		dealBust.innerHTML = `Your ${cardSum1New3Out-cardSum1New3DOut} ahead`;
 	};
-
 	
+
 	/*Animations*/
 	if (scale2.matches) {
 			if (hitCount === 1) {
@@ -1942,39 +1917,39 @@ if (suitArrD[2] === 'diamonds') {
 		document.querySelector('#dflipcard2').style.animation = 'moveincriment 1s forwards';
 		document.querySelector('#dflipcard3').style.animation = 'move3d 1s forwards';
 		
-	} else if (hitCount === 2) {
-		dflipcard1.style.top = '215%';
-		dflipcard1.style.left = '-82.5px';
-		dflipcard2.style.top = '215%';
-		dflipcard2.style.left = '-65px';
-		dflipcard3.style.top = '215%';
-		dflipcard3.style.left = '-47.5px';
-		dflipinner4.id = 'dflipinner4';
-		dflipcard4.id = 'dflipcard4';
+		} else if (hitCount === 2) {
+			dflipcard1.style.top = '215%';
+			dflipcard1.style.left = '-82.5px';
+			dflipcard2.style.top = '215%';
+			dflipcard2.style.left = '-65px';
+			dflipcard3.style.top = '215%';
+			dflipcard3.style.left = '-47.5px';
+			dflipinner4.id = 'dflipinner4';
+			dflipcard4.id = 'dflipcard4';
 
-		document.querySelector('#dflipcard1').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#dflipcard2').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#dflipcard3').style.animation = 'moveincriment 1s forwards';
-		document.querySelector('#dflipcard4').style.animation = 'move4d 1s forwards';
-	} else if (hitCount === 3) {
-		dflipcard1.style.top = '215%';
-		dflipcard1.style.left = '-91.25px';
-		dflipcard2.style.top = '215%';
-		dflipcard2.style.left = '-73.75px';
-		dflipcard3.style.top = '215%';
-		dflipcard3.style.left = '-56.25px';
-		dflipcard4.style.top = '215%';
-		dflipcard4.style.left = '-38.75px';
-		dflipinner5.id = 'dflipinner5';
-		dflipcard5.id = 'dflipcard5';
+			document.querySelector('#dflipcard1').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#dflipcard2').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#dflipcard3').style.animation = 'moveincriment 1s forwards';
+			document.querySelector('#dflipcard4').style.animation = 'move4d 1s forwards';
+		} else if (hitCount === 3) {
+			dflipcard1.style.top = '215%';
+			dflipcard1.style.left = '-91.25px';
+			dflipcard2.style.top = '215%';
+			dflipcard2.style.left = '-73.75px';
+			dflipcard3.style.top = '215%';
+			dflipcard3.style.left = '-56.25px';
+			dflipcard4.style.top = '215%';
+			dflipcard4.style.left = '-38.75px';
+			dflipinner5.id = 'dflipinner5';
+			dflipcard5.id = 'dflipcard5';
 
-		document.querySelector('#dflipcard1').style.animation = 'moveincriment3 1s forwards';
-		document.querySelector('#dflipcard2').style.animation = 'moveincriment3 1s forwards';
-		document.querySelector('#dflipcard3').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#dflipcard4').style.animation = 'moveincriment 1s forwards';
-		document.querySelector('#dflipcard5').style.animation = 'move5d 1s forwards';
-	}
-} else if (scale.matches) {
+			document.querySelector('#dflipcard1').style.animation = 'moveincriment3 1s forwards';
+			document.querySelector('#dflipcard2').style.animation = 'moveincriment3 1s forwards';
+			document.querySelector('#dflipcard3').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#dflipcard4').style.animation = 'moveincriment 1s forwards';
+			document.querySelector('#dflipcard5').style.animation = 'move5d 1s forwards';
+		}
+	} else if (scale.matches) {
 			if (hitCount === 1) {
 		
 		dflipcard1.style.top = '40%';
@@ -1988,41 +1963,41 @@ if (suitArrD[2] === 'diamonds') {
 		document.querySelector('#dflipcard2').style.animation = 'moveincriment 1s forwards';
 		document.querySelector('#dflipcard3').style.animation = 'move3d 1s forwards';
 		
-	} else if (hitCount === 2) {
-		dflipcard1.style.top = '40%';
-		dflipcard1.style.left = '30px';
-		dflipcard2.style.top = '40%';
-		dflipcard2.style.left = '65px';
-		dflipcard3.style.top = '40%';
-		dflipcard3.style.left = '100px';
-		dflipinner4.id = 'dflipinner4';
-		dflipcard4.id = 'dflipcard4';
+		} else if (hitCount === 2) {
+			dflipcard1.style.top = '40%';
+			dflipcard1.style.left = '30px';
+			dflipcard2.style.top = '40%';
+			dflipcard2.style.left = '65px';
+			dflipcard3.style.top = '40%';
+			dflipcard3.style.left = '100px';
+			dflipinner4.id = 'dflipinner4';
+			dflipcard4.id = 'dflipcard4';
 
-		document.querySelector('#dflipcard1').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#dflipcard2').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#dflipcard3').style.animation = 'moveincriment 1s forwards';
-		document.querySelector('#dflipcard4').style.animation = 'move4d 1s forwards';
-	} else if (hitCount === 3) {
-		dflipcard1.style.top = '40%';
-		dflipcard1.style.left = '12.5px';
-		dflipcard2.style.top = '40%';
-		dflipcard2.style.left = '47.5px';
-		dflipcard3.style.top = '40%';
-		dflipcard3.style.left = '82.5px';
-		dflipcard4.style.top = '40%';
-		dflipcard4.style.left = '117.5px';
-		dflipinner5.id = 'dflipinner5';
-		dflipcard5.id = 'dflipcard5';
+			document.querySelector('#dflipcard1').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#dflipcard2').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#dflipcard3').style.animation = 'moveincriment 1s forwards';
+			document.querySelector('#dflipcard4').style.animation = 'move4d 1s forwards';
+		} else if (hitCount === 3) {
+			dflipcard1.style.top = '40%';
+			dflipcard1.style.left = '12.5px';
+			dflipcard2.style.top = '40%';
+			dflipcard2.style.left = '47.5px';
+			dflipcard3.style.top = '40%';
+			dflipcard3.style.left = '82.5px';
+			dflipcard4.style.top = '40%';
+			dflipcard4.style.left = '117.5px';
+			dflipinner5.id = 'dflipinner5';
+			dflipcard5.id = 'dflipcard5';
 
-		document.querySelector('#dflipcard1').style.animation = 'moveincriment3 1s forwards';
-		document.querySelector('#dflipcard2').style.animation = 'moveincriment3 1s forwards';
-		document.querySelector('#dflipcard3').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#dflipcard4').style.animation = 'moveincriment 1s forwards';
-		document.querySelector('#dflipcard5').style.animation = 'move5d 1s forwards';
-	}
-} else {
+			document.querySelector('#dflipcard1').style.animation = 'moveincriment3 1s forwards';
+			document.querySelector('#dflipcard2').style.animation = 'moveincriment3 1s forwards';
+			document.querySelector('#dflipcard3').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#dflipcard4').style.animation = 'moveincriment 1s forwards';
+			document.querySelector('#dflipcard5').style.animation = 'move5d 1s forwards';
+		}
+	} else {
 	
-	if (hitCount === 1) {
+		if (hitCount === 1) {
 		
 		dflipcard1.style.top = '40%';
 		dflipcard1.style.left = '130px';
@@ -2035,48 +2010,44 @@ if (suitArrD[2] === 'diamonds') {
 		document.querySelector('#dflipcard2').style.animation = 'moveincriment 1s forwards';
 		document.querySelector('#dflipcard3').style.animation = 'move3d 1s forwards';
 		
-	} else if (hitCount === 2) {
-		dflipcard1.style.top = '40%';
-		dflipcard1.style.left = '95px';
-		dflipcard2.style.top = '40%';
-		dflipcard2.style.left = '165px';
-		dflipcard3.style.top = '40%';
-		dflipcard3.style.left = '235px';
-		dflipinner4.id = 'dflipinner4';
-		dflipcard4.id = 'dflipcard4';
+		} else if (hitCount === 2) {
+			dflipcard1.style.top = '40%';
+			dflipcard1.style.left = '95px';
+			dflipcard2.style.top = '40%';
+			dflipcard2.style.left = '165px';
+			dflipcard3.style.top = '40%';
+			dflipcard3.style.left = '235px';
+			dflipinner4.id = 'dflipinner4';
+			dflipcard4.id = 'dflipcard4';
 
-		document.querySelector('#dflipcard1').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#dflipcard2').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#dflipcard3').style.animation = 'moveincriment 1s forwards';
-		document.querySelector('#dflipcard4').style.animation = 'move4d 1s forwards';
-	} else if (hitCount === 3) {
-		dflipcard1.style.top = '40%';
-		dflipcard1.style.left = '60px';
-		dflipcard2.style.top = '40%';
-		dflipcard2.style.left = '130px';
-		dflipcard3.style.top = '40%';
-		dflipcard3.style.left = '200px';
-		dflipcard4.style.top = '40%';
-		dflipcard4.style.left = '270px';
-		dflipinner5.id = 'dflipinner5';
-		dflipcard5.id = 'dflipcard5';
+			document.querySelector('#dflipcard1').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#dflipcard2').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#dflipcard3').style.animation = 'moveincriment 1s forwards';
+			document.querySelector('#dflipcard4').style.animation = 'move4d 1s forwards';
+		} else if (hitCount === 3) {
+			dflipcard1.style.top = '40%';
+			dflipcard1.style.left = '60px';
+			dflipcard2.style.top = '40%';
+			dflipcard2.style.left = '130px';
+			dflipcard3.style.top = '40%';
+			dflipcard3.style.left = '200px';
+			dflipcard4.style.top = '40%';
+			dflipcard4.style.left = '270px';
+			dflipinner5.id = 'dflipinner5';
+			dflipcard5.id = 'dflipcard5';
 
-		document.querySelector('#dflipcard1').style.animation = 'moveincriment3 1s forwards';
-		document.querySelector('#dflipcard2').style.animation = 'moveincriment3 1s forwards';
-		document.querySelector('#dflipcard3').style.animation = 'moveincriment2 1s forwards';
-		document.querySelector('#dflipcard4').style.animation = 'moveincriment 1s forwards';
-		document.querySelector('#dflipcard5').style.animation = 'move5d 1s forwards';
-	}
-}
-
-
+			document.querySelector('#dflipcard1').style.animation = 'moveincriment3 1s forwards';
+			document.querySelector('#dflipcard2').style.animation = 'moveincriment3 1s forwards';
+			document.querySelector('#dflipcard3').style.animation = 'moveincriment2 1s forwards';
+			document.querySelector('#dflipcard4').style.animation = 'moveincriment 1s forwards';
+			document.querySelector('#dflipcard5').style.animation = 'move5d 1s forwards';
+		}
+	};
 
 
-
-	
 	timeFunction2();
 
-	};
+  };
 };
 
 
@@ -2089,6 +2060,25 @@ const timeFunction = () => {
 	 if (cardSum1New3Out !== cardNumber3Opt1 + cardNumber4Opt1 + cardNumber5Opt1 + cardSum1) {
 		cardSum1New3Out = cardSum1;
 	 }; 
+
+
+	if (cardSum2 > 0 && cardSum2D > 0) {
+		dealBust.innerHTML = `Your ${cardSum2-cardSum2D} ahead`;
+	};
+
+	if (cardSum2 > 0 && cardSum2D === 0) {
+		dealBust.innerHTML = `Your ${cardSum2-cardSum1D} ahead`;
+	}; 
+
+	if(cardSum2 === 0 && cardSum2D > 0) {
+		dealBust.innerHTML = `Your ${cardSum1New3Out-cardSum2D} ahead`;
+	}; 
+
+	if (cardSum2 === 0 && cardSum2D === 0) {
+		dealBust.innerHTML = `Your ${cardSum1New3Out-cardSum1D} ahead`;
+	};
+
+
 	dflipinner1.id = 'dflipinner1';
 
 	stay.removeEventListener("click", timeFunction);
@@ -2116,125 +2106,125 @@ const timeFunction = () => {
 	if (cardSuit[randSuit1DOut] === 'clubs') {
 		if (cardValue[randValue1DOut] === 'Ace') {
 		dcard1.src = clubCards[0];
-	} else if (cardValue[randValue1DOut] === 2) {
-		dcard1.src = clubCards[1];
-	} else if (cardValue[randValue1DOut] === 3) {
-		dcard1.src = clubCards[2];
-	} else if (cardValue[randValue1DOut] === 4) {
-		dcard1.src = clubCards[3];
-	} else if (cardValue[randValue1DOut] === 5) {
-		dcard1.src = clubCards[4];
-	} else if (cardValue[randValue1DOut] === 6) {
-		dcard1.src = clubCards[5];
-	} else if (cardValue[randValue1DOut] === 7) {
-		dcard1.src = clubCards[6];
-	} else if (cardValue[randValue1DOut] === 8) {
-		dcard1.src = clubCards[7];
-	} else if (cardValue[randValue1DOut] === 9) {
-		dcard1.src = clubCards[8];
-	} else if (cardValue[randValue1DOut] === 10) {
-		dcard1.src = clubCards[9];
-	} else if (cardValue[randValue1DOut] === 'Jack') {
-		dcard1.src = clubCards[10];
-	} else if (cardValue[randValue1DOut] === 'Queen') {
-		dcard1.src = clubCards[11];
-	} else if (cardValue[randValue1DOut] === 'King') {
-		dcard1.src = clubCards[12];
-	}; 
-};
+		} else if (cardValue[randValue1DOut] === 2) {
+			dcard1.src = clubCards[1];
+		} else if (cardValue[randValue1DOut] === 3) {
+			dcard1.src = clubCards[2];
+		} else if (cardValue[randValue1DOut] === 4) {
+			dcard1.src = clubCards[3];
+		} else if (cardValue[randValue1DOut] === 5) {
+			dcard1.src = clubCards[4];
+		} else if (cardValue[randValue1DOut] === 6) {
+			dcard1.src = clubCards[5];
+		} else if (cardValue[randValue1DOut] === 7) {
+			dcard1.src = clubCards[6];
+		} else if (cardValue[randValue1DOut] === 8) {
+			dcard1.src = clubCards[7];
+		} else if (cardValue[randValue1DOut] === 9) {
+			dcard1.src = clubCards[8];
+		} else if (cardValue[randValue1DOut] === 10) {
+			dcard1.src = clubCards[9];
+		} else if (cardValue[randValue1DOut] === 'Jack') {
+			dcard1.src = clubCards[10];
+		} else if (cardValue[randValue1DOut] === 'Queen') {
+			dcard1.src = clubCards[11];
+		} else if (cardValue[randValue1DOut] === 'King') {
+			dcard1.src = clubCards[12];
+		}; 
+	};
 
 
-if (cardSuit[randSuit1DOut] === 'spades') {
-	if (cardValue[randValue1DOut] === 'Ace') {
-		dcard1.src = spadeCards[0];
-	} else if (cardValue[randValue1DOut] === 2) {
-		dcard1.src = spadeCards[1];
-	} else if (cardValue[randValue1DOut] === 3) {
-		dcard1.src = spadeCards[2];
-	} else if (cardValue[randValue1DOut] === 4) {
-		dcard1.src = spadeCards[3];
-	} else if (cardValue[randValue1DOut] === 5) {
-		dcard1.src = spadeCards[4];
-	} else if (cardValue[randValue1DOut] === 6) {
-		dcard1.src = spadeCards[5];
-	} else if (cardValue[randValue1DOut] === 7) {
-		dcard1.src = spadeCards[6];
-	} else if (cardValue[randValue1DOut] === 8) {
-		dcard1.src = spadeCards[7];
-	} else if (cardValue[randValue1DOut] === 9) {
-		dcard1.src = spadeCards[8];
-	} else if (cardValue[randValue1DOut] === 10) {
-		dcard1.src = spadeCards[9];
-	} else if (cardValue[randValue1DOut] === 'Jack') {
-		dcard1.src = spadeCards[10];
-	} else if (cardValue[randValue1DOut] === 'Queen') {
-		dcard1.src = spadeCards[11];
-	} else if (cardValue[randValue1DOut] === 'King') {
-		dcard1.src = spadeCards[12];
-	}; 
-};
+	if (cardSuit[randSuit1DOut] === 'spades') {
+		if (cardValue[randValue1DOut] === 'Ace') {
+			dcard1.src = spadeCards[0];
+		} else if (cardValue[randValue1DOut] === 2) {
+			dcard1.src = spadeCards[1];
+		} else if (cardValue[randValue1DOut] === 3) {
+			dcard1.src = spadeCards[2];
+		} else if (cardValue[randValue1DOut] === 4) {
+			dcard1.src = spadeCards[3];
+		} else if (cardValue[randValue1DOut] === 5) {
+			dcard1.src = spadeCards[4];
+		} else if (cardValue[randValue1DOut] === 6) {
+			dcard1.src = spadeCards[5];
+		} else if (cardValue[randValue1DOut] === 7) {
+			dcard1.src = spadeCards[6];
+		} else if (cardValue[randValue1DOut] === 8) {
+			dcard1.src = spadeCards[7];
+		} else if (cardValue[randValue1DOut] === 9) {
+			dcard1.src = spadeCards[8];
+		} else if (cardValue[randValue1DOut] === 10) {
+			dcard1.src = spadeCards[9];
+		} else if (cardValue[randValue1DOut] === 'Jack') {
+			dcard1.src = spadeCards[10];
+		} else if (cardValue[randValue1DOut] === 'Queen') {
+			dcard1.src = spadeCards[11];
+		} else if (cardValue[randValue1DOut] === 'King') {
+			dcard1.src = spadeCards[12];
+		}; 
+	};
 
 
-if (cardSuit[randSuit1DOut] === 'hearts') {
-	if (cardValue[randValue1DOut] === 'Ace') {
-		dcard1.src = heartCards[0];
-	} else if (cardValue[randValue1DOut] === 2) {
-		dcard1.src = heartCards[1];
-	} else if (cardValue[randValue1DOut] === 3) {
-		dcard1.src = heartCards[2];
-	} else if (cardValue[randValue1DOut] === 4) {
-		dcard1.src = heartCards[3];
-	} else if (cardValue[randValue1DOut] === 5) {
-		dcard1.src = heartCards[4];
-	} else if (cardValue[randValue1DOut] === 6) {
-		dcard1.src = heartCards[5];
-	} else if (cardValue[randValue1DOut] === 7) {
-		dcard1.src = heartCards[6];
-	} else if (cardValue[randValue1DOut] === 8) {
-		dcard1.src = heartCards[7];
-	} else if (cardValue[randValue1DOut] === 9) {
-		dcard1.src = heartCards[8];
-	} else if (cardValue[randValue1DOut] === 10) {
-		dcard1.src = heartCards[9];
-	} else if (cardValue[randValue1DOut] === 'Jack') {
-		dcard1.src = heartCards[10];
-	} else if (cardValue[randValue1DOut] === 'Queen') {
-		dcard1.src = heartCards[11];
-	} else if (cardValue[randValue1DOut] === 'King') {
-		dcard1.src = heartCards[12];
-	}; 
-};
+	if (cardSuit[randSuit1DOut] === 'hearts') {
+		if (cardValue[randValue1DOut] === 'Ace') {
+			dcard1.src = heartCards[0];
+		} else if (cardValue[randValue1DOut] === 2) {
+			dcard1.src = heartCards[1];
+		} else if (cardValue[randValue1DOut] === 3) {
+			dcard1.src = heartCards[2];
+		} else if (cardValue[randValue1DOut] === 4) {
+			dcard1.src = heartCards[3];
+		} else if (cardValue[randValue1DOut] === 5) {
+			dcard1.src = heartCards[4];
+		} else if (cardValue[randValue1DOut] === 6) {
+			dcard1.src = heartCards[5];
+		} else if (cardValue[randValue1DOut] === 7) {
+			dcard1.src = heartCards[6];
+		} else if (cardValue[randValue1DOut] === 8) {
+			dcard1.src = heartCards[7];
+		} else if (cardValue[randValue1DOut] === 9) {
+			dcard1.src = heartCards[8];
+		} else if (cardValue[randValue1DOut] === 10) {
+			dcard1.src = heartCards[9];
+		} else if (cardValue[randValue1DOut] === 'Jack') {
+			dcard1.src = heartCards[10];
+		} else if (cardValue[randValue1DOut] === 'Queen') {
+			dcard1.src = heartCards[11];
+		} else if (cardValue[randValue1DOut] === 'King') {
+			dcard1.src = heartCards[12];
+		}; 
+	};
 
 
-if (cardSuit[randSuit1DOut] === 'diamonds') {
-	if (cardValue[randValue1DOut] === 'Ace') {
-		dcard1.src = diamondCards[0];
-	} else if (cardValue[randValue1DOut] === 2) {
-		dcard1.src = diamondCards[1];
-	} else if (cardValue[randValue1DOut] === 3) {
-		dcard1.src = diamondCards[2];
-	} else if (cardValue[randValue1DOut] === 4) {
-		dcard1.src = diamondCards[3];
-	} else if (cardValue[randValue1DOut] === 5) {
-		dcard1.src = diamondCards[4];
-	} else if (cardValue[randValue1DOut] === 6) {
-		dcard1.src = diamondCards[5];
-	} else if (cardValue[randValue1DOut] === 7) {
-		dcard1.src = diamondCards[6];
-	} else if (cardValue[randValue1DOut] === 8) {
-		dcard1.src = diamondCards[7];
-	} else if (cardValue[randValue1DOut] === 9) {
-		dcard1.src = diamondCards[8];
-	} else if (cardValue[randValue1DOut] === 10) {
-		dcard1.src = diamondCards[9];
-	} else if (cardValue[randValue1DOut] === 'Jack') {
-		dcard1.src = diamondCards[10];
-	} else if (cardValue[randValue1DOut] === 'Queen') {
-		dcard1.src = diamondCards[11];
-	} else if (cardValue[randValue1DOut] === 'King') {
-		dcard1.src = diamondCards[12];
-	}; 
-};
+	if (cardSuit[randSuit1DOut] === 'diamonds') {
+		if (cardValue[randValue1DOut] === 'Ace') {
+			dcard1.src = diamondCards[0];
+		} else if (cardValue[randValue1DOut] === 2) {
+			dcard1.src = diamondCards[1];
+		} else if (cardValue[randValue1DOut] === 3) {
+			dcard1.src = diamondCards[2];
+		} else if (cardValue[randValue1DOut] === 4) {
+			dcard1.src = diamondCards[3];
+		} else if (cardValue[randValue1DOut] === 5) {
+			dcard1.src = diamondCards[4];
+		} else if (cardValue[randValue1DOut] === 6) {
+			dcard1.src = diamondCards[5];
+		} else if (cardValue[randValue1DOut] === 7) {
+			dcard1.src = diamondCards[6];
+		} else if (cardValue[randValue1DOut] === 8) {
+			dcard1.src = diamondCards[7];
+		} else if (cardValue[randValue1DOut] === 9) {
+			dcard1.src = diamondCards[8];
+		} else if (cardValue[randValue1DOut] === 10) {
+			dcard1.src = diamondCards[9];
+		} else if (cardValue[randValue1DOut] === 'Jack') {
+			dcard1.src = diamondCards[10];
+		} else if (cardValue[randValue1DOut] === 'Queen') {
+			dcard1.src = diamondCards[11];
+		} else if (cardValue[randValue1DOut] === 'King') {
+			dcard1.src = diamondCards[12];
+		}; 
+	};
 
 
 
@@ -2494,132 +2484,132 @@ const genDealerHand = () => {
 	};
 
 
-/*card 1 blank*/
+	/*card 1 blank*/
 
 
-/*card 2*/
-if (cardSuit[randSuit2D] === 'clubs') {
-	if (cardValue[randValue2D] === 'Ace') {
-		dcard2.src = clubCards[0];
-	} else if (cardValue[randValue2D] === 2) {
-		dcard2.src = clubCards[1];
-	} else if (cardValue[randValue2D] === 3) {
-		dcard2.src = clubCards[2];
-	} else if (cardValue[randValue2D] === 4) {
-		dcard2.src = clubCards[3];
-	} else if (cardValue[randValue2D] === 5) {
-		dcard2.src = clubCards[4];
-	} else if (cardValue[randValue2D] === 6) {
-		dcard2.src = clubCards[5];
-	} else if (cardValue[randValue2D] === 7) {
-		dcard2.src = clubCards[6];
-	} else if (cardValue[randValue2D] === 8) {
-		dcard2.src = clubCards[7];
-	} else if (cardValue[randValue2D] === 9) {
-		dcard2.src = clubCards[8];
-	} else if (cardValue[randValue2D] === 10) {
-		dcard2.src = clubCards[9];
-	} else if (cardValue[randValue2D] === 'Jack') {
-		dcard2.src = clubCards[10];
-	} else if (cardValue[randValue2D] === 'Queen') {
-		dcard2.src = clubCards[11];
-	} else if (cardValue[randValue2D] === 'King') {
-		dcard2.src = clubCards[12];
-	}; 
-};
-
-
-if (cardSuit[randSuit2D] === 'spades') {
-	if (cardValue[randValue2D] === 'Ace') {
-		dcard2.src = spadeCards[0];
-	} else if (cardValue[randValue2D] === 2) {
-		dcard2.src = spadeCards[1];
-	} else if (cardValue[randValue2D] === 3) {
-		dcard2.src = spadeCards[2];
-	} else if (cardValue[randValue2D] === 4) {
-		dcard2.src = spadeCards[3];
-	} else if (cardValue[randValue2D] === 5) {
-		dcard2.src = spadeCards[4];
-	} else if (cardValue[randValue2D] === 6) {
-		dcard2.src = spadeCards[5];
-	} else if (cardValue[randValue2D] === 7) {
-		dcard2.src = spadeCards[6];
-	} else if (cardValue[randValue2D] === 8) {
-		dcard2.src = spadeCards[7];
-	} else if (cardValue[randValue2D] === 9) {
-		dcard2.src = spadeCards[8];
-	} else if (cardValue[randValue2D] === 10) {
-		dcard2.src = spadeCards[9];
-	} else if (cardValue[randValue2D] === 'Jack') {
-		dcard2.src = spadeCards[10];
-	} else if (cardValue[randValue2D] === 'Queen') {
-		dcard2.src = spadeCards[11];
-	} else if (cardValue[randValue2D] === 'King') {
-		dcard2.src = spadeCards[12];
-	}; 
-};
-
-
-if (cardSuit[randSuit2D] === 'hearts') {
-	if (cardValue[randValue2D] === 'Ace') {
-		dcard2.src = heartCards[0];
-	} else if (cardValue[randValue2D] === 2) {
-		dcard2.src = heartCards[1];
-	} else if (cardValue[randValue2D] === 3) {
-		dcard2.src = heartCards[2];
-	} else if (cardValue[randValue2D] === 4) {
-		dcard2.src = heartCards[3];
-	} else if (cardValue[randValue2D] === 5) {
-		dcard2.src = heartCards[4];
-	} else if (cardValue[randValue2D] === 6) {
-		dcard2.src = heartCards[5];
-	} else if (cardValue[randValue2D] === 7) {
-		dcard2.src = heartCards[6];
-	} else if (cardValue[randValue2D] === 8) {
-		dcard2.src = heartCards[7];
-	} else if (cardValue[randValue2D] === 9) {
-		dcard2.src = heartCards[8];
-	} else if (cardValue[randValue2D] === 10) {
-		dcard2.src = heartCards[9];
-	} else if (cardValue[randValue2D] === 'Jack') {
-		dcard2.src = heartCards[10];
-	} else if (cardValue[randValue2D] === 'Queen') {
-		dcard2.src = heartCards[11];
-	} else if (cardValue[randValue2D] === 'King') {
-		dcard2.src = heartCards[12];
+	/*card 2*/
+	if (cardSuit[randSuit2D] === 'clubs') {
+		if (cardValue[randValue2D] === 'Ace') {
+			dcard2.src = clubCards[0];
+		} else if (cardValue[randValue2D] === 2) {
+			dcard2.src = clubCards[1];
+		} else if (cardValue[randValue2D] === 3) {
+			dcard2.src = clubCards[2];
+		} else if (cardValue[randValue2D] === 4) {
+			dcard2.src = clubCards[3];
+		} else if (cardValue[randValue2D] === 5) {
+			dcard2.src = clubCards[4];
+		} else if (cardValue[randValue2D] === 6) {
+			dcard2.src = clubCards[5];
+		} else if (cardValue[randValue2D] === 7) {
+			dcard2.src = clubCards[6];
+		} else if (cardValue[randValue2D] === 8) {
+			dcard2.src = clubCards[7];
+		} else if (cardValue[randValue2D] === 9) {
+			dcard2.src = clubCards[8];
+		} else if (cardValue[randValue2D] === 10) {
+			dcard2.src = clubCards[9];
+		} else if (cardValue[randValue2D] === 'Jack') {
+			dcard2.src = clubCards[10];
+		} else if (cardValue[randValue2D] === 'Queen') {
+			dcard2.src = clubCards[11];
+		} else if (cardValue[randValue2D] === 'King') {
+			dcard2.src = clubCards[12];
+		}; 
 	};
-};
 
 
-if (cardSuit[randSuit2D] === 'diamonds') {
-	if (cardValue[randValue2D] === 'Ace') {
-		dcard2.src = diamondCards[0];
-	} else if (cardValue[randValue2D] === 2) {
-		dcard2.src = diamondCards[1];
-	} else if (cardValue[randValue2D] === 3) {
-		dcard2.src = diamondCards[2];
-	} else if (cardValue[randValue2D] === 4) {
-		dcard2.src = diamondCards[3];
-	} else if (cardValue[randValue2D] === 5) {
-		dcard2.src = diamondCards[4];
-	} else if (cardValue[randValue2D] === 6) {
-		dcard2.src = diamondCards[5];
-	} else if (cardValue[randValue2D] === 7) {
-		dcard2.src = diamondCards[6];
-	} else if (cardValue[randValue2D] === 8) {
-		dcard2.src = diamondCards[7];
-	} else if (cardValue[randValue2D] === 9) {
-		dcard2.src = diamondCards[8];
-	} else if (cardValue[randValue2D] === 10) {
-		dcard2.src = diamondCards[9];
-	} else if (cardValue[randValue2D] === 'Jack') {
-		dcard2.src = diamondCards[10];
-	} else if (cardValue[randValue2D] === 'Queen') {
-		dcard2.src = diamondCards[11];
-	} else if (cardValue[randValue2D] === 'King') {
-		dcard2.src = diamondCards[12];
-	}; 
-};
+	if (cardSuit[randSuit2D] === 'spades') {
+		if (cardValue[randValue2D] === 'Ace') {
+			dcard2.src = spadeCards[0];
+		} else if (cardValue[randValue2D] === 2) {
+			dcard2.src = spadeCards[1];
+		} else if (cardValue[randValue2D] === 3) {
+			dcard2.src = spadeCards[2];
+		} else if (cardValue[randValue2D] === 4) {
+			dcard2.src = spadeCards[3];
+		} else if (cardValue[randValue2D] === 5) {
+			dcard2.src = spadeCards[4];
+		} else if (cardValue[randValue2D] === 6) {
+			dcard2.src = spadeCards[5];
+		} else if (cardValue[randValue2D] === 7) {
+			dcard2.src = spadeCards[6];
+		} else if (cardValue[randValue2D] === 8) {
+			dcard2.src = spadeCards[7];
+		} else if (cardValue[randValue2D] === 9) {
+			dcard2.src = spadeCards[8];
+		} else if (cardValue[randValue2D] === 10) {
+			dcard2.src = spadeCards[9];
+		} else if (cardValue[randValue2D] === 'Jack') {
+			dcard2.src = spadeCards[10];
+		} else if (cardValue[randValue2D] === 'Queen') {
+			dcard2.src = spadeCards[11];
+		} else if (cardValue[randValue2D] === 'King') {
+			dcard2.src = spadeCards[12];
+		}; 
+	};
+
+
+	if (cardSuit[randSuit2D] === 'hearts') {
+		if (cardValue[randValue2D] === 'Ace') {
+			dcard2.src = heartCards[0];
+		} else if (cardValue[randValue2D] === 2) {
+			dcard2.src = heartCards[1];
+		} else if (cardValue[randValue2D] === 3) {
+			dcard2.src = heartCards[2];
+		} else if (cardValue[randValue2D] === 4) {
+			dcard2.src = heartCards[3];
+		} else if (cardValue[randValue2D] === 5) {
+			dcard2.src = heartCards[4];
+		} else if (cardValue[randValue2D] === 6) {
+			dcard2.src = heartCards[5];
+		} else if (cardValue[randValue2D] === 7) {
+			dcard2.src = heartCards[6];
+		} else if (cardValue[randValue2D] === 8) {
+			dcard2.src = heartCards[7];
+		} else if (cardValue[randValue2D] === 9) {
+			dcard2.src = heartCards[8];
+		} else if (cardValue[randValue2D] === 10) {
+			dcard2.src = heartCards[9];
+		} else if (cardValue[randValue2D] === 'Jack') {
+			dcard2.src = heartCards[10];
+		} else if (cardValue[randValue2D] === 'Queen') {
+			dcard2.src = heartCards[11];
+		} else if (cardValue[randValue2D] === 'King') {
+			dcard2.src = heartCards[12];
+		};
+	};
+
+
+	if (cardSuit[randSuit2D] === 'diamonds') {
+		if (cardValue[randValue2D] === 'Ace') {
+			dcard2.src = diamondCards[0];
+		} else if (cardValue[randValue2D] === 2) {
+			dcard2.src = diamondCards[1];
+		} else if (cardValue[randValue2D] === 3) {
+			dcard2.src = diamondCards[2];
+		} else if (cardValue[randValue2D] === 4) {
+			dcard2.src = diamondCards[3];
+		} else if (cardValue[randValue2D] === 5) {
+			dcard2.src = diamondCards[4];
+		} else if (cardValue[randValue2D] === 6) {
+			dcard2.src = diamondCards[5];
+		} else if (cardValue[randValue2D] === 7) {
+			dcard2.src = diamondCards[6];
+		} else if (cardValue[randValue2D] === 8) {
+			dcard2.src = diamondCards[7];
+		} else if (cardValue[randValue2D] === 9) {
+			dcard2.src = diamondCards[8];
+		} else if (cardValue[randValue2D] === 10) {
+			dcard2.src = diamondCards[9];
+		} else if (cardValue[randValue2D] === 'Jack') {
+			dcard2.src = diamondCards[10];
+		} else if (cardValue[randValue2D] === 'Queen') {
+			dcard2.src = diamondCards[11];
+		} else if (cardValue[randValue2D] === 'King') {
+			dcard2.src = diamondCards[12];
+		}; 
+	};
 
 
 
@@ -2652,27 +2642,8 @@ if (cardSuit[randSuit2D] === 'diamonds') {
 		dealVal.innerHTML = `At least ${cardNumber2Opt1D+1}`;
 	};
 	
+	dealBust.innerHTML = 'Could be anything';
 
-
-	/*Printing bust statment and other statements based on the current sum*/
-	
-
-			if (cardSum1D <= 11) {
-		dealBust.innerHTML = 'All clear';
-	}; 
-
-		if (cardSum1D > 11 && cardSum1D <= 14) {
-		dealBust.innerHTML = 'Careful';
-	}; 
-
-		if (cardSum1D > 14 && cardSum1D <= 17) {
-		dealBust.innerHTML = 'CAREFUL!'; 
-	};
-
-		if (cardSum1D > 17) {
-		dealBust.innerHTML = 'CAREFUL!!!';
-	};
-	
 
 	/*Resetting values from previous games after a new hand is dealt*/
 
@@ -2733,6 +2704,7 @@ const winmessage = document.querySelector('.winmessage');
 const winFunction = () => {
 	playerscore.innerHTML ++;
 	winmessage.innerHTML = 'You Win'
+	dealBust.innerHTML = 'Good game';
 
 };
 
@@ -2740,14 +2712,14 @@ const winFunction = () => {
 const winFunctionD = () => {
 	dealerscore.innerHTML ++;
 	winmessage.innerHTML = 'Dealer Wins';
-
+	dealBust.innerHTML = 'Good game';
 
 };
 
 
 const draw = () => {
 	winmessage.innerHTML = 'Draw';
-
+	dealBust.innerHTML = 'Good game';
 };
 
 
@@ -2768,85 +2740,87 @@ const resetAnimations = () => {
 
 	dflipinner1.id = 'dflipinner1';
 
-/*Doing these as left when you go to a wider size the left never resets and it causes problems.
-so instead of resetting left to zero everytime it's better to just set everything that was right
-to negative right instead of left*/
- if (scale2.matches) {
-	flipcard1.style.right = '105%';
-	flipcard2.style.right = '105%';
-	flipcard3.style.right = '105%';
-	flipcard4.style.right = '105%';
-	flipcard5.style.right = '105%';
-	flipcard1.style.top = '70%';
-	flipcard2.style.top = '70%';
-	flipcard3.style.top = '70%';
-	flipcard4.style.top = '70%';
-	flipcard5.style.top = '70%';
 
-} else if(scale.matches) {
-	
-	flipcard1.style.top = '80%';
-	flipcard1.style.right = '48.3333333333333333333333333333333333333333333333%';
-	flipcard2.style.right = '48.333333333333333333333333333333333333333333333%';
-	flipcard2.style.top = '80%';
-	flipcard3.style.right = '48.333333333333333333333333333333333333333333333%';
-	flipcard3.style.top = '80%';
-	flipcard4.style.right = '48.333333333333333333333333333333333333333333333%';
-	flipcard4.style.top = '80%';
-	flipcard5.style.right = '48.333333333333333333333333333333333333333333333%';
-	flipcard5.style.top = '80%';
+ 	if (scale2.matches) {
+		flipcard1.style.right = '105%';
+		flipcard2.style.right = '105%';
+		flipcard3.style.right = '105%';
+		flipcard4.style.right = '105%';
+		flipcard5.style.right = '105%';
+		flipcard1.style.top = '70%';
+		flipcard2.style.top = '70%';
+		flipcard3.style.top = '70%';
+		flipcard4.style.top = '70%';
+		flipcard5.style.top = '70%';
 
-}else {
-	flipcard1.style.top = '70%';
-	flipcard1.style.right = '54.16666666666666666666666666666666666667%';
-	flipcard2.style.top = '70%';
-	flipcard2.style.right = '54.166666666666666666666666666666666666667%';
-	flipcard3.style.top = '70%';
-	flipcard3.style.right = '54.16666666666666666666666666666666666667%';
-	flipcard4.style.top = '70%';
-	flipcard4.style.right = '54.1666666666666666666666666666666666666667%';
-	flipcard5.style.top = '70%';
-	flipcard5.style.right = '54.16666666666666666666666666666666666666667%';
-};
+	} else if (scale.matches) {
+		
+		flipcard1.style.top = '80%';
+		flipcard1.style.right = '48.3333333333333333333333333333333333333333333333%';
+		flipcard2.style.right = '48.333333333333333333333333333333333333333333333%';
+		flipcard2.style.top = '80%';
+		flipcard3.style.right = '48.333333333333333333333333333333333333333333333%';
+		flipcard3.style.top = '80%';
+		flipcard4.style.right = '48.333333333333333333333333333333333333333333333%';
+		flipcard4.style.top = '80%';
+		flipcard5.style.right = '48.333333333333333333333333333333333333333333333%';
+		flipcard5.style.top = '80%';
+
+	}else {
+		flipcard1.style.top = '70%';
+		flipcard1.style.right = '54.16666666666666666666666666666666666667%';
+		flipcard2.style.top = '70%';
+		flipcard2.style.right = '54.166666666666666666666666666666666666667%';
+		flipcard3.style.top = '70%';
+		flipcard3.style.right = '54.16666666666666666666666666666666666667%';
+		flipcard4.style.top = '70%';
+		flipcard4.style.right = '54.1666666666666666666666666666666666666667%';
+		flipcard5.style.top = '70%';
+		flipcard5.style.right = '54.16666666666666666666666666666666666666667%';
+	};
 
 /*I should combine the above and below*/
 	
 
 	if (scale2.matches) {
-	dflipcard1.style.left = '-75%';
-	dflipcard2.style.left = '-75%';
-	dflipcard3.style.left = '-75%';
-	dflipcard4.style.left = '-75%';
-	dflipcard5.style.left = '-75%';
-	dflipcard1.style.top = '70%';
-	dflipcard2.style.top = '70%';
-	dflipcard3.style.top = '70%';
-	dflipcard4.style.top = '70%';
-	dflipcard5.style.top = '70%';
-} else if(scale.matches) {
-	dflipcard1.style.left = '40%';
-	dflipcard1.style.top = '80%';
-	dflipcard2.style.left = '40%';
-	dflipcard2.style.top = '80%';
-	dflipcard3.style.left = '40%';
-	dflipcard3.style.top = '80%';
-	dflipcard4.style.left = '40%';
-	dflipcard4.style.top = '80%';
-	dflipcard5.style.left = '40%';
-	dflipcard5.style.top = '80%';			
-} else {
+		
+		dflipcard1.style.left = '-75%';
+		dflipcard2.style.left = '-75%';
+		dflipcard3.style.left = '-75%';
+		dflipcard4.style.left = '-75%';
+		dflipcard5.style.left = '-75%';
+		dflipcard1.style.top = '70%';
+		dflipcard2.style.top = '70%';
+		dflipcard3.style.top = '70%';
+		dflipcard4.style.top = '70%';
+		dflipcard5.style.top = '70%';
 
-	dflipcard1.style.top = '70%';
-	dflipcard1.style.left = '40%';
-	dflipcard2.style.top = '70%';
-	dflipcard2.style.left = '40%';
-	dflipcard3.style.top = '70%';
-	dflipcard3.style.left = '40%';
-	dflipcard4.style.top = '70%';
-	dflipcard4.style.left = '40%';
-	dflipcard5.style.top = '70%';
-	dflipcard5.style.left = '40%';
-};
+	} else if(scale.matches) {
+		
+		dflipcard1.style.left = '40%';
+		dflipcard1.style.top = '80%';
+		dflipcard2.style.left = '40%';
+		dflipcard2.style.top = '80%';
+		dflipcard3.style.left = '40%';
+		dflipcard3.style.top = '80%';
+		dflipcard4.style.left = '40%';
+		dflipcard4.style.top = '80%';
+		dflipcard5.style.left = '40%';
+		dflipcard5.style.top = '80%';
+
+	} else {
+
+		dflipcard1.style.top = '70%';
+		dflipcard1.style.left = '40%';
+		dflipcard2.style.top = '70%';
+		dflipcard2.style.left = '40%';
+		dflipcard3.style.top = '70%';
+		dflipcard3.style.left = '40%';
+		dflipcard4.style.top = '70%';
+		dflipcard4.style.left = '40%';
+		dflipcard5.style.top = '70%';
+		dflipcard5.style.left = '40%';
+	};
 
 	dflipcard2.style.display = 'none';
 	flipinner3.style.display = 'none';
@@ -2901,6 +2875,12 @@ to negative right instead of left*/
 	flipinner1.style.display = 'none';
 	flipinner2.style.display = 'none';
 	
+	hit.removeEventListener("click", addCard);
+
+	stay.removeEventListener("click", pressStay);
+
+	stay.removeEventListener("click", timeFunction);
+
 	gameOn = 0;
 
    generateHands();
