@@ -397,7 +397,7 @@ nav h1, nav h2 {
 
 	100% {
 		top: 40%;
-		left: 10.8333333333333333333333333333333333333333%;
+		left: 130px;
 
 	}	
 }
@@ -405,7 +405,7 @@ nav h1, nav h2 {
 @keyframes move2d {
 	100% {
 		top: 40%;
-		left: 16.666666666666666666666666666666666666667%;
+		left: 200px;
 	}
 }
 
@@ -414,21 +414,21 @@ nav h1, nav h2 {
 @keyframes move3d {
 	100% {
 		top: 40%;
-		left: 19.58333333333333333333333333333333333333333333333%;
+		left: 235px;
 	}
 }
 
 @keyframes move4d {
 	100% {
 		top: 40%;
-		left: 22.5%;
+		left: 270px;
 	}
 }
 
 @keyframes move5d {
 	100% {
 		top: 40%;
-		left: 25.4166666666666666666666666666666666666666666666666666667%;
+		left: 305px;
 	}
 }
 
@@ -541,14 +541,14 @@ nav h1, nav h2 {
 @keyframes move {
 	100% {
 		top: 40%;
-		right: 16.6666666666666666666666666666666666666666666666667%;
+		right: 200px;
 	}
 }
 
 @keyframes move2 {
 	100% {
 		top: 40%;
-		right: 10.833333333333333333333333333333333333333333333333333333%;
+		right: 130px;
 	}
 }
 
@@ -556,21 +556,21 @@ nav h1, nav h2 {
 @keyframes move3 {
 	100% {
 		top: 40%;
-		right: 7.916666666666666666666666666666666666666666666666666667%;
+		right: 95px;
 	}
 }
 
 @keyframes move4 {
 	100% {
 		top: 40%;
-		right: 5%;
+		right: 60px;
 	}
 }
 
 @keyframes move5 {
 	100% {
 		top: 40%;
-		right: 2.0833333333333333333333333333333333333333333333333333333333333%;
+		right: 25px;
 	}
 }
 
@@ -740,14 +740,14 @@ the card value showing. Or I'll have to link to smaller card pictures at that sc
 @keyframes move {
 	100% {
 		top: 40%;
-		right: 13.75%;
+		right: 82.5px;
 	}
 }
 
 @keyframes move2 {
 	100% {
 		top: 40%;
-		right: 7.916666666666666666666666666666666666666666666666666667%;
+		right: 47.5px;
 	}
 }
 
@@ -755,21 +755,21 @@ the card value showing. Or I'll have to link to smaller card pictures at that sc
 @keyframes move3 {
 	100% {
 		top: 40%;
-		right: 5%;
+		right: 30px;
 	}
 }
 
 @keyframes move4 {
 	100% {
 		top: 40%;
-		right: 2.083333333333333333333333333333333333333333333333333333333334%;
+		right: 12.5px;
 	}
 }
 
 @keyframes move5 {
 	100% {
 		top: 40%;
-		right: -.833333333333333333333333333333333333333333333333333333333333333%;
+		right: -5px;
 	}
 }
 
@@ -810,15 +810,15 @@ the card value showing. Or I'll have to link to smaller card pictures at that sc
 
 	100% {
 		top: 40%;
-		left: 5.72%;
-
+		left: 30px;
+		/*34.32px*/
 	}	
 }
 
 @keyframes move2d {
 	100% {
 		top: 40%;
-		left: 16.66666666666666666666666666666666666666666666666666666666667%;
+		left: 100px;
 	}
 }
 
@@ -827,21 +827,21 @@ the card value showing. Or I'll have to link to smaller card pictures at that sc
 @keyframes move3d {
 	100% {
 		top: 40%;
-		left: 16.6666666666666666666666666666666666666666666666666666666667%;
+		left: 100px;
 	}
 }
 
 @keyframes move4d {
 	100% {
 		top: 40%;
-		left: 19.5833333333333333333333333333333333333333333333333333333333333%;
+		left: 117.5px;
 	}
 }
 
 @keyframes move5d {
 	100% {
 		top: 40%;
-		left: 22.49999999999999999999999999999999999999999999999999999999999999999%;
+		left: 135px;
 	}
 }
 
@@ -1026,17 +1026,17 @@ this. I still want to try to make the animations able to be played together so t
 when you press hit to fast but if i don't get to that point right away i'm not to worried about it.
 */
 		.deck {
-			left: -75%;
+			left: -75px;
 			top: 70%;
 		}
 
 		.flipcard {
-			right: 105%;
+			right: 105px;
 			top: 70%;
 		}
 
 		.dflipcard {
-			left: -75%;
+			left: -75px;
 			top: 70%;
 		}
 		
@@ -1065,14 +1065,14 @@ when you press hit to fast but if i don't get to that point right away i'm not t
 	@keyframes move {
 		100% {
 			top: 215%;
-			right: -56.25%;
+			right: -56.25px;
 		}
 	}
 
 	@keyframes move2 {
 		100% {
 			top: 215%;
-			right: -73.75%;
+			right: -73.75px;
 		}
 	}
 
@@ -1103,21 +1103,21 @@ on scale 1 so I'm going to have to change that also.*/
 	@keyframes move3 {
 		100% {
 			top: 215%;
-			right: -82.5%;
+			right: -82.5px;
 		}
 	}
 
 	@keyframes move4 {
 		100% {
 			top: 215%;
-			right: -90%;
+			right: -91.25px;
 		}
 	}
 
 	@keyframes move5 {
 		100% {
 			top: 215%;
-			right: -98.75%;
+			right: -100px;
 		}
 	}
 
@@ -1142,13 +1142,13 @@ on scale 1 so I'm going to have to change that also.*/
 
 	@keyframes moveincrimentpre {
 		100% {
-			transform: translate(17.5px, 0px);
+			transform: translate(26.25px, 0px);
 		}
 	}
 
 	@keyframes moveincrimentpre2 {
 		100% {
-			transform: translate(-17.5px, 0px);
+			transform: translate(-26.25px, 0px);
 		}
 	}
 
@@ -1158,7 +1158,7 @@ on scale 1 so I'm going to have to change that also.*/
 
 		100% {
 			top: 215%;
-			left: -90%;
+			left: -100px;
 
 		}	
 	}
@@ -1166,7 +1166,7 @@ on scale 1 so I'm going to have to change that also.*/
 	@keyframes move2d {
 		100% {
 			top: 215%;
-			left: -20%;
+			left: -30px;
 		}
 	}
 
@@ -1175,21 +1175,21 @@ on scale 1 so I'm going to have to change that also.*/
 	@keyframes move3d {
 		100% {
 			top: 215%;
-			left: -100%;
+			left: -47.5px;
 		}
 	}
 
 	@keyframes move4d {
 		100% {
 			top: 215%;
-			left: -100%;
+			left: -38.75px;
 		}
 	}
 
 	@keyframes move5d {
 		100% {
 			top: 215%;
-			left: -100%;
+			left: -30px;
 		}
 	}
 
