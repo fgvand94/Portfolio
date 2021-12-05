@@ -8,28 +8,28 @@ const cardSuit = ['diamonds', 'hearts', 'spades', 'clubs'];
 
 /*links to each picture of each card in a given suit*/
 
-const clubCards = ['resources/pictures/clubs/acec.jpg', 'resources/pictures/clubs/2c.jpg', 'resources/pictures/clubs/3c.jpg', 
-'resources/pictures/clubs/4c.jpg', 'resources/pictures/clubs/5c.jpg', 'resources/pictures/clubs/6c.jpg', 'resources/pictures/clubs/7c.jpg',
-'resources/pictures/clubs/8c.jpg', 'resources/pictures/clubs/9c.jpg', 'resources/pictures/clubs/10c.jpg', 'resources/pictures/clubs/jc.jpg'
-, 'resources/pictures/clubs/qc.jpg', 'resources/pictures/clubs/kc.jpg'];
+const clubCards = ['resources/pictures/clubs/acec.svg', 'resources/pictures/clubs/2c.svg', 'resources/pictures/clubs/3c.svg', 
+'resources/pictures/clubs/4c.svg', 'resources/pictures/clubs/5c.svg', 'resources/pictures/clubs/6c.svg', 'resources/pictures/clubs/7c.svg',
+'resources/pictures/clubs/8c.svg', 'resources/pictures/clubs/9c.svg', 'resources/pictures/clubs/10c.svg', 'resources/pictures/clubs/jc.svg'
+, 'resources/pictures/clubs/qc.svg', 'resources/pictures/clubs/kc.svg'];
 
 
-const spadeCards = ['resources/pictures/spades/aces.jpg', 'resources/pictures/spades/2s.jpg', 'resources/pictures/spades/3s.jpg', 
-'resources/pictures/spades/4s.jpg', 'resources/pictures/spades/5s.jpg', 'resources/pictures/spades/6s.jpg', 'resources/pictures/spades/7s.jpg',
-'resources/pictures/spades/8s.jpg', 'resources/pictures/spades/9s.jpg', 'resources/pictures/spades/10s.jpg', 'resources/pictures/spades/js.jpg',
-'resources/pictures/spades/qs.jpg', 'resources/pictures/spades/ks.jpg',];
+const spadeCards = ['resources/pictures/spades/aces.svg', 'resources/pictures/spades/2s.svg', 'resources/pictures/spades/3s.svg', 
+'resources/pictures/spades/4s.svg', 'resources/pictures/spades/5s.svg', 'resources/pictures/spades/6s.svg', 'resources/pictures/spades/7s.svg',
+'resources/pictures/spades/8s.svg', 'resources/pictures/spades/9s.svg', 'resources/pictures/spades/10s.svg', 'resources/pictures/spades/js.svg',
+'resources/pictures/spades/qs.svg', 'resources/pictures/spades/ks.svg',];
 
 
-const heartCards = ['resources/pictures/hearts/aceh.jpg', 'resources/pictures/hearts/2h.jpg', 'resources/pictures/hearts/3h.jpg', 'resources/pictures/hearts/4h.jpg',
-'resources/pictures/hearts/5h.jpg', 'resources/pictures/hearts/6h.jpg', 'resources/pictures/hearts/7h.jpg', 'resources/pictures/hearts/8h.jpg',
-'resources/pictures/hearts/9h.jpg', 'resources/pictures/hearts/10h.jpg', 'resources/pictures/hearts/jh.jpg', 'resources/pictures/hearts/qh.jpg',
-'resources/pictures/hearts/kh.jpg',];
+const heartCards = ['resources/pictures/hearts/aceh.svg', 'resources/pictures/hearts/2h.svg', 'resources/pictures/hearts/3h.svg', 'resources/pictures/hearts/4h.svg',
+'resources/pictures/hearts/5h.svg', 'resources/pictures/hearts/6h.svg', 'resources/pictures/hearts/7h.svg', 'resources/pictures/hearts/8h.svg',
+'resources/pictures/hearts/9h.svg', 'resources/pictures/hearts/10h.svg', 'resources/pictures/hearts/jh.svg', 'resources/pictures/hearts/qh.svg',
+'resources/pictures/hearts/kh.svg',];
 
 
-const diamondCards = ['resources/pictures/diamonds/aced.jpg', 'resources/pictures/diamonds/2d.jpg', 'resources/pictures/diamonds/3d.jpg', 'resources/pictures/diamonds/4d.jpg',
-'resources/pictures/diamonds/5d.jpg', 'resources/pictures/diamonds/6d.jpg', 'resources/pictures/diamonds/7d.jpg', 'resources/pictures/diamonds/8d.jpg',
-'resources/pictures/diamonds/9d.jpg', 'resources/pictures/diamonds/10d.jpg', 'resources/pictures/diamonds/jd.jpg', 'resources/pictures/diamonds/qd.jpg',
-'resources/pictures/diamonds/kd.jpg',];
+const diamondCards = ['resources/pictures/diamonds/aced.svg', 'resources/pictures/diamonds/2d.svg', 'resources/pictures/diamonds/3d.svg', 'resources/pictures/diamonds/4d.svg',
+'resources/pictures/diamonds/5d.svg', 'resources/pictures/diamonds/6d.svg', 'resources/pictures/diamonds/7d.svg', 'resources/pictures/diamonds/8d.svg',
+'resources/pictures/diamonds/9d.svg', 'resources/pictures/diamonds/10d.svg', 'resources/pictures/diamonds/jd.svg', 'resources/pictures/diamonds/qd.svg',
+'resources/pictures/diamonds/kd.svg',];
 
 /*I'm going to replace the sources for these with higher quility images that are cropped nicer later but the ones I have should work for now
 I'll just replace the location with the better image and leave it the same name so I won't have to change any of my source code. */
