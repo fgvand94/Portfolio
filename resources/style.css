@@ -261,11 +261,18 @@ nav h1, nav h2 {
 	position: absolute;
 	top: 70%;
 	right: 54.1666666666666666666666666666666666666666666667%;
-	z-index: 11;
+	z-index: 3;
 }
 
 
 
+.flipcard1 {
+	z-index: 2;
+}
+
+.dflipcard2 {
+	display: none;
+}
 .flipinner {
 	position: relative;
 	text-align: center;
@@ -299,6 +306,7 @@ nav h1, nav h2 {
 
 #flipcard1 {
 	animation: move 1s forwards;
+	animation: z .1s forwards;
 }
 
 .flipcard11 {
@@ -536,9 +544,15 @@ nav h1, nav h2 {
 		transform: translate(-35px, 0px);
 	}
 }
-
+@keyframes z {
+	100% {
+		z-index: -1;
+	}
+}
 
 @keyframes move {
+
+
 	100% {
 		top: 40%;
 		right: 200px;
@@ -585,7 +599,7 @@ nav h1, nav h2 {
 }
 
 .dflipinner1 {
-	z-index: 2;
+	
 }
 
 
@@ -680,12 +694,7 @@ footer form textarea {
 }
 
 
-/*everything is fully responsive up to 200% zoom now and only the blackjack game needs to be refactored
-at smart phone scale. I think I'll need to shift stuff around. I'm thinking it'll work out okay
-if I move the score either above or below the player and dealer hand area and then center the hit buttons
-between both of these instead of having it centered in the player hand specifically. Even then I think
-I'll probably either need to overlap the cards by more then half. Maybe overlap 3/4 or just barely have
-the card value showing. Or I'll have to link to smaller card pictures at that scale.*/
+
 @media only screen and (max-width: 1214px) {
 	.flipcard {
 	
@@ -914,7 +923,19 @@ body {
 	}
 
 	.buttons {
-		top: 110%;
+		top: 103%;
+		width: 220px;
+		left: -110px;
+	}
+
+	#newhand, .hit {
+		width: 49%;
+		height: 25px;
+	}
+
+	.stay {
+		width: 100%;
+		height: 25px;
 	}
 	
 	footer {
@@ -1003,28 +1024,9 @@ body {
 			width: 100px;
 			height: 150px;
 		}
-/*I'm not sure what the inital top would be on these. I'd think 70 cause that's the origional but
-it looks almost exactly like 80 which is the one for the scale before this. Maybe it inheriets 
-from the closest media query above it if nothing is specified idk. Also I think I have the z-index
-mixed up. it looks like the bottom card on the first two is dealing first. It just looked good
-that card two went over the top and cause the deal was so close on each two I guess i didn't realise
-but if card two goes over the top that means it has to be highter up which means card 1 is dealt
-from underneath. Ill fix this by changing the z index mid animation so i can still get the 2nd
-card passing over the first from the top. I wish i would have noticed these things and just had
-it more complete in general when I sent it to robert half but i'm not worried about it. I didn't
-expect to be good enough to actually get a job for at least another few months anyway. works out
-though cause it made me work on this more. I was going to anyway i just wanted to learn some back
-end stuff first. I think it's maybe a good idea to finish this first though just so my first solo
-project is totaly done. changing the z inded isn't going to work really for higher zoom because
-the cards are basically always on top of eachother. I was thinking of lengthening the animation
-and maybe going back and forth like how it would actually be, player 1 dealer1 player 2 dealer2 I
-just kind of like the way it looks like this for some reason lol. As long as it doesn't cause problems
-There was some issue I had earlier on when the timing was longer but idk if it was that aspect of
-it. If I pressed hit or something to soon after it would make the card fly off from the center
-cause it hadn't been defined or something to that effect. In any case there's probably a way around
-this. I still want to try to make the animations able to be played together so they don't jump
-when you press hit to fast but if i don't get to that point right away i'm not to worried about it.
-*/
+
+
+
 		.deck {
 			left: -75px;
 			top: 70%;

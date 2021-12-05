@@ -1260,7 +1260,7 @@ if (cardSuit[randSuit2] === 'diamonds') {
 	flipinner1.style.display = 'block';
 	flipinner1.id = 'flipinner1';
 	flipcard1.id = 'flipcard1';
-	document.querySelector('#flipcard1').style.animation = 'move 1s forwards';	
+	document.querySelector('#flipcard1').style.animation = 'move 1s forwards, z 1s forwards';	
 	};
 	
 	const dealcard2 = () => {
@@ -1271,20 +1271,22 @@ if (cardSuit[randSuit2] === 'diamonds') {
 	};
 
 	setTimeout(dealcard1, 10);
-	setTimeout(dealcard2, 100);
+	setTimeout(dealcard2, 400);
 	
 
 
 
 	/*Creating the event listiner for hit which will be removed when the player
 	busts or presses stay*/
-
-
+	const hitStayDelay = () => {
 	hit.addEventListener("click", addCard);
 
 	stay.addEventListener("click", pressStay);
 
-	stay.addEventListener("click", timeFunction);	
+	stay.addEventListener("click", timeFunction);
+	}
+	setTimeout(hitStayDelay, 1200);
+	
 };
 
 
@@ -2703,16 +2705,19 @@ if (cardSuit[randSuit2D] === 'diamonds') {
 		dflipinner1.style.display = 'block'
 		dflipcard1.id = 'dflipcard1';
 		document.querySelector('#dflipcard1').style.animation = 'moved 1s forwards';
+		
 	}
 
 	const dealdcard2 = () => {
+		dflipcard2.style.display = 'block';
 		dflipinner2.id = 'dflipinner2';
 		dflipcard2.id = 'dflipcard2';
 		document.querySelector('#dflipcard2').style.animation = 'move2d 1s forwards';
+	
 	}
 
 	setTimeout(dealdcard1, 200);
-	setTimeout(dealdcard2, 250);
+	setTimeout(dealdcard2, 600);
 };
 
 
@@ -2839,7 +2844,7 @@ to negative right instead of left*/
 	dflipcard5.style.left = '40%';
 };
 
-
+	dflipcard2.style.display = 'none';
 	flipinner3.style.display = 'none';
 	flipinner4.style.display = 'none';
 	flipinner5.style.display = 'none';
