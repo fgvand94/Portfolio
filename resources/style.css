@@ -658,31 +658,20 @@ footer form textarea {
 }
 
 
-.email2m {
-	display: none;
-}
-
-
-
-
 
 @media only screen and (max-width: 1214px) {
-	.flipcard {
-	
+	.flipcard {	
 	top: 80%;
-	right: 48.3333333333333333333333333333333333333333333333%;
-	
-}
+	right: 48.3333333333333333333333333333333333333333333333%;	
+	}
 
 	.dflipcard {
 		left: 40%;
 		top: 80%;
-
 	}
 
 	.black-jack {
 		width: 600px;
-
 	}
 
 
@@ -693,7 +682,6 @@ footer form textarea {
 	.dealer, #playerhand {
 	width: 200px;
 	max-width: 200px;
-
 	}
 
 	.blackj {
@@ -786,7 +774,6 @@ footer form textarea {
 
 
 	@keyframes moved {
-
 		100% {
 			top: 40%;
 			left: 30px;
@@ -830,23 +817,19 @@ footer form textarea {
 
 
 @media only screen and (max-width: 1000px) {
-	
-	
+		
 	.emailcontainer, .phonecontainer, .leave-message {
-		display: inline;
 		width: 33.333333%;
-
 	}
+
 	.number {
 		max-width: 100%;
 	}
-
-
-
-
 }	
 
+
 @media only screen and (max-width: 755px) {
+	
 	body {
 		width: 100%;
 	}
@@ -909,9 +892,6 @@ footer form textarea {
 	
 	footer {
 		flex-direction: column;
-		justify-items: center;
-		align-items: center;
-		align-content: center;
 		justify-content: center;
 		height: 500px;
 	}
@@ -935,38 +915,23 @@ footer form textarea {
 
 
 	.leave-message {
-		width: 66%;
-		display: flex;
-		justify-content: center;
-		align-items: center; 
-		justify-items: center;
-		align-content: center;
+		width: 66%; 
 	}
 
 	.emailcontainer {
 		order: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 250px;
+		width: 300px;
 	}
+
 
 	.email {
-	margin-bottom: 0px;
-	width: 200px;
-	text-align: center;
-	}
-	
-	.email2 {
-	display: none;
+	display: inline;	
 	}
 
-	.email2m {
-	margin-top: 5px;
-	display: block;
 	
-}
+	.email2 {
+		display: block;
+	}
 
 		
 
@@ -987,7 +952,7 @@ footer form textarea {
 		display: flex;
 		justify-content: center;
 		width: 100%;
-		overflow: hidden;
+		
 	}
 
 	.score {
@@ -1147,7 +1112,6 @@ footer form textarea {
 	}
 
 }
-
 
 
 
