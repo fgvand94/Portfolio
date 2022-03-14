@@ -61,6 +61,16 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}...`);
 });
+
+/*It's interesting cause this actually sends the message from your own email address.
+I was thinking it would send it from the other persons but now thinking about it the form
+would have to directly acess the persons email essentially to send it from their email so
+I don't know if that really possible unless they provide you with their password which isn't
+going to happen lawl. I could just have a test email that it's sent to so my password for my
+real account isn't out in the open and then have all the emails sent to the test email form
+the test email forwarded to my actual account. I could probably automate replies to the email
+that sent it to me though possibly. */
+
 /*
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com", //replace with your email provider
