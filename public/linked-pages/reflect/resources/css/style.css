@@ -1,7 +1,5 @@
 
-* {
 
-}
 
 body {
 	width: 100%;
@@ -16,6 +14,8 @@ nav {
 	top: 0;
 	width: 100%;
 	justify-content: space-between;
+	border-bottom: 2px solid black;
+	
 }
 
 
@@ -44,9 +44,25 @@ a:hover {
 }
 
 .herobackground {
+	
+	height: 100vh;
+	position: relative;
+	width: 100vw;
+
+	
+}
+/*Note to self the content "" is essentially what makes this work. This seems to be because
+the before and after pseudo elements aren't meant generally to hold content. To have them
+hold content like a picture you have to add the content property. The reason you even put
+the image in the psudoselector is so you can seperate it from the text on top of the image.*/
+.herobackground::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	filter: brightness(90%);
 	background-image: url(../images/reflect.jpg);
 	height: 100%;
-	position: relative;
 	width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -56,33 +72,38 @@ a:hover {
 
 .herocontent {
 	position: relative;
-	top: 68.0555555555555555%;
+	top: 68vh;
 	color: white;
 	text-shadow: black;
-	text-shadow: 3px 3px black;
+	text-shadow: -3px 3px black;
 }
 
 .reflect {
 	position: relative;
-	bottom: 310px;
-	left: 72.41606319947333%;
-	font-size: 40px;
+	bottom: 40vh;
+	left: 71vw;
+	font-size: 5vh;
 	font-family: "Parisienne";
 	width: 50px;
 }
 
 .words {
 	position: relative;
-	left: 20px;
+	left: 3vw;
 	font-family: "Caveat";
-	width: 500px;
+	width: 32%;
+	font-size: 4.5vh;
+}
+
+.quote {
+	font-size: 2.2vh;
 }
 
 .container {
 	display: flex;
 	justify-content: center;
-	height: 720px;
-
+	height: 100vh;
+	
 }
 
 article {
