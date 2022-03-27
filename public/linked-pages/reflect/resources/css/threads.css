@@ -93,35 +93,26 @@ button {
 }
 
 .column-container {
-	display: flex;
+	width: 1240px;
 	margin-left: auto;
 	margin-right: auto;
-	justify-content: center;
-}
-
-.column {
-	width: 400px;
 	
-	background-color: gray;
-
 }
 
-.wildlife {
-	margin-left: 20px;
-	margin-right: 20px;
+.thread {
+    width: 100%;
+    height: 60px;
+    background-color: gray;
+	margin-top: 5px;
+}
+/*I think it's not considered best practice to do this but it seems more efficient
+then comming up with js to give class names to these things. */
+.thread h2, .thread p{
+	margin-bottom: 7px;
+	margin-top: 0;
 }
 
-.column-header {
-	text-align: center;
-}
-
-.column-block {
-	width: 100%;
-	height: 100px;
-	background-color: white;
-	margin-top: 20px;
-}
-
-.search-input, .search-button {
+.forumNav {
 	display: inline;
 }
+

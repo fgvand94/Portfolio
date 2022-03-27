@@ -5,6 +5,11 @@ let message = document.getElementById('message-input');
 
 
 
+
+
+
+
+
 form.addEventListener('submit', (e)=> {
   e.preventDefault();
   
@@ -33,6 +38,14 @@ form.addEventListener('submit', (e)=> {
   xhr.send(JSON.stringify(formData));
   
 });
+
+navigate.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  let formData = {
+
+  }
+})
 
 
 
