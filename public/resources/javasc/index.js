@@ -16,13 +16,16 @@ form.addEventListener('submit', (e)=> {
   let formData = {
     name: name.value,
     email: email.value,
-    message: message.value
+    message: message.value,
+    allow: 'POST'
   }
   console.log(formData);
 
   let xhr = new XMLHttpRequest();
   xhr.open('POST', '/');
-  xhr.setRequestHeader('content-type', 'application/json');
+  xhr.setRequestHeader('content-type', 'application/json', {
+    allow: 'POST'
+  });
   xhr.onload = function() {
     console.log(xhr.responseText);
     if(xhr.responseText == 'success') {
