@@ -42,13 +42,7 @@ form.addEventListener('submit', (e)=> {
   
 });
 
-navigate.addEventListener('click', (e) => {
-  e.preventDefault();
 
-  let formData = {
-
-  }
-})
 
 
 
