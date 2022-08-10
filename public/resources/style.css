@@ -670,7 +670,7 @@ footer {
 
 
 footer p {
-	color:  silver;
+	color:  lightgray;
 }
 
 
@@ -720,14 +720,13 @@ footer form {
 	
 }
 
-
 .labels {
 	display: block;
 }
 
 
 footer form label {
-	background-color: silver;
+	background-color: lightgray;
 }
 
 
@@ -736,10 +735,9 @@ footer form textarea {
 }
 
 .form-color {
-	background-color: silver;
+	background-color: lightgray;
 	
 }
-
 
 .form-color:focus {
 	border: none;
@@ -751,7 +749,7 @@ footer form textarea {
 	width: 100px;
 	height: 30px;
 	font-weight: bold;
-	background-color: silver;
+	background-color: lightgray;
 }
 
 .email, .number {
